@@ -1,0 +1,41 @@
+#cloud-config
+
+users:
+- name: ubuntu
+
+bootcmd:
+- fsck.ext4 -tvy /dev/sdb
+- mkdir -p /mnt/disks/test-create-vol
+- mount -t ext4 /dev/sdb /mnt/disks/test-create-vol
+- mkdir -p /mnt/disks/test-create-vol/home/ubuntu/.ssh
+- chown 2000:2000 /mnt/disks/test-create-vol/home/ubuntu
+- chmod -R 700 /mnt/disks/test-create-vol/home/ubuntu/.ssh
+- chown -R 2000:2000 /mnt/disks/test-create-vol/home/ubuntu/.ssh
+
+write_files:
+- path: /mnt/disks/test-create-vol/home/ubuntu/.ssh/authorized_keys
+  permissions: "0700"
+  content: |
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B
+- path: /etc/systemd/system/container-sshd.service
+  permissions: "0644"
+  owner: root
+  content: |
+    [Unit]
+    Description=Container which we can connect via ssh
+    Wants=gcr-online.target
+    After=gcr-online.target
+
+    [Service]
+    Environment="HOME=/home/cloudservice"
+    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker
+    ExecStart=/usr/bin/docker run --rm --name=container-sshd -p3022:22 -v /mnt/disks/test-create-vol/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab /usr/sbin/sshd -D -e
+    ExecStop=/usr/bin/docker stop container-sshd
+    ExecStopPost=/usr/bin/docker rm container-sshd
+runcmd:
+  - 'usermod -u 2000 ubuntu'
+  - 'groupmod -g 2000 ubuntu'
+  - 'chown ubuntu:ubuntu /mnt/disks/test-create-vol/home/ubuntu/.ssh/authorized_keys'
+  - 'chmod 0666 /var/run/docker.sock'
+  - systemctl daemon-reload
+  - systemctl start container-sshd.service
