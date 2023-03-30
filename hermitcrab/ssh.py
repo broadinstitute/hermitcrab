@@ -1,9 +1,10 @@
-import config 
+import config
 from typing import List
 import shutil
 import time
 import os
 import tempfile
+
 
 def replace_if_changed(dest_filename, content):
     if not os.path.exists(dest_filename):
@@ -16,17 +17,21 @@ def replace_if_changed(dest_filename, content):
         backup_filename = f"{dest_filename}.{int(time.time())}"
         print(f"Updating {dest_filename} after saving a backup named {backup_filename}")
 
-        fd, tmpname = tempfile.mkstemp(prefix="tmpconfig", dir=os.path.dirname(dest_filename), text=True)
+        fd, tmpname = tempfile.mkstemp(
+            prefix="tmpconfig", dir=os.path.dirname(dest_filename), text=True
+        )
         fd.write(content)
 
         # make a backup copy
         shutil.copy(dest_filename, backup_filename)
         os.rename(tmpname, dest_filename)
 
-START_MARKER="### AUTOMATICALLY ADDED BY HERMITCRAB TOOL START ###\n"
-END_MARKER="### AUTOMATICALLY ADDED BY HERMITCRAB TOOL END ###\n"
 
-def remove_section(content: str, start_marker: str, end_marker :str):
+START_MARKER = "### AUTOMATICALLY ADDED BY HERMITCRAB TOOL START ###\n"
+END_MARKER = "### AUTOMATICALLY ADDED BY HERMITCRAB TOOL END ###\n"
+
+
+def remove_section(content: str, start_marker: str, end_marker: str):
     if start_marker not in content:
         return content
     start_index = content.index(start_marker)
@@ -34,7 +39,8 @@ def remove_section(content: str, start_marker: str, end_marker :str):
 
     return content[:start_index] + content[end_index:]
 
-def update_ssh_config(configs : List[config.InstanceConfig]):
+
+def update_ssh_config(configs: List[config.InstanceConfig]):
     # sort so that we get a deterministic order
     configs = sorted(configs, key=lambda x: x.name)
 
@@ -48,14 +54,18 @@ def update_ssh_config(configs : List[config.InstanceConfig]):
     if len(configs) > 0:
         new_section = []
         for instance_config in configs:
-            new_section.append(f"""Host {instance_config.name}
+            new_section.append(
+                f"""Host {instance_config.name}
    Hostname localhost
    User ubuntu
    Port {instance_config.local_port}
    UserKnownHostsFile /dev/null
    StrictHostKeyChecking no
 
-""")    
-        config_content = config_content + START_MARKER + ("".join(new_section)) + END_MARKER
+"""
+            )
+        config_content = (
+            config_content + START_MARKER + ("".join(new_section)) + END_MARKER
+        )
 
     replace_if_changed(ssh_config_path, config_content)

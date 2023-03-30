@@ -1,9 +1,9 @@
-
 from ..ssh import get_pub_key
 from ..gcp import gcloud
 from ..config import get_instance_config
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
+
 
 def up(name: str):
     ssh_pub_key = get_pub_key()
@@ -12,7 +12,8 @@ def up(name: str):
 
     with tempfile.NamedTemporaryFile("wt") as tmp:
         # write out cloudinit file
-        tmp.write(f"""#cloud-config
+        tmp.write(
+            f"""#cloud-config
 
 users:
 - name: ubuntu
@@ -53,22 +54,28 @@ runcmd:
   - 'chmod 0666 /var/run/docker.sock'
   - systemctl daemon-reload
   - systemctl start container-sshd.service
-""")
+"""
+        )
         tmp.flush()
 
         cloudinit_path = tmp.name
         print("Creating new instance named {instance.name}...")
-        gcloud(['compute', 'instances', 'create', 
-            instance_config.name, 
-            '--image-family=cos-stable', 
-            '--image-project=cos-cloud', 
-            f'--zone={instance_config.zone}', 
-            f'--project={instance_config.project}', 
-            f'--machine-type={instance_config.machine_type}', 
-            f'--metadata-from-file=user-data={cloudinit_path}', 
-            f'--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no'])
+        gcloud(
+            [
+                "compute",
+                "instances",
+                "create",
+                instance_config.name,
+                "--image-family=cos-stable",
+                "--image-project=cos-cloud",
+                f"--zone={instance_config.zone}",
+                f"--project={instance_config.project}",
+                f"--machine-type={instance_config.machine_type}",
+                f"--metadata-from-file=user-data={cloudinit_path}",
+                f"--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no",
+            ]
+        )
 
     if is_tunnel_running(instance_config.name):
         stop_tunnel(instance_config.name)
     start_tunnel(instance_config.name)
-
