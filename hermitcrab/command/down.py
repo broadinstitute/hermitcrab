@@ -33,5 +33,8 @@ def add_command(subparser):
     )
     parser.set_defaults(func=_down)
     parser.add_argument(
-        "name", help="The name to use when creating instance", default="default"
+        "name",
+        help="The name to use when creating instance",
+        nargs="?",
+        default="default",
     )

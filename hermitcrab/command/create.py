@@ -9,11 +9,27 @@ from ..config import (
     CONTAINER_SSHD_PORT,
 )
 from ..ssh import update_ssh_config
+import json
 
 
 def create_volume(
     pd_name, drive_size, drive_type, name, zone, project, machine_type="n2-standard-2"
 ):
+    disk_json = json.loads(
+        gcloud(
+            [
+                "compute",
+                "disks",
+                "list",
+                f"--filter=name={pd_name}",
+                f"--zones={zone}",
+                "--format=json",
+            ],
+            capture_stdout=True,
+        )
+    )
+    assert len(disk_json) == 0, f"Disk {pd_name} already exists"
+
     existing_status = get_instance_status(name, zone, project, one_or_none=True)
     assert (
         existing_status is None
@@ -25,7 +41,7 @@ def create_volume(
             "compute",
             "disks",
             "create",
-            name,
+            pd_name,
             f"--size={drive_size}",
             f"--zone={zone}",
             f"--type={drive_type}",
@@ -50,7 +66,7 @@ bootcmd:
                 "compute",
                 "instances",
                 "create",
-                "create-vol",
+                name,
                 "--image-family=cos-stable",
                 "--image-project=cos-cloud",
                 f"--zone={zone}",
@@ -67,20 +83,49 @@ bootcmd:
     gcloud(["compute", "instances", "delete", name])
 
 
-def ensure_firewall_setup():
+def ensure_firewall_setup(project):
     # Add rule to allow connections from IAP tunnel. See https://cloud.google.com/iap/docs/using-tcp-forwarding
-    gcloud(
+    IAP_TUNNEL_IP_RANGE = "35.235.240.0/20"
+
+    firewall_settings_json = gcloud(
         [
             "compute",
             "firewall-rules",
-            "create",
-            "allow-altssh-ingress-from-iap",
-            "--direction=INGRESS",
-            "--action=allow",
-            f"--rules=tcp:{CONTAINER_SSHD_PORT}",
-            "--source-ranges=35.235.240.0/20",
-        ]
+            "list",
+            "--filter=name=allow-altssh-ingress-from-iap",
+            "--format=json",
+            f"--project={project}",
+        ],
+        capture_stdout=True,
     )
+    firewall_settings = json.loads(firewall_settings_json)
+    if len(firewall_settings_json) == 0:
+        # create rule if it's not present
+        gcloud(
+            [
+                "compute",
+                "firewall-rules",
+                "create",
+                "allow-altssh-ingress-from-iap",
+                "--direction=INGRESS",
+                "--action=allow",
+                f"--rules=tcp:{CONTAINER_SSHD_PORT}",
+                f"--source-ranges={IAP_TUNNEL_IP_RANGE}",
+                f"--project={project}",
+            ]
+        )
+    else:
+        # some simple santity checks to make sure it's set the way we want
+        assert len(firewall_settings) == 1
+        rule = firewall_settings[0]
+        assert rule["allowed"] == [
+            {"IPProtocol": "tcp", "ports": [str(CONTAINER_SSHD_PORT)]}
+        ]
+        assert rule["direction"] == "INGRESS"
+        assert rule["disabled"] == False
+        assert rule["sourceRanges"] == [
+            IAP_TUNNEL_IP_RANGE
+        ]  # , f"expected {IAP_TUNNEL_IP_RANGE} but got {rule['sourceRanges']}"
 
 
 def create(
@@ -94,11 +139,15 @@ def create(
     pd_name: str,
     local_port: int,
 ):
+    assert zone
+    assert project
+    assert pd_name
+
     assert (
         get_instance_config(name) is None
     ), f"{name} appears to already have a config stored"
 
-    ensure_firewall_setup()
+    ensure_firewall_setup(project)
 
     create_volume(pd_name, drive_size, drive_type, name, zone, project)
     print(
@@ -135,6 +184,9 @@ def add_command(subparser):
 
         assert_valid_gcp_name("instance name", args.name)
         assert_valid_gcp_name("persistent disk name", pd_name)
+
+        assert args.zone, "zone must be specified"
+        assert args.project, "project must be specified"
 
         create(
             args.name,

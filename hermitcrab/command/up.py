@@ -59,7 +59,7 @@ runcmd:
         tmp.flush()
 
         cloudinit_path = tmp.name
-        print("Creating new instance named {instance.name}...")
+        print(f"Creating new instance named {instance_config.name}...")
         gcloud(
             [
                 "compute",
@@ -95,5 +95,8 @@ def add_command(subparser):
     )
     parser.set_defaults(func=_up)
     parser.add_argument(
-        "name", help="The name to use when creating instance", default="default"
+        "name",
+        help="The name to use when creating instance",
+        nargs="?",
+        default="default",
     )

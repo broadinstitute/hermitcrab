@@ -46,6 +46,7 @@ def remove_section(content: str, start_marker: str, end_marker: str):
 def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     # sort so that we get a deterministic order
     configs = sorted(configs, key=lambda x: x.name)
+    print("configs", configs)
 
     ssh_config_path = os.path.join(os.environ["HOME"], ".ssh", "config")
 

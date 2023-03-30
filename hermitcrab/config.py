@@ -53,7 +53,7 @@ def get_instance_configs() -> Dict[str, InstanceConfig]:
 
 def get_instance_config(name):
     config_dir = get_instance_config_dir()
-    config_filename = os.path.join(config_dir, name)
+    config_filename = os.path.join(config_dir, f"{name}.json")
 
     if not os.path.exists(config_filename):
         return None
@@ -66,7 +66,7 @@ def get_instance_config(name):
 
 def write_instance_config(config: InstanceConfig):
     config_dir = get_instance_config_dir()
-    config_filename = os.path.join(config_dir, config.name)
+    config_filename = os.path.join(config_dir, f"{config.name}.json")
 
     ensure_dir_exists(config_dir)
     config_dict = asdict(config)
@@ -74,4 +74,7 @@ def write_instance_config(config: InstanceConfig):
         fd.write(json.dumps(config_dict, indent=2, sort_keys=True))
 
     print(f"Setting {config.name} as the 'default' instance config")
-    os.symlink(config_filename, os.path.join(config_dir, "default"))
+    os.symlink(
+        os.path.relpath(config_filename, config_dir),
+        os.path.join(config_dir, "default.json"),
+    )
