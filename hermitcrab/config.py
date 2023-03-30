@@ -1,5 +1,6 @@
 import os
 import json
+from typing import Dict
 
 from dataclasses import dataclass, asdict
 
@@ -17,25 +18,36 @@ class InstanceConfig:
     local_port: int
 
 
-def get_instance_config_dir():
+def get_home_config_dir():
     home_dir = os.environ.get("HOME")
     assert home_dir is not None
-    return os.path.join(home_dir, ".hermit", "instances")
+    return os.path.join(home_dir, ".hermit")
 
 
-def ensure_config_dirs_exists():
-    config_dir = get_instance_config_dir()
+def get_instance_config_dir():
+    return os.path.join(get_home_config_dir(), "instances")
+
+
+def get_tunnel_status_dir(create_if_missing=False):
+    path = os.path.join(get_home_config_dir(), "tunnels")
+    if create_if_missing:
+        ensure_dir_exists(path)
+    return path
+
+
+def ensure_dir_exists(config_dir):
     if not os.path.exists(config_dir):
         os.makedirs(config_dir)
 
 
-def get_instance_configs():
+def get_instance_configs() -> Dict[str, InstanceConfig]:
     configs = {}
     config_dir = get_instance_config_dir()
-    for filename in os.listdir(config_dir):
-        if filename.endswith(".json"):
-            name = filename[: -len(".json")]  # drop the extension
-            configs[name] = get_instance_config(name)
+    if os.path.exists(config_dir):
+        for filename in os.listdir(config_dir):
+            if filename.endswith(".json"):
+                name = filename[: -len(".json")]  # drop the extension
+                configs[name] = get_instance_config(name)
     return configs
 
 
@@ -52,12 +64,11 @@ def get_instance_config(name):
     return InstanceConfig(**config_dict)
 
 
-def write_config(config):
-    ensure_config_dirs_exists()
-
+def write_instance_config(config: InstanceConfig):
     config_dir = get_instance_config_dir()
     config_filename = os.path.join(config_dir, config.name)
 
+    ensure_dir_exists(config_dir)
     config_dict = asdict(config)
     with open(config_filename, "wt") as fd:
         fd.write(json.dumps(config_dict, indent=2, sort_keys=True))

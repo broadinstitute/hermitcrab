@@ -4,7 +4,7 @@ from ..gcp import get_instance_status, gcloud, wait_for_instance_status
 from ..config import (
     get_instance_config,
     get_instance_configs,
-    write_config,
+    write_instance_config,
     InstanceConfig,
     CONTAINER_SSHD_PORT,
 )
@@ -14,7 +14,7 @@ from ..ssh import update_ssh_config
 def create_volume(
     pd_name, drive_size, drive_type, name, zone, project, machine_type="n2-standard-2"
 ):
-    existing_status = get_instance_status(name, one_or_none=True)
+    existing_status = get_instance_status(name, zone, project, one_or_none=True)
     assert (
         existing_status is None
     ), f"Expected there to be no instance with name {name}, but found one with status {existing_status}"
@@ -92,9 +92,10 @@ def create(
     zone: str,
     docker_image: str,
     pd_name: str,
+    local_port: int,
 ):
     assert (
-        get_instance_config(name, create_if_missing=True) is None
+        get_instance_config(name) is None
     ), f"{name} appears to already have a config stored"
 
     ensure_firewall_setup()
@@ -104,7 +105,7 @@ def create(
         f"Successfully created {drive_size}GB filesystem on persistent disk {pd_name}"
     )
 
-    write_config(
+    write_instance_config(
         InstanceConfig(
             name=name,
             zone=zone,
@@ -112,10 +113,11 @@ def create(
             machine_type=machine_type,
             docker_image=docker_image,
             pd_name=pd_name,
+            local_port=local_port,
         )
     )
 
-    update_ssh_config(get_instance_configs().values())
+    update_ssh_config(list(get_instance_configs().values()))
 
 
 def assert_valid_gcp_name(description, name):
@@ -143,18 +145,22 @@ def add_command(subparser):
             args.zone,
             args.docker_image,
             pd_name,
+            args.local_port,
         )
 
     parser = subparser.add_parser("create", help="Create a new instance config")
     parser.set_defaults(func=_create)
     parser.add_argument(
-        "name", help="The name to use when creating instance",
+        "name",
+        help="The name to use when creating instance",
     )
     parser.add_argument(
-        "drive_size", help="Size of the home directory volume in GBs",
+        "drive_size",
+        help="Size of the home directory volume in GBs",
     )
     parser.add_argument(
-        "docker_image", help="Name of the docker image to use",
+        "docker_image",
+        help="Name of the docker image to use",
     )
     parser.add_argument(
         "--drive-type",
@@ -175,4 +181,11 @@ def add_command(subparser):
         default=None,
         dest="pd_name",
         help='What to name the persistent disk used for the home volume. ("NAME-pd" if not specified)',
+    )
+    parser.add_argument(
+        "--local-port",
+        dest="local_port",
+        type=int,
+        default=3022,
+        help="The port on localhost that will be used to establish a tunnel to the instance.",
     )

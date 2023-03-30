@@ -78,4 +78,22 @@ runcmd:
 
     if is_tunnel_running(instance_config.name):
         stop_tunnel(instance_config.name)
-    start_tunnel(instance_config.name)
+    start_tunnel(
+        instance_config.name,
+        instance_config.zone,
+        instance_config.project,
+        instance_config.local_port,
+    )
+
+
+def add_command(subparser):
+    def _up(args):
+        up(args.name)
+
+    parser = subparser.add_parser(
+        "up", help="Start a compute instance based on the named configuration"
+    )
+    parser.set_defaults(func=_up)
+    parser.add_argument(
+        "name", help="The name to use when creating instance", default="default"
+    )

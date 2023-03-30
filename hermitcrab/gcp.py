@@ -1,15 +1,43 @@
 import subprocess
 import time
+from typing import List, Optional, Union
+import logging
+
+log = logging.getLogger(__name__)
 
 
-def gcloud(args):
+def _make_command(args):
     for x in args:
         assert (
             isinstance(x, str) or isinstance(x, int) or isinstance(x, float)
         ), f"{x} not an expected type"
     args = [str(x) for x in args]
 
-    subprocess.check_call(["gcloud"] + args)
+    cmd = ["gcloud"] + args
+
+    return cmd
+
+
+def gcloud_in_background(args: List[Union[str, int]], log_path: str):
+    cmd = _make_command(args)
+
+    log.info("Running in the background:", cmd)
+
+    with open(log_path, "at") as log_fd:
+        proc = subprocess.Popen(cmd, stderr=subprocess.STDOUT, stdout=log_fd)
+
+    return proc.pid
+
+
+def gcloud(args: List[str], capture_stdout: bool = False) -> Optional[str]:
+    cmd = _make_command(args)
+
+    log.info("Executing:", cmd)
+    if capture_stdout:
+        stdout = subprocess.check_output(cmd)
+        return stdout.decode("utf8")
+    else:
+        subprocess.check_call(cmd)
 
 
 def get_instance_status(name, zone, project, one_or_none=False):
@@ -25,6 +53,8 @@ def get_instance_status(name, zone, project, one_or_none=False):
         ],
         capture_stdout=True,
     )
+    assert status is not None
+
     if one_or_none:
         if status.strip() == "":
             return None

@@ -1,12 +1,12 @@
-import config
-from typing import List
+from hermitcrab import config
+from typing import List, Sequence
 import shutil
 import time
 import os
 import tempfile
 
 
-def replace_if_changed(dest_filename, content):
+def replace_if_changed(dest_filename: str, content: str):
     if not os.path.exists(dest_filename):
         prev_content = ""
     else:
@@ -17,10 +17,13 @@ def replace_if_changed(dest_filename, content):
         backup_filename = f"{dest_filename}.{int(time.time())}"
         print(f"Updating {dest_filename} after saving a backup named {backup_filename}")
 
-        fd, tmpname = tempfile.mkstemp(
+        tmpfd, tmpname = tempfile.mkstemp(
             prefix="tmpconfig", dir=os.path.dirname(dest_filename), text=True
         )
-        fd.write(content)
+        os.close(tmpfd)
+
+        with open(tmpname, "wt") as fd:
+            fd.write(content)
 
         # make a backup copy
         shutil.copy(dest_filename, backup_filename)
@@ -40,7 +43,7 @@ def remove_section(content: str, start_marker: str, end_marker: str):
     return content[:start_index] + content[end_index:]
 
 
-def update_ssh_config(configs: List[config.InstanceConfig]):
+def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     # sort so that we get a deterministic order
     configs = sorted(configs, key=lambda x: x.name)
 
@@ -69,3 +72,10 @@ def update_ssh_config(configs: List[config.InstanceConfig]):
         )
 
     replace_if_changed(ssh_config_path, config_content)
+
+
+def get_pub_key():
+    path = os.path.join(os.environ["HOME"], ".ssh", "id_rsa.pub")
+    assert os.path.exists(path), f"Could not find ssh public key: {path}"
+    with open(path, "rt") as fd:
+        return fd.read()

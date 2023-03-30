@@ -21,3 +21,17 @@ def down(name: str):
             f"--project={instance_config.project}",
         ]
     )
+
+
+def add_command(subparser):
+    def _down(args):
+        down(args.name)
+
+    parser = subparser.add_parser(
+        "down",
+        help="Delete instance (file system on associated disk will remain and an equivilent server can be brought up with the 'up' command)",
+    )
+    parser.set_defaults(func=_down)
+    parser.add_argument(
+        "name", help="The name to use when creating instance", default="default"
+    )

@@ -1,9 +1,9 @@
 import argparse
 import sys
-from command import create, up, down
+from .command import create, up, down
 
 
-def main(argv):
+def main(argv=None):
     parse = argparse.ArgumentParser()
     subparser = parse.add_subparsers()
 
