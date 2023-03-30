@@ -30,8 +30,8 @@ def replace_if_changed(dest_filename: str, content: str):
         os.rename(tmpname, dest_filename)
 
 
-START_MARKER = "### AUTOMATICALLY ADDED BY HERMITCRAB TOOL START ###\n"
-END_MARKER = "### AUTOMATICALLY ADDED BY HERMITCRAB TOOL END ###\n"
+START_MARKER = "### AUTOMATICALLY ADDED BY HERMITCRAB START ###\n"
+END_MARKER = "### AUTOMATICALLY ADDED BY HERMITCRAB END ###\n"
 
 
 def remove_section(content: str, start_marker: str, end_marker: str):
@@ -56,7 +56,8 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     config_content = remove_section(config_content, START_MARKER, END_MARKER)
 
     if len(configs) > 0:
-        new_section = []
+        new_section = ["""# This section may be rewritten by 'hermit' so avoid making 
+manual edits here. They will be lost next time hermit updates this file."""]
         for instance_config in configs:
             new_section.append(
                 f"""Host {instance_config.name}
