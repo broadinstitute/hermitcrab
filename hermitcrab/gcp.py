@@ -7,6 +7,10 @@ import json
 log = logging.getLogger(__name__)
 
 
+def log_info(msg):
+    log.info("%s", msg)
+
+
 def _make_command(args):
     for x in args:
         assert (
@@ -22,27 +26,56 @@ def _make_command(args):
 def gcloud_in_background(args: List[Union[str, int]], log_path: str):
     cmd = _make_command(args)
 
-    log.info("%s", f"Running in the background: {cmd}")
+    log_info(f"Running in the background: {cmd}")
 
     with open(log_path, "at") as log_fd:
-        proc = subprocess.Popen(cmd, stderr=subprocess.STDOUT, stdout=log_fd)
+        proc = subprocess.Popen(
+            cmd, stderr=subprocess.STDOUT, stdout=log_fd, stdin=subprocess.DEVNULL
+        )
+
+    log_info(f"Running as pid={proc.pid}")
 
     return proc.pid
 
 
-def gcloud(args: List[str], capture_stdout: bool = False) -> Optional[str]:
+def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)
 
-    log.info("%s", f"Executing: {cmd}")
-    if capture_stdout:
-        stdout = subprocess.check_output(cmd)
-        return stdout.decode("utf8")
-    else:
-        subprocess.check_call(cmd)
+    log_info(f"Executing, expecting json output: {cmd}")
+
+    proc = subprocess.Popen(
+        cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL
+    )
+    stdout, stderr = proc.communicate(timeout=10)
+    stdout = stdout.decode("utf8")
+    stderr = stderr.decode("utf8")
+    log_info(f"stdout: {stdout}")
+    log_info(f"stderr: {stderr}")
+    assert (
+        proc.returncode == 0
+    ), f"Executing {cmd} failed (return code: {proc.returncode}). Output: {stderr}"
+
+    return json.loads(stdout)
+
+
+def gcloud(args: List[str], timeout=10):
+    cmd = _make_command(args)
+
+    log_info(f"Executing: {cmd}")
+    proc = subprocess.Popen(
+        cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL
+    )
+    stdout, stderr = proc.communicate(timeout=timeout)
+    assert stderr is None
+    stdout = stdout.decode("utf8")
+    log_info(f"output: {stdout}")
+    assert (
+        proc.returncode == 0
+    ), f"Executing {cmd} failed (return code: {proc.returncode}). Output: {stdout}"
 
 
 def get_instance_status(name, zone, project, one_or_none=False):
-    status_json = gcloud(
+    status = gcloud_capturing_json_output(
         [
             "compute",
             "instances",
@@ -52,12 +85,7 @@ def get_instance_status(name, zone, project, one_or_none=False):
             f"--zones={zone}",
             f"--project={project}",
         ],
-        capture_stdout=True,
     )
-    assert status_json is not None
-
-    status = json.loads(status_json)
-
     if one_or_none:
         if len(status) == 0:
             return None

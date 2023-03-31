@@ -5,6 +5,7 @@ from typing import Dict
 from dataclasses import dataclass, asdict
 
 CONTAINER_SSHD_PORT = 3022
+LONG_OPERATION_TIMEOUT = 60 * 5
 
 
 @dataclass

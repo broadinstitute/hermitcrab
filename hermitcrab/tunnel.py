@@ -37,6 +37,14 @@ def read_pid(name: str):
     return None
 
 
+def delete_pid(name: str):
+    tunnel_status_dir = get_tunnel_status_dir(create_if_missing=True)
+    tunnel_pid_file = os.path.join(tunnel_status_dir, f"{name}.pid")
+
+    if os.path.exists(tunnel_pid_file):
+        os.unlink(tunnel_pid_file)
+
+
 def is_tunnel_running(name: str):
     pid = read_pid(name)
     return pid is not None and is_pid_valid(pid)
@@ -68,9 +76,23 @@ def start_tunnel(name: str, zone: str, project: str, local_port: int):
         fd.write(str(pid))
 
 
+MAX_PROCESS_TERM_TIME = 10
+# how many seconds to wait after TERM signal is sent before reporting an error
+import time
+
+
 def stop_tunnel(name: str):
     pid = read_pid(name)
     if pid is None:
         return
     print(f"Stopping tunnel (by terminating pid={pid})")
     os.kill(pid, signal.SIGTERM)
+
+    start_time = time.time()
+    while True:
+        if not is_pid_valid(pid):
+            break
+        elapsed = time.time() - start_time
+        assert (
+            elapsed < MAX_PROCESS_TERM_TIME
+        ), f"Giving up waiting for tunnel process (pid: {pid}) to terminate after {elapsed} seconds"

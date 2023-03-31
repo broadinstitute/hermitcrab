@@ -1,6 +1,11 @@
 import re
 import tempfile
-from ..gcp import get_instance_status, gcloud, wait_for_instance_status
+from ..gcp import (
+    get_instance_status,
+    gcloud,
+    gcloud_capturing_json_output,
+    wait_for_instance_status,
+)
 from ..config import (
     get_instance_config,
     get_instance_configs,
@@ -15,20 +20,17 @@ import json
 def create_volume(
     pd_name, drive_size, drive_type, name, zone, project, machine_type="n2-standard-2"
 ):
-    disk_json = json.loads(
-        gcloud(
-            [
-                "compute",
-                "disks",
-                "list",
-                f"--filter=name={pd_name}",
-                f"--zones={zone}",
-                "--format=json",
-            ],
-            capture_stdout=True,
-        )
+    disk_status = gcloud_capturing_json_output(
+        [
+            "compute",
+            "disks",
+            "list",
+            f"--filter=name={pd_name}",
+            f"--zones={zone}",
+            "--format=json",
+        ],
     )
-    assert len(disk_json) == 0, f"Disk {pd_name} already exists"
+    assert len(disk_status) == 0, f"Disk {pd_name} already exists"
 
     existing_status = get_instance_status(name, zone, project, one_or_none=True)
     assert (
@@ -87,7 +89,7 @@ def ensure_firewall_setup(project):
     # Add rule to allow connections from IAP tunnel. See https://cloud.google.com/iap/docs/using-tcp-forwarding
     IAP_TUNNEL_IP_RANGE = "35.235.240.0/20"
 
-    firewall_settings_json = gcloud(
+    firewall_settings = gcloud_capturing_json_output(
         [
             "compute",
             "firewall-rules",
@@ -96,10 +98,8 @@ def ensure_firewall_setup(project):
             "--format=json",
             f"--project={project}",
         ],
-        capture_stdout=True,
     )
-    firewall_settings = json.loads(firewall_settings_json)
-    if len(firewall_settings_json) == 0:
+    if len(firewall_settings) == 0:
         # create rule if it's not present
         gcloud(
             [

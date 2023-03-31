@@ -44,9 +44,11 @@ def remove_section(content: str, start_marker: str, end_marker: str):
 
 
 def update_ssh_config(configs: Sequence[config.InstanceConfig]):
+    # because default is an alias, we get dups in this sequence. Dedup them by name
+    by_name = {c.name: c for c in configs}
+
     # sort so that we get a deterministic order
-    configs = sorted(configs, key=lambda x: x.name)
-    print("configs", configs)
+    configs = sorted(by_name.values(), key=lambda x: x.name)
 
     ssh_config_path = os.path.join(os.environ["HOME"], ".ssh", "config")
 
@@ -56,8 +58,13 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     config_content = remove_section(config_content, START_MARKER, END_MARKER)
 
     if len(configs) > 0:
-        new_section = ["""# This section may be rewritten by 'hermit' so avoid making 
-manual edits here. They will be lost next time hermit updates this file."""]
+        new_section = [
+            """#
+# This section may be rewritten by 'hermit' so avoid making 
+# manual edits here. They will be lost next time hermit updates this file.
+#
+"""
+        ]
         for instance_config in configs:
             new_section.append(
                 f"""Host {instance_config.name}

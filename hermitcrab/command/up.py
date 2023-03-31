@@ -1,15 +1,12 @@
 from ..ssh import get_pub_key
-from ..gcp import gcloud
-from ..config import get_instance_config, CONTAINER_SSHD_PORT
+from ..gcp import gcloud, get_instance_status
+from ..config import get_instance_config, CONTAINER_SSHD_PORT, LONG_OPERATION_TIMEOUT
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
 
 
-def up(name: str):
+def create_instance(instance_config):
     ssh_pub_key = get_pub_key()
-    instance_config = get_instance_config(name)
-    assert instance_config is not None, f"Could not file config for {name}"
-
     with tempfile.NamedTemporaryFile("wt") as tmp:
         # write out cloudinit file
         tmp.write(
@@ -73,11 +70,29 @@ runcmd:
                 f"--machine-type={instance_config.machine_type}",
                 f"--metadata-from-file=user-data={cloudinit_path}",
                 f"--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no",
-            ]
+            ],
+            timeout=LONG_OPERATION_TIMEOUT,
         )
+
+
+def up(name: str):
+    instance_config = get_instance_config(name)
+    assert instance_config is not None, f"Could not file config for {name}"
+
+    status = get_instance_status(
+        instance_config.name,
+        instance_config.zone,
+        instance_config.project,
+        one_or_none=True,
+    )
+    if status is None:
+        create_instance(instance_config)
+    else:
+        print(f"Instance {instance_config.name} is already running.")
 
     if is_tunnel_running(instance_config.name):
         stop_tunnel(instance_config.name)
+
     start_tunnel(
         instance_config.name,
         instance_config.zone,

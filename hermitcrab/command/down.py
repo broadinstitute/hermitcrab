@@ -1,6 +1,6 @@
-from ..gcp import gcloud
+from ..gcp import gcloud, get_instance_status
 from ..tunnel import is_tunnel_running, stop_tunnel
-from ..config import get_instance_config
+from ..config import get_instance_config, LONG_OPERATION_TIMEOUT
 
 
 def down(name: str):
@@ -9,18 +9,30 @@ def down(name: str):
 
     if is_tunnel_running(instance_config.name):
         stop_tunnel(instance_config.name)
+    else:
+        print("Tunnel appears to already be stopped")
 
-    print(f"Deleting instance {instance_config.name}")
-    gcloud(
-        [
-            "compute",
-            "instances",
-            "delete",
-            instance_config.name,
-            f"--zone={instance_config.zone}",
-            f"--project={instance_config.project}",
-        ]
+    status = get_instance_status(
+        instance_config.name,
+        instance_config.zone,
+        instance_config.project,
+        one_or_none=True,
     )
+    if status is None:
+        print(f"Instance appears to be offline already.")
+    else:
+        print(f"Deleting instance {instance_config.name}...")
+        gcloud(
+            [
+                "compute",
+                "instances",
+                "delete",
+                instance_config.name,
+                f"--zone={instance_config.zone}",
+                f"--project={instance_config.project}",
+            ],
+            timeout=LONG_OPERATION_TIMEOUT,
+        )
 
 
 def add_command(subparser):
