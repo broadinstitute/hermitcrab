@@ -1,6 +1,0 @@
-#cloud-config
-
-bootcmd:
-- mkfs /dev/sdb
-- shutdown -h now
-

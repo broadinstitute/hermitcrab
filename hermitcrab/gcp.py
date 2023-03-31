@@ -28,14 +28,14 @@ def gcloud_in_background(args: List[Union[str, int]], log_path: str):
 
     log_info(f"Running in the background: {cmd}")
 
-    with open(log_path, "at") as log_fd:
+    with open(log_path, "wt") as log_fd:
         proc = subprocess.Popen(
             cmd, stderr=subprocess.STDOUT, stdout=log_fd, stdin=subprocess.DEVNULL
         )
 
     log_info(f"Running as pid={proc.pid}")
 
-    return proc.pid
+    return proc
 
 
 def gcloud_capturing_json_output(args: List[str]):

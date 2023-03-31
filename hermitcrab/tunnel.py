@@ -1,5 +1,5 @@
 import os
-from .config import CONTAINER_SSHD_PORT, get_tunnel_status_dir
+from .config import CONTAINER_SSHD_PORT, get_tunnel_status_dir, LONG_OPERATION_TIMEOUT
 from .gcp import gcloud_in_background
 import socket
 import signal
@@ -21,6 +21,17 @@ def is_port_free(port):
     try:
         s.bind(("localhost", port))
     except socket.error:
+        return False
+    finally:
+        s.close()
+    return True
+
+
+def is_port_listening(port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.connect(("localhost", port))
+    except ConnectionRefusedError:
         return False
     finally:
         s.close()
@@ -60,20 +71,77 @@ def start_tunnel(name: str, zone: str, project: str, local_port: int):
 
     tunnel_log = os.path.join(tunnel_status_dir, f"{name}.log")
     tunnel_pid = os.path.join(tunnel_status_dir, f"{name}.pid")
-    pid = gcloud_in_background(
-        [
-            "compute",
-            "start-iap-tunnel",
-            name,
-            CONTAINER_SSHD_PORT,
-            f"--local-host-port=localhost:{local_port}",
-            f"--zone={zone}",
-            f"--project={project}",
-        ],
-        tunnel_log,
-    )
-    with open(tunnel_pid, "wt") as fd:
-        fd.write(str(pid))
+
+    def attempt_start():
+        proc = gcloud_in_background(
+            [
+                "compute",
+                "start-iap-tunnel",
+                name,
+                CONTAINER_SSHD_PORT,
+                f"--local-host-port=localhost:{local_port}",
+                f"--zone={zone}",
+                f"--project={project}",
+            ],
+            tunnel_log,
+        )
+
+        wait_for_proc_to_die_or_port_listening(
+            proc, local_port, LONG_OPERATION_TIMEOUT, tunnel_log
+        )
+
+        with open(tunnel_pid, "wt") as fd:
+            fd.write(str(proc.pid))
+
+    retry_on_exception(attempt_start, UnexpectedTermination)
+    print(f"Tunnel on port {local_port} started.")
+    print("You should now be able to execute the following to connect to the instance:")
+    print("")
+    print(f"  ssh {name}")
+    print("")
+
+
+verbose = False
+
+
+def retry_on_exception(callback, expected_exception, retry_delay=10, max_attempts=10):
+    count = 0
+    while True:
+        count += 1
+
+        try:
+            callback()
+            break
+        except expected_exception as ex:
+            if verbose:
+                print(f"Caught {ex}, retrying {count} out of {max_attempts}...")
+
+            if count >= max_attempts:
+                raise ex
+
+        time.sleep(retry_delay)
+
+
+class UnexpectedTermination(Exception):
+    pass
+
+
+def wait_for_proc_to_die_or_port_listening(proc, local_port, timeout, log_path):
+    start = time.time()
+    while True:
+        if proc.poll() is not None:
+            # if it has stopped, we have a problem
+            if verbose:
+                with open(log_path, "rt") as fd:
+                    log = fd.read()
+                print(log)
+            raise UnexpectedTermination("start-iap-tunnel terminated unexpectedly")
+
+        if is_port_listening(local_port):
+            break
+
+        assert time.time() - start < timeout
+        time.sleep(1)
 
 
 MAX_PROCESS_TERM_TIME = 10
