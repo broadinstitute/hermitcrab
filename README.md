@@ -49,6 +49,9 @@ Starts an instance for the config with the given name. The created instance
 will have the same name as the configuration. If no name is provided, it
 defaults to "default".
 
+![Hermit crab provisioned server](docs/hermitcrabarch.png)
+
+
 ```
 hermit down [name]
 ```
