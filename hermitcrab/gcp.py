@@ -10,8 +10,10 @@ log = logging.getLogger(__name__)
 def log_info(msg):
     log.info("%s", msg)
 
+
 def log_debug(msg):
     log.debug("%s", msg)
+
 
 def _make_command(args):
     for x in args:
