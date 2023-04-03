@@ -11,7 +11,8 @@ from ..config import (
     get_instance_configs,
     write_instance_config,
     InstanceConfig,
-    CONTAINER_SSHD_PORT, LONG_OPERATION_TIMEOUT
+    CONTAINER_SSHD_PORT,
+    LONG_OPERATION_TIMEOUT,
 )
 from ..ssh import update_ssh_config
 import json
@@ -28,7 +29,7 @@ def create_volume(
             f"--filter=name={pd_name}",
             f"--zones={zone}",
             "--format=json",
-            f"--project={project}"
+            f"--project={project}",
         ],
     )
     assert len(disk_status) == 0, f"Disk {pd_name} already exists"
@@ -38,7 +39,7 @@ def create_volume(
         existing_status is None
     ), f"Expected there to be no instance with name {name}, but found one with status {existing_status}"
 
-    print("Creating persistent disk named {pd_name}")
+    print(f"Creating persistent disk named {pd_name}")
     # gcloud compute disks create test-create-vol --size=50 --zone=us-central1-a --type=pd-standard
     gcloud(
         [
@@ -49,6 +50,7 @@ def create_volume(
             f"--size={drive_size}",
             f"--zone={zone}",
             f"--type={drive_type}",
+            f"--project={project}",
         ]
     )
 
@@ -64,7 +66,7 @@ bootcmd:
         )
         tmp.flush()
 
-        print("Creating filesystem on {pd_name} (using a temp instance named {name})")
+        print(f"Creating filesystem on {pd_name} (using a temp instance named {name})")
 
         cloudinit_path = tmp.name
         gcloud(
@@ -81,13 +83,22 @@ bootcmd:
                 f"--disk=name={pd_name},device-name={pd_name},auto-delete=no",
                 f"--zone={zone}",
                 f"--project={project}",
-                        ], retry_on_expected_errors=["The referenced disk resource cannot be found"],
-            timeout=LONG_OPERATION_TIMEOUT
+            ],
+            timeout=LONG_OPERATION_TIMEOUT,
         )
 
     wait_for_instance_status(name, zone, project, "TERMINATED")
 
-    gcloud(["compute", "instances", "delete", name])
+    gcloud(
+        [
+            "compute",
+            "instances",
+            "delete",
+            name,
+            f"--zone={zone}",
+            f"--project={project}",
+        ]
+    )
 
 
 def ensure_firewall_setup(project):
@@ -106,6 +117,7 @@ def ensure_firewall_setup(project):
     )
     if len(firewall_settings) == 0:
         # create rule if it's not present
+        print("Adding firewall rule to allow connections from IAP")
         gcloud(
             [
                 "compute",
@@ -134,10 +146,14 @@ def ensure_firewall_setup(project):
 
 
 def find_unused_port():
-    used_ports = [instance_config.local_port for instance_config in get_instance_configs().values()]
+    used_ports = [
+        instance_config.local_port
+        for instance_config in get_instance_configs().values()
+    ]
     if len(used_ports) > 0:
-        return max(used_ports)+1
+        return max(used_ports) + 1
     return 3022
+
 
 def create(
     name: str,
@@ -203,6 +219,8 @@ def add_command(subparser):
 
         if args.local_port is None:
             local_port = find_unused_port()
+        else:
+            local_port = args.local_port
 
         create(
             args.name,
