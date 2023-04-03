@@ -11,7 +11,7 @@ from ..config import (
     get_instance_configs,
     write_instance_config,
     InstanceConfig,
-    CONTAINER_SSHD_PORT,
+    CONTAINER_SSHD_PORT, LONG_OPERATION_TIMEOUT
 )
 from ..ssh import update_ssh_config
 import json
@@ -28,6 +28,7 @@ def create_volume(
             f"--filter=name={pd_name}",
             f"--zones={zone}",
             "--format=json",
+            f"--project={project}"
         ],
     )
     assert len(disk_status) == 0, f"Disk {pd_name} already exists"
@@ -37,6 +38,7 @@ def create_volume(
         existing_status is None
     ), f"Expected there to be no instance with name {name}, but found one with status {existing_status}"
 
+    print("Creating persistent disk named {pd_name}")
     # gcloud compute disks create test-create-vol --size=50 --zone=us-central1-a --type=pd-standard
     gcloud(
         [
@@ -62,6 +64,8 @@ bootcmd:
         )
         tmp.flush()
 
+        print("Creating filesystem on {pd_name} (using a temp instance named {name})")
+
         cloudinit_path = tmp.name
         gcloud(
             [
@@ -77,7 +81,8 @@ bootcmd:
                 f"--disk=name={pd_name},device-name={pd_name},auto-delete=no",
                 f"--zone={zone}",
                 f"--project={project}",
-            ]
+                        ], retry_on_expected_errors=["The referenced disk resource cannot be found"],
+            timeout=LONG_OPERATION_TIMEOUT
         )
 
     wait_for_instance_status(name, zone, project, "TERMINATED")
@@ -127,6 +132,12 @@ def ensure_firewall_setup(project):
             IAP_TUNNEL_IP_RANGE
         ]  # , f"expected {IAP_TUNNEL_IP_RANGE} but got {rule['sourceRanges']}"
 
+
+def find_unused_port():
+    used_ports = [instance_config.local_port for instance_config in get_instance_configs().values()]
+    if len(used_ports) > 0:
+        return max(used_ports)+1
+    return 3022
 
 def create(
     name: str,
@@ -190,6 +201,9 @@ def add_command(subparser):
         assert args.zone, "zone must be specified"
         assert args.project, "project must be specified"
 
+        if args.local_port is None:
+            local_port = find_unused_port()
+
         create(
             args.name,
             args.drive_size,
@@ -199,7 +213,7 @@ def add_command(subparser):
             args.zone,
             args.docker_image,
             pd_name,
-            args.local_port,
+            local_port,
             args.idle_timeout,
         )
 
@@ -241,8 +255,8 @@ def add_command(subparser):
         "--local-port",
         dest="local_port",
         type=int,
-        default=3022,
-        help="The port on localhost that will be used to establish a tunnel to the instance.",
+        default=None,
+        help="The port on localhost that will be used to establish a tunnel to the instance. If not specified will attempt to pick a port after 3022 not assigned to any other instances",
     )
     parser.add_argument(
         "--idle-timeout",
