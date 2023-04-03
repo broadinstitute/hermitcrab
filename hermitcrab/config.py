@@ -17,6 +17,7 @@ class InstanceConfig:
     docker_image: str
     pd_name: str
     local_port: int
+    suspend_on_idle_timeout: int = 30
 
 
 def get_home_config_dir():

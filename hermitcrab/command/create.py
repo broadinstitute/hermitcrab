@@ -138,6 +138,7 @@ def create(
     docker_image: str,
     pd_name: str,
     local_port: int,
+    idle_timeout: int,
 ):
     assert zone
     assert project
@@ -163,6 +164,7 @@ def create(
             docker_image=docker_image,
             pd_name=pd_name,
             local_port=local_port,
+            suspend_on_idle_timeout=idle_timeout,
         )
     )
 
@@ -198,6 +200,7 @@ def add_command(subparser):
             args.docker_image,
             pd_name,
             args.local_port,
+            args.idle_timeout,
         )
 
     parser = subparser.add_parser("create", help="Create a new instance config")
@@ -240,4 +243,11 @@ def add_command(subparser):
         type=int,
         default=3022,
         help="The port on localhost that will be used to establish a tunnel to the instance.",
+    )
+    parser.add_argument(
+        "--idle-timeout",
+        dest="idle_timeout",
+        type=int,
+        default=30,
+        help="The number of minutes the machine appears idle before it is suspended",
     )
