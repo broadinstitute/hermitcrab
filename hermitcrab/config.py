@@ -50,6 +50,8 @@ def get_instance_configs() -> Dict[str, InstanceConfig]:
             if filename.endswith(".json"):
                 name = filename[: -len(".json")]  # drop the extension
                 configs[name] = get_instance_config(name)
+    if "default" in configs:
+        del configs["default"]
     return configs
 
 

@@ -10,6 +10,8 @@ log = logging.getLogger(__name__)
 def log_info(msg):
     log.info("%s", msg)
 
+def log_debug(msg):
+    log.debug("%s", msg)
 
 def _make_command(args):
     for x in args:
@@ -41,7 +43,7 @@ def gcloud_in_background(args: List[Union[str, int]], log_path: str):
 def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)
 
-    log_info(f"Executing, expecting json output: {cmd}")
+    log_debug(f"Executing, expecting json output: {cmd}")
 
     proc = subprocess.Popen(
         cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL
@@ -49,8 +51,8 @@ def gcloud_capturing_json_output(args: List[str]):
     stdout, stderr = proc.communicate(timeout=10)
     stdout = stdout.decode("utf8")
     stderr = stderr.decode("utf8")
-    log_info(f"stdout: {stdout}")
-    log_info(f"stderr: {stderr}")
+    log_debug(f"stdout: {stdout}")
+    log_debug(f"stderr: {stderr}")
     assert (
         proc.returncode == 0
     ), f"Executing {cmd} failed (return code: {proc.returncode}). Output: {stderr}"
