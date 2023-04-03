@@ -63,3 +63,57 @@ environment.
 This is primarily to shut down the instance to save on costs. However,
 shutting it down are bringing it back up is also a good way to reset the
 system files to their original state from the docker image.
+
+# Cautionary notes
+
+## Docker
+
+Since "ssh name" takes to you to a shell within a container, and the docker
+demon runs _outside_ of the container, you may encounter surprising
+behavior. For example mounting directories other than /home/ubuntu will not
+work as expected because it will use the filepath outside of the container.
+
+Mounting locations under /home/ubuntu, however, will work because the 
+same directory named /home/ubuntu exists inside and outside of the
+container.
+
+## Suspend on Idle
+
+Every minute, there's a process that checks if the docker container has
+used any network traffic. If yes, the machine runs normally. However, if
+nothing has happened for the timeout `suspend_on_idle_timeout` to expire,
+the server will suspend itself.
+
+Even if you are running a large CPU heavy job and don't have
+anything printed out as output, the idle check may decide the server is idle
+and suspend it.
+
+(I'm considering adding a check on "load average" as well, but at this time
+it's only checking network activity.)
+
+To unsuspend, simply re-run `hermit up`
+
+# Troubleshooting
+
+All gcloud commands are logged to hermit.log. That can be a good place to
+look and understand what is going on.
+
+If you want to connect to the VM outside of the container, you can via
+
+```
+gcloud compute ssh MACHINE_NAME
+```
+
+(where `MACHINE_NAME` is the name of the instance) 
+
+Contrast this to running:
+
+```
+ssh MACHINE_NAME
+```
+
+which will log you into a session _inside_ the container running on
+`MACHINE_NAME`.
+
+
+
