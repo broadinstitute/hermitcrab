@@ -51,7 +51,8 @@ def create_volume(
             f"--zone={zone}",
             f"--type={drive_type}",
             f"--project={project}",
-        ]
+        ],
+        timeout=LONG_OPERATION_TIMEOUT,
     )
 
     with tempfile.NamedTemporaryFile("wt") as tmp:

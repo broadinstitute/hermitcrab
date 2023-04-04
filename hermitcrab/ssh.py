@@ -84,7 +84,10 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
 
 
 def get_pub_key():
-    path = os.path.join(os.environ["HOME"], ".ssh", "id_rsa.pub")
-    assert os.path.exists(path), f"Could not find ssh public key: {path}"
-    with open(path, "rt") as fd:
-        return fd.read()
+    for name in ["id_rsa.pub", "id_ed25519.pub"]:
+        path = os.path.join(os.environ["HOME"], ".ssh", name)
+        if os.path.exists(path):
+            with open(path, "rt") as fd:
+                return fd.read()
+
+    raise Exception("could not find ssh pub key")

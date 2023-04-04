@@ -67,6 +67,19 @@ def get_instance_config(name):
 
     return InstanceConfig(**config_dict)
 
+def delete_instance_config(name : str):
+    config_dir = get_instance_config_dir()
+    assert name != "default"
+
+    # check to see if this name is what default is pointing to
+    default_config = get_instance_config("default")
+    if default_config is not None and default_config.name == name:
+        os.unlink(os.path.join(config_dir, "default.json"))
+
+    # now delete the config under its read name
+    config_filename = os.path.join(config_dir, f"{name}.json")
+    assert os.path.exists(config_filename)
+    os.unlink(config_filename)
 
 def write_instance_config(config: InstanceConfig):
     config_dir = get_instance_config_dir()
@@ -78,6 +91,8 @@ def write_instance_config(config: InstanceConfig):
         fd.write(json.dumps(config_dict, indent=2, sort_keys=True))
 
     print(f"Setting {config.name} as the 'default' instance config")
+    if os.path.exists(os.path.join(config_dir, "default.json")):
+        os.unlink(os.path.join(config_dir, "default.json"))
     os.symlink(
         os.path.relpath(config_filename, config_dir),
         os.path.join(config_dir, "default.json"),
