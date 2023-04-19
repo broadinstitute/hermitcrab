@@ -1,5 +1,5 @@
 from ..ssh import get_pub_key
-from ..gcp import gcloud, get_instance_status
+from ..gcp import gcloud, get_instance_status, sanity_check_docker_image
 from ..config import get_instance_config, CONTAINER_SSHD_PORT, LONG_OPERATION_TIMEOUT
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
@@ -103,6 +103,7 @@ runcmd:
                 instance_config.name,
                 "--image-family=cos-stable",
                 "--image-project=cos-cloud",
+                f"--boot-disk-size={instance_config.boot_disk_size_in_gb}GB",
                 f"--zone={instance_config.zone}",
                 f"--project={instance_config.project}",
                 f"--machine-type={instance_config.machine_type}",
@@ -111,6 +112,7 @@ runcmd:
                 # use scopes that are equivilent to 'default' from https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes
                 # but also add compute-rw so that the instance can suspend itself down when idle.
                 f"--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw",
+                f"--service-account={instance_config.service_account}",
             ],
             timeout=LONG_OPERATION_TIMEOUT,
         )
@@ -120,12 +122,19 @@ def up(name: str):
     instance_config = get_instance_config(name)
     assert instance_config is not None, f"Could not file config for {name}"
 
+    # check again just in case something has changed since we created this config. Shouldn't really be
+    # needed, but hopefully this check is fairly cheap.
+    sanity_check_docker_image(
+        instance_config.service_account, instance_config.docker_image
+    )
+
     status = get_instance_status(
         instance_config.name,
         instance_config.zone,
         instance_config.project,
         one_or_none=True,
     )
+
     if status is None:
         create_instance(instance_config)
     elif status == "RUNNING":

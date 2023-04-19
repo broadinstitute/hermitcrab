@@ -12,6 +12,6 @@ def add_command(subparser):
 
     parser = subparser.add_parser(
         "update_ssh",
-        help="Rewrites the information in ~/.ssh/config with information for each of the instance configs. (This should automatically happen as a result of the 'hermit create ...' command, but this is a way to run this manually)"
+        help="Rewrites the information in ~/.ssh/config with information for each of the instance configs. (This should automatically happen as a result of the 'hermit create ...' command, but this is a way to run this manually)",
     )
     parser.set_defaults(func=_update_ssh)

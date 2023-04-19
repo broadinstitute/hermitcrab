@@ -1,6 +1,6 @@
 import argparse
 import sys
-from .command import create, up, down, update_ssh, status, delete
+from .command import create, up, down, update_ssh, status, delete, version
 import logging
 
 
@@ -16,6 +16,7 @@ def main(argv=None):
     update_ssh.add_command(subparser)
     status.add_command(subparser)
     delete.add_command(subparser)
+    version.add_command(subparser)
 
     args = parse.parse_args(argv)
 

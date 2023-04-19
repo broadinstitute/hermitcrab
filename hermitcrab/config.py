@@ -1,6 +1,7 @@
 import os
 import json
 from typing import Dict
+from .gcp import get_default_service_account
 
 from dataclasses import dataclass, asdict
 
@@ -17,6 +18,8 @@ class InstanceConfig:
     docker_image: str
     pd_name: str
     local_port: int
+    service_account: str
+    boot_disk_size_in_gb: int
     suspend_on_idle_timeout: int = 30
 
 
@@ -65,9 +68,22 @@ def get_instance_config(name):
     with open(config_filename, "rt") as fd:
         config_dict = json.load(fd)
 
+    if "service_account" not in config_dict:
+        print(
+            f'Configuration {config_filename} is missing a value for "service_account". (This is a recent change to hermit). Attempting to find default Compute Engine service account and will use that. Add this to the config manually to avoid this message in the future.'
+        )
+        service_account = get_default_service_account(config_dict["project"])
+        print(f"Identified {service_account} as the default service account.")
+        config_dict["service_account"] = service_account
+
+    if "boot_disk_size_in_gb" not in config_dict:
+        config_dict["boot_disk_size_in_gb"] = 10
+    # ), f'Missing "service_account" field on config for {name}. This field was added to hermit recently and you will need to manually add it to {config_filename}.'
+
     return InstanceConfig(**config_dict)
 
-def delete_instance_config(name : str):
+
+def delete_instance_config(name: str):
     config_dir = get_instance_config_dir()
     assert name != "default"
 
@@ -80,6 +96,7 @@ def delete_instance_config(name : str):
     config_filename = os.path.join(config_dir, f"{name}.json")
     assert os.path.exists(config_filename)
     os.unlink(config_filename)
+
 
 def write_instance_config(config: InstanceConfig):
     config_dir = get_instance_config_dir()

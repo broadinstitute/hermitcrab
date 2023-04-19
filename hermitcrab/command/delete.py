@@ -2,11 +2,14 @@ from ..gcp import gcloud, get_instance_status
 from ..config import get_instance_config, LONG_OPERATION_TIMEOUT, delete_instance_config
 from .down import is_tunnel_running
 
+
 def delete(name: str):
     instance_config = get_instance_config(name)
     assert instance_config is not None, f"Could not file config for {name}"
 
-    assert not is_tunnel_running(instance_config.name), "Tunnel appears to still be running. use 'hermit down ...' to shut down first"
+    assert not is_tunnel_running(
+        instance_config.name
+    ), "Tunnel appears to still be running. use 'hermit down ...' to shut down first"
 
     status = get_instance_status(
         instance_config.name,
@@ -14,18 +17,36 @@ def delete(name: str):
         instance_config.project,
         one_or_none=True,
     )
-    assert status is None, f"Instance is exists. Use 'hermit down ...' to remove instance before deleting configuration."
+    assert (
+        status is None
+    ), f"Instance is exists. Use 'hermit down ...' to remove instance before deleting configuration."
 
-    print(f"Are you sure you want to delete the data volume associated with {instance_config.name}? This will irreversably delete the data on this disk!\n"
-           f"If you are sure, type the name of the disk '{instance_config.pd_name}': ", end="")
+    print(
+        f"Are you sure you want to delete the data volume associated with {instance_config.name}? This will irreversably delete the data on this disk!\n"
+        f"If you are sure, type the name of the disk '{instance_config.pd_name}': ",
+        end="",
+    )
     disk_name = input()
-    assert disk_name == instance_config.pd_name, f"typed value '{disk_name}' did not match the disk name '{instance_config.pd_name}'"
+    assert (
+        disk_name == instance_config.pd_name
+    ), f"typed value '{disk_name}' did not match the disk name '{instance_config.pd_name}'"
 
     print(f"Deleting persistent disk {instance_config.pd_name}")
-    gcloud(["compute", "disks", "delete", instance_config.pd_name, f"--zone={instance_config.zone}", f"--project={instance_config.project}"], timeout=LONG_OPERATION_TIMEOUT)
+    gcloud(
+        [
+            "compute",
+            "disks",
+            "delete",
+            instance_config.pd_name,
+            f"--zone={instance_config.zone}",
+            f"--project={instance_config.project}",
+        ],
+        timeout=LONG_OPERATION_TIMEOUT,
+    )
 
     print(f"Deleting config")
     delete_instance_config(instance_config.name)
+
 
 def add_command(subparser):
     def _delete(args):

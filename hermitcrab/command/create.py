@@ -5,6 +5,8 @@ from ..gcp import (
     gcloud,
     gcloud_capturing_json_output,
     wait_for_instance_status,
+    sanity_check_docker_image,
+    get_default_service_account,
 )
 from ..config import (
     get_instance_config,
@@ -19,7 +21,14 @@ import json
 
 
 def create_volume(
-    pd_name, drive_size, drive_type, name, zone, project, machine_type="n2-standard-2"
+    pd_name,
+    drive_size,
+    drive_type,
+    name,
+    service_account,
+    zone,
+    project,
+    machine_type="n2-standard-2",
 ):
     disk_status = gcloud_capturing_json_output(
         [
@@ -84,6 +93,7 @@ bootcmd:
                 f"--disk=name={pd_name},device-name={pd_name},auto-delete=no",
                 f"--zone={zone}",
                 f"--project={project}",
+                f"--service-account={service_account}",
             ],
             timeout=LONG_OPERATION_TIMEOUT,
         )
@@ -161,16 +171,20 @@ def create(
     drive_size: int,
     drive_type: str,
     machine_type: str,
+    service_account: str,
     project: str,
     zone: str,
     docker_image: str,
     pd_name: str,
     local_port: int,
     idle_timeout: int,
+    boot_disk_size_in_gb: int,
 ):
     assert zone
     assert project
     assert pd_name
+
+    sanity_check_docker_image(service_account, docker_image)
 
     assert (
         get_instance_config(name) is None
@@ -178,7 +192,7 @@ def create(
 
     ensure_firewall_setup(project)
 
-    create_volume(pd_name, drive_size, drive_type, name, zone, project)
+    create_volume(pd_name, drive_size, drive_type, name, service_account, zone, project)
     print(
         f"Successfully created {drive_size}GB filesystem on persistent disk {pd_name}"
     )
@@ -193,6 +207,8 @@ def create(
             pd_name=pd_name,
             local_port=local_port,
             suspend_on_idle_timeout=idle_timeout,
+            service_account=service_account,
+            boot_disk_size_in_gb=boot_disk_size_in_gb,
         )
     )
 
@@ -223,17 +239,24 @@ def add_command(subparser):
         else:
             local_port = args.local_port
 
+        if args.service_account:
+            service_account = args.service_account
+        else:
+            service_account = get_default_service_account(args.project)
+
         create(
             args.name,
             args.drive_size,
             args.drive_type,
             args.machine_type,
+            service_account,
             args.project,
             args.zone,
             args.docker_image,
             pd_name,
             local_port,
             args.idle_timeout,
+            args.boot_disk_size_in_gb,
         )
 
     parser = subparser.add_parser("create", help="Create a new instance config")
@@ -249,6 +272,13 @@ def add_command(subparser):
     parser.add_argument(
         "docker_image",
         help="Name of the docker image to use",
+    )
+    parser.add_argument(
+        "--boot-disk-size",
+        default=50,
+        dest="boot_disk_size_in_gb",
+        help="The size of the boot volume (which needs to be large enough to hold all docker images and containers)",
+        type=int,
     )
     parser.add_argument(
         "--drive-type",
@@ -283,4 +313,9 @@ def add_command(subparser):
         type=int,
         default=30,
         help="The number of minutes the machine appears idle before it is suspended",
+    )
+    parser.add_argument(
+        "--service-account",
+        dest="service_account",
+        help="If specified, the id of the service account to assign to the host as the default service account",
     )
