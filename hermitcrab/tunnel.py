@@ -1,6 +1,6 @@
 import os
 from .config import CONTAINER_SSHD_PORT, get_tunnel_status_dir, LONG_OPERATION_TIMEOUT
-from .gcp import gcloud_in_background
+from .gcp import gcloud_in_background, _check_procs
 import socket
 import signal
 
@@ -158,6 +158,8 @@ def stop_tunnel(name: str):
 
     start_time = time.time()
     while True:
+        _check_procs()
+        
         if not is_pid_valid(pid):
             break
         elapsed = time.time() - start_time

@@ -1,9 +1,9 @@
-from ..gcp import gcloud, get_instance_status
+from .. import gcp
 from ..config import get_instance_config, LONG_OPERATION_TIMEOUT, delete_instance_config
 from .down import is_tunnel_running
 
 
-def delete(name: str):
+def delete(name: str, force: bool):
     instance_config = get_instance_config(name)
     assert instance_config is not None, f"Could not file config for {name}"
 
@@ -11,7 +11,7 @@ def delete(name: str):
         instance_config.name
     ), "Tunnel appears to still be running. use 'hermit down ...' to shut down first"
 
-    status = get_instance_status(
+    status = gcp.get_instance_status(
         instance_config.name,
         instance_config.zone,
         instance_config.project,
@@ -21,18 +21,19 @@ def delete(name: str):
         status is None
     ), f"Instance is exists. Use 'hermit down ...' to remove instance before deleting configuration."
 
-    print(
-        f"Are you sure you want to delete the data volume associated with {instance_config.name}? This will irreversably delete the data on this disk!\n"
-        f"If you are sure, type the name of the disk '{instance_config.pd_name}': ",
-        end="",
-    )
-    disk_name = input()
-    assert (
-        disk_name == instance_config.pd_name
-    ), f"typed value '{disk_name}' did not match the disk name '{instance_config.pd_name}'"
+    if not force:
+        print(
+            f"Are you sure you want to delete the data volume associated with {instance_config.name}? This will irreversably delete the data on this disk!\n"
+            f"If you are sure, type the name of the disk '{instance_config.pd_name}': ",
+            end="",
+        )
+        disk_name = input()
+        assert (
+            disk_name == instance_config.pd_name
+        ), f"typed value '{disk_name}' did not match the disk name '{instance_config.pd_name}'"
 
     print(f"Deleting persistent disk {instance_config.pd_name}")
-    gcloud(
+    gcp.gcloud(
         [
             "compute",
             "disks",
@@ -50,7 +51,7 @@ def delete(name: str):
 
 def add_command(subparser):
     def _delete(args):
-        delete(args.name)
+        delete(args.name, args.force)
 
     parser = subparser.add_parser(
         "delete",
@@ -62,4 +63,9 @@ def add_command(subparser):
         help="The name of the instance config to delete the volume for",
         nargs="?",
         default="default",
+    )
+    parser.add_argument(
+        "-f","--force",
+        help="If specified, will not prompt user to confirm before deleting resources",
+        action="store_true"
     )

@@ -1,4 +1,4 @@
-from ..gcp import gcloud, get_instance_status
+from .. import gcp
 from ..config import (
     get_instance_config,
     get_instance_configs,
@@ -22,7 +22,7 @@ def status(name: Optional[str]):
     )
 
     for instance_config in instance_configs:
-        status = get_instance_status(
+        status = gcp.get_instance_status(
             instance_config.name,
             instance_config.zone,
             instance_config.project,

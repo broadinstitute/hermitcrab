@@ -28,6 +28,9 @@ def _make_command(args):
 
     return cmd
 
+# a big of hack to work around the next for parents to reap threads. If children aren't reaped, then we can't check by pid 
+# if tunnel has shut down
+_procs = []
 
 def gcloud_in_background(args: List[Union[str, int]], log_path: str):
     cmd = _make_command(args)
@@ -41,8 +44,13 @@ def gcloud_in_background(args: List[Union[str, int]], log_path: str):
 
     log_info(f"Running as pid={proc.pid}")
 
+    _procs.append(proc)
+
     return proc
 
+def _check_procs():
+    for proc in _procs:
+        proc.poll()
 
 def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)

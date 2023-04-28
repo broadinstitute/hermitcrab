@@ -1,4 +1,4 @@
-from ..gcp import gcloud, get_instance_status
+from ..import gcp
 from ..tunnel import is_tunnel_running, stop_tunnel
 from ..config import get_instance_config, LONG_OPERATION_TIMEOUT
 
@@ -12,7 +12,7 @@ def down(name: str):
     else:
         print("Tunnel appears to already be stopped")
 
-    status = get_instance_status(
+    status = gcp.get_instance_status(
         instance_config.name,
         instance_config.zone,
         instance_config.project,
@@ -22,7 +22,7 @@ def down(name: str):
         print(f"Instance appears to be offline already.")
     else:
         print(f"Deleting instance {instance_config.name}...")
-        gcloud(
+        gcp.gcloud(
             [
                 "compute",
                 "instances",

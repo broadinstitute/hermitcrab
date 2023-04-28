@@ -1,13 +1,7 @@
 import re
 import tempfile
-from ..gcp import (
-    get_instance_status,
-    gcloud,
-    gcloud_capturing_json_output,
-    wait_for_instance_status,
-    sanity_check_docker_image,
-    get_default_service_account,
-)
+from .. import gcp
+
 from ..config import (
     get_instance_config,
     get_instance_configs,
@@ -30,7 +24,7 @@ def create_volume(
     project,
     machine_type="n2-standard-2",
 ):
-    disk_status = gcloud_capturing_json_output(
+    disk_status = gcp.gcloud_capturing_json_output(
         [
             "compute",
             "disks",
@@ -43,14 +37,14 @@ def create_volume(
     )
     assert len(disk_status) == 0, f"Disk {pd_name} already exists"
 
-    existing_status = get_instance_status(name, zone, project, one_or_none=True)
+    existing_status = gcp.get_instance_status(name, zone, project, one_or_none=True)
     assert (
         existing_status is None
     ), f"Expected there to be no instance with name {name}, but found one with status {existing_status}"
 
     print(f"Creating persistent disk named {pd_name}")
     # gcloud compute disks create test-create-vol --size=50 --zone=us-central1-a --type=pd-standard
-    gcloud(
+    gcp.gcloud(
         [
             "compute",
             "disks",
@@ -79,7 +73,7 @@ bootcmd:
         print(f"Creating filesystem on {pd_name} (using a temp instance named {name})")
 
         cloudinit_path = tmp.name
-        gcloud(
+        gcp.gcloud(
             [
                 "compute",
                 "instances",
@@ -98,9 +92,9 @@ bootcmd:
             timeout=LONG_OPERATION_TIMEOUT,
         )
 
-    wait_for_instance_status(name, zone, project, "TERMINATED")
+    gcp.wait_for_instance_status(name, zone, project, "TERMINATED")
 
-    gcloud(
+    gcp.gcloud(
         [
             "compute",
             "instances",
@@ -116,7 +110,7 @@ def ensure_firewall_setup(project):
     # Add rule to allow connections from IAP tunnel. See https://cloud.google.com/iap/docs/using-tcp-forwarding
     IAP_TUNNEL_IP_RANGE = "35.235.240.0/20"
 
-    firewall_settings = gcloud_capturing_json_output(
+    firewall_settings = gcp.gcloud_capturing_json_output(
         [
             "compute",
             "firewall-rules",
@@ -129,7 +123,7 @@ def ensure_firewall_setup(project):
     if len(firewall_settings) == 0:
         # create rule if it's not present
         print("Adding firewall rule to allow connections from IAP")
-        gcloud(
+        gcp.gcloud(
             [
                 "compute",
                 "firewall-rules",
@@ -184,7 +178,7 @@ def create(
     assert project
     assert pd_name
 
-    sanity_check_docker_image(service_account, docker_image)
+    gcp.sanity_check_docker_image(service_account, docker_image)
 
     assert (
         get_instance_config(name) is None
@@ -242,7 +236,7 @@ def add_command(subparser):
         if args.service_account:
             service_account = args.service_account
         else:
-            service_account = get_default_service_account(args.project)
+            service_account = gcp.get_default_service_account(args.project)
 
         create(
             args.name,

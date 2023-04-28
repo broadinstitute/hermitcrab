@@ -1,5 +1,5 @@
 from ..ssh import get_pub_key
-from ..gcp import gcloud, get_instance_status, sanity_check_docker_image
+from .. import gcp
 from ..config import get_instance_config, CONTAINER_SSHD_PORT, LONG_OPERATION_TIMEOUT
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
@@ -9,7 +9,7 @@ import pkg_resources
 
 def resume_instance(instance_config):
     print(f"Resuming suspended instance named {instance_config.name}...")
-    gcloud(
+    gcp.gcloud(
         [
             "compute",
             "instances",
@@ -95,7 +95,7 @@ runcmd:
 
         cloudinit_path = tmp.name
         print(f"Creating new instance named {instance_config.name}...")
-        gcloud(
+        gcp.gcloud(
             [
                 "compute",
                 "instances",
@@ -124,11 +124,11 @@ def up(name: str):
 
     # check again just in case something has changed since we created this config. Shouldn't really be
     # needed, but hopefully this check is fairly cheap.
-    sanity_check_docker_image(
+    gcp.sanity_check_docker_image(
         instance_config.service_account, instance_config.docker_image
     )
 
-    status = get_instance_status(
+    status = gcp.get_instance_status(
         instance_config.name,
         instance_config.zone,
         instance_config.project,
