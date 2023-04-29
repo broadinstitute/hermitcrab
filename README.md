@@ -1,7 +1,12 @@
 `hermitcrab`: A simple way to provision a development enviornment on google
 cloud platform.
 
-# Problems
+# Motivation
+
+Being able to spin up a machine on the cloud is useful when working with
+large data that live on the cloud. However, the realities of maintaining a
+machine on the cloud are a fair amount of work, especially if one doesn't
+have a lot of experience with GCP and linux.
 
 Problem 1: The `gcloud` CLI to GCP is extremely flexible, but that flexibility makes it
 harder to use. Commands tend to all have a lot of options and there's a fair
@@ -19,7 +24,7 @@ difficulty reconstructing the state of the server if someone else would like
 the same environment. It also runs the risk of the environment breaking and
 not having a good way to backtrack to a sane state.
 
-The solution here is to encourage the use of Docker to manage system
+The solution taken by hermit-crab is to encourage the use of Docker to manage system
 installed tools and libraries. By having the system files coming from a
 docker image, we have the recipe for how that environment captured in the
 Dockerfile which created that image. Those images can be shared as well as
@@ -114,6 +119,7 @@ ssh MACHINE_NAME
 
 which will log you into a session _inside_ the container running on
 `MACHINE_NAME`.
+
 
 
 
