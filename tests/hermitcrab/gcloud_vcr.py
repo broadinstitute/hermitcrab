@@ -32,7 +32,7 @@ class Returned:
 RECORDING = "recording"
 PLAYBACK = "playback"
 NONE = "none"
-
+import re 
 class PlaybackError(Exception):
     pass
 
@@ -44,6 +44,10 @@ def _rewrite_metadata_param(args):
             filename = arg[len(prefix):]
             with open(filename, "rt") as fd:
                 content = fd.read()
+                # this content contains an key which needs to be replaced because
+                # when we're playing back, we don't have access to the real key
+                content = re.sub("ssh-rsa .+", "ssh-rsa X", content)
+
             new_args.append(f"{arg[:len(prefix)]}<{content}>")
         else:
             new_args.append(arg)
@@ -83,7 +87,7 @@ def make_playback_wrapper(f, vcr):
         if next_fn != function_name:
             raise PlaybackError(f"Got a call to {function_name} when expecting a call to {next_fn}. This could be due to either non-determinism in test, or the recorded cassette is stale. Rerun test with --no-playback to re-record cassette.")
         if parameters != next_parameters:
-            raise PlaybackError(f"Call to {function_name} had different parameters than expected. Expected: \n{json.dumps(indent=2)}\nActual call:\n{json.dumps(indent=2)}\n This could be due to either non-determinism in test, or the recorded cassette is stale. Rerun test with --no-playback to re-record cassette.")
+            raise PlaybackError(f"Call to {function_name} had different parameters than expected. Expected: \n{json.dumps(next_parameters, indent=2)}\nActual call:\n{json.dumps(parameters, indent=2)}\n This could be due to either non-determinism in test, or the recorded cassette is stale. Rerun test with --no-playback to re-record cassette.")
 
         if isinstance(next_result, Raised):
             raise next_result.exception

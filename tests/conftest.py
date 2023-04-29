@@ -12,17 +12,18 @@ def pytest_addoption(parser):
         help="If set, will disable payback from any past recorded session and instead record a new one",)
  
 @pytest.fixture(scope="function")
-def vcr(monkeypatch, tmpdir, request):
-    state = setup_vcr(monkeypatch, request)
-    yield
-    teardown_vcr(*state)
+def vcr(monkeypatch, request):
+    vcr, cassette = setup_vcr(monkeypatch, request)
+    yield vcr
+    teardown_vcr(vcr, cassette)
 
 @pytest.fixture(scope="function")
-def tmphomedir(tmpdir, monkeypatch):
+def tmphomedir(tmpdir, monkeypatch, vcr):
     tmpdir.join("config").mkdir()
-    tmpdir.join("ssh").mkdir()
-
     monkeypatch.setattr(config, "get_home_config_dir", lambda: str(tmpdir.join("config")))
 
-    monkeypatch.setattr(ssh, "get_ssh_config_path", lambda: str(tmpdir.join("ssh").join("config")))
+    if vcr.is_playback():
+        tmpdir.join("ssh").mkdir()
+        tmpdir.join("ssh").join("id_rsa.pub").write("ssh-rsa boguskey\n")
+        monkeypatch.setattr(ssh, "get_ssh_dir", lambda: str(tmpdir.join("ssh")))
     

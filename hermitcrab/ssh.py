@@ -45,8 +45,11 @@ def remove_section(content: str, start_marker: str, end_marker: str):
 
     return content[:start_index] + content[end_index:]
 
+def get_ssh_dir():
+    return os.path.join(os.environ["HOME"], ".ssh")
+
 def get_ssh_config_path():
-    return os.path.join(os.environ["HOME"], ".ssh", "config")
+    return os.path.join(get_ssh_dir(), "config")
 
 def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     # because default is an alias, we get dups in this sequence. Dedup them by name
@@ -93,7 +96,7 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
 
 def get_pub_key():
     for name in ["id_rsa.pub", "id_ed25519.pub"]:
-        path = os.path.join(os.environ["HOME"], ".ssh", name)
+        path = os.path.join(get_ssh_dir(), name)
         if os.path.exists(path):
             with open(path, "rt") as fd:
                 return fd.read()
