@@ -8,8 +8,10 @@ import tempfile
 
 def replace_if_changed(dest_filename: str, content: str):
     if not os.path.exists(dest_filename):
+        file_existed = False
         prev_content = ""
     else:
+        file_existed = True
         with open(dest_filename, "rt") as fd:
             prev_content = fd.read()
 
@@ -26,7 +28,8 @@ def replace_if_changed(dest_filename: str, content: str):
             fd.write(content)
 
         # make a backup copy
-        shutil.copy(dest_filename, backup_filename)
+        if file_existed:
+            shutil.copy(dest_filename, backup_filename)
         os.rename(tmpname, dest_filename)
 
 
@@ -54,8 +57,11 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
 
     ssh_config_path = get_ssh_config_path()
 
-    with open(ssh_config_path, "rt") as fd:
-        config_content = fd.read()
+    if os.path.exists(ssh_config_path):
+        with open(ssh_config_path, "rt") as fd:
+            config_content = fd.read()
+    else:
+        config_content = ""
 
     config_content = remove_section(config_content, START_MARKER, END_MARKER)
 
