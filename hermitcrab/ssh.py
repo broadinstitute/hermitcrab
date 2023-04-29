@@ -42,6 +42,8 @@ def remove_section(content: str, start_marker: str, end_marker: str):
 
     return content[:start_index] + content[end_index:]
 
+def get_ssh_config_path():
+    return os.path.join(os.environ["HOME"], ".ssh", "config")
 
 def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     # because default is an alias, we get dups in this sequence. Dedup them by name
@@ -50,7 +52,7 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     # sort so that we get a deterministic order
     configs = sorted(by_name.values(), key=lambda x: x.name)
 
-    ssh_config_path = os.path.join(os.environ["HOME"], ".ssh", "config")
+    ssh_config_path = get_ssh_config_path()
 
     with open(ssh_config_path, "rt") as fd:
         config_content = fd.read()
