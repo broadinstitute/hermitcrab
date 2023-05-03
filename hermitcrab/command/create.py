@@ -180,7 +180,7 @@ def create(
     assert project
     assert pd_name
 
-    gcp.sanity_check_docker_image(service_account, docker_image)
+    gcp.ensure_access_to_docker_image(service_account, docker_image)
 
     assert (
         get_instance_config(name) is None

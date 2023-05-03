@@ -124,7 +124,7 @@ def up(name: str):
 
     # check again just in case something has changed since we created this config. Shouldn't really be
     # needed, but hopefully this check is fairly cheap.
-    gcp.sanity_check_docker_image(
+    gcp.ensure_access_to_docker_image(
         instance_config.service_account, instance_config.docker_image
     )
 

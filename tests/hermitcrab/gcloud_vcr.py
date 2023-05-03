@@ -214,7 +214,7 @@ def setup_vcr(monkeypatch, request, mode=None):
             monkeypatch.setattr(gcp, fn, make_playback_wrapper(getattr(gcp, fn), vcr))
 
     monkeypatch.setattr(
-        gcp, "sanity_check_docker_image", lambda service_account, docker_image: None
+        gcp, "ensure_access_to_docker_image", lambda service_account, docker_image: None
     )
     if vcr.is_playback():
         monkeypatch.setattr(time, "sleep", lambda x: None)

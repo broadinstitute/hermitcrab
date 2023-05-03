@@ -191,9 +191,8 @@ def wait_for_impersonating_access_token_success(
             time.sleep(retry_delay)
 
 
-def sanity_check_docker_image(service_account, docker_image):
+def _check_access_to_docker_image(service_account, docker_image):
     "Tests to make sure that the given service account can read the docker_image. Throws an assertion error if not"
-
     access_token = _get_access_token()
 
     service_account_access_token = _get_impersonating_access_token(
@@ -228,3 +227,69 @@ def sanity_check_docker_image(service_account, docker_image):
     raise AssertionError(
         f"Unexpected status_code={res.status_code} when fetching manifest from {manifest_url}, response body={res.content}"
     )
+
+
+def ensure_access_to_docker_image(service_account, docker_image):
+    "If the docker image is hosted on gcr, will grant the required permissions to access the repo that contains the image"
+    m = re.match("us.gcr.io/([^/]+)/(.+)", docker_image)
+
+    if m is not None:
+        project = m.group(1)
+        print(
+            f"docker image {docker_image} appears to be hosted on a GCR docker repo. Granting access to {service_account} to make sure image can be pulled by VM"
+        )
+        grant_access_to_gcr(project, service_account, False)
+
+    _check_access_to_docker_image(service_account, docker_image)
+
+
+def grant_access_to_gcr(project, service_account, needs_write_access):
+    if needs_write_access:
+        role = "roles/storage.objectAdmin"
+    else:
+        role = "roles/storage.objectViewer"
+
+    bucket = f"us.artifacts.{project}.appspot.com"
+
+    print(f"Granting {role} on GS bucket {bucket} to {service_account} ")
+    gcloud(
+        [
+            "projects",
+            "add-iam-policy-binding",
+            project,
+            f"--member=serviceAccount:{service_account}",
+            f"--role={role}",
+        ]
+    )
+
+    wait_for_bucket_access(service_account, bucket)
+
+
+def wait_for_bucket_access(service_account, bucket, retry_delay=5, max_wait=60 * 5):
+    start = time.time()
+    attempts = 0
+    while True:
+        attempts += 1
+
+        try:
+            gcloud(
+                [
+                    "storage",
+                    "ls",
+                    f"gs://{bucket}",
+                    f"--impersonate-service-account={service_account}",
+                ]
+            )
+            break
+        except GCloudError as ex:
+            if attempts == 1:
+                print(
+                    "Waiting for grant to take effect... (May take awhile, but this only needs to happen once)"
+                )
+
+            if (time.time() - start) > max_wait:
+                raise Exception(
+                    f"Failed to verify that permissions are set up for impersonification after {attempts} checks. Aborting"
+                )
+
+            time.sleep(retry_delay)

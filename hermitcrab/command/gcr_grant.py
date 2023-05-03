@@ -3,58 +3,9 @@ from ..config import get_instance_config
 
 
 def gcr_grant(project, instance_name, needs_write_access):
-    if needs_write_access:
-        role = "roles/storage.objectAdmin"
-    else:
-        role = "roles/storage.objectViewer"
-
     config = get_instance_config(instance_name)
     assert config is not None
-    bucket = f"us.artifacts.{project}.appspot.com"
-
-    print(f"Granting {role} on GS bucket {bucket} to {config.service_account} ")
-    gcp.gcloud(
-        [
-            "projects",
-            "add-iam-policy-binding",
-            project,
-            f"--member=serviceAccount:{config.service_account}",
-            f"--role={role}",
-        ]
-    )
-
-    wait_for_access(config.service_account, bucket)
-
-
-import time
-
-
-def wait_for_access(service_account, bucket, retry_delay=5, max_wait=60 * 5):
-    print(
-        "Waiting for grant to take effect... (May take awhile, but this only needs to happen once)"
-    )
-    start = time.time()
-    attempts = 0
-    while True:
-        attempts += 1
-
-        try:
-            gcp.gcloud(
-                [
-                    "storage",
-                    "ls",
-                    f"gs://{bucket}",
-                    f"--impersonate-service-account={service_account}",
-                ]
-            )
-            break
-        except gcp.GCloudError as ex:
-            if (time.time() - start) > max_wait:
-                raise Exception(
-                    f"Failed to verify that permissions are set up for impersonification after {attempts} checks. Aborting"
-                )
-
-            time.sleep(retry_delay)
+    gcp.grant_access_to_gcr(project, instance_name, needs_write_access)
 
 
 def add_command(subparser):
