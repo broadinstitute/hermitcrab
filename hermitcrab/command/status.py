@@ -2,6 +2,7 @@ from .. import gcp
 from ..config import (
     get_min_instance_config,
     get_instance_names,
+    config_exists,
     CONTAINER_SSHD_PORT,
     LONG_OPERATION_TIMEOUT,
 )
@@ -17,10 +18,11 @@ def status(name: Optional[str]):
             get_min_instance_config(name) for name in get_instance_names()
         ]
 
-    default_instance_config = get_min_instance_config("default")
-    default_instance_name = (
-        default_instance_config.name if default_instance_config else None
-    )
+    if config_exists("default"):
+        default_instance_config = get_min_instance_config("default")
+        default_instance_name = default_instance_config.name
+    else:
+        default_instance_name = None
 
     for instance_config in instance_configs:
         status = gcp.get_instance_status(
