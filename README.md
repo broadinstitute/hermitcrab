@@ -9,6 +9,8 @@ large data that live on the cloud. However, the realities of maintaining a
 machine on the cloud are a fair amount of work, especially if one doesn't
 have a lot of experience with GCP and linux.
 
+More specifically, `hermit` attempts to address the following problems:
+
 Problem 1: The `gcloud` CLI to GCP is extremely flexible, but that flexibility makes it
 harder to use. Commands tend to all have a lot of options and there's a fair
 amount of typing to get to the command you want.
@@ -30,6 +32,13 @@ installed tools and libraries. By having the system files coming from a
 docker image, we have the recipe for how that environment captured in the
 Dockerfile which created that image. Those images can be shared as well as
 versioned alongside the Dockerfiles used to create them.
+
+Problem 3: The GCP's IAM service is great for fine grained access control, and a boon 
+for reducing risk due to compromised accounts. However, at the same time, the number one 
+blocker that I've observed users have when working with GCP is navigating which permissions
+they need to grant to different accounts. Hermit tried to automatically grant reasonable default 
+permissions to a service account which it sets up, so that users don't need to worry about 
+explictly managing grants.
 
 # Commands
 
