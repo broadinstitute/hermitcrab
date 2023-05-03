@@ -1,3 +1,4 @@
+![Hermit logo](docs/hermit_small.jpeg)
 `hermitcrab`: A simple way to provision a development enviornment on google
 cloud platform.
 
