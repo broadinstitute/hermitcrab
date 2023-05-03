@@ -11,7 +11,6 @@ from typing import Optional
 def status(name: Optional[str]):
     if name:
         instance_config = get_min_instance_config(name)
-        assert instance_config is not None, f"Could not file config for {name}"
         instance_configs = [instance_config]
     else:
         instance_configs = [

@@ -120,7 +120,6 @@ runcmd:
 
 def up(name: str):
     instance_config = get_instance_config(name)
-    assert instance_config is not None, f"Could not file config for {name}"
 
     # check again just in case something has changed since we created this config. Shouldn't really be
     # needed, but hopefully this check is fairly cheap.

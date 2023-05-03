@@ -72,23 +72,24 @@ def _read_instance_config_dict(name):
     config_dir = get_instance_config_dir()
     config_filename = os.path.join(config_dir, f"{name}.json")
 
-    if not os.path.exists(config_filename):
-        return config_filename, None
-
     with open(config_filename, "rt") as fd:
         config_dict = json.load(fd)
 
     if "boot_disk_size_in_gb" not in config_dict:
         config_dict["boot_disk_size_in_gb"] = 10
 
-    return config_filename, config_dict
+    return config_dict
+
+
+def config_exists(name):
+    config_dir = get_instance_config_dir()
+    config_filename = os.path.join(config_dir, f"{name}.json")
+
+    return os.path.exists(config_filename)
 
 
 def get_min_instance_config(name):
-    _, config_dict = _read_instance_config_dict(name)
-    if config_dict is None:
-        return None
-        # raise Exception(f"Could not find configuration for \"{name}\"")
+    config_dict = _read_instance_config_dict(name)
 
     min_config_dict = {}
     for prop in ["name", "zone", "project", "pd_name"]:
@@ -101,20 +102,16 @@ def get_instance_configs():
     configs = []
     for name in get_instance_names():
         config = get_instance_config(name)
-        assert config is not None
         configs.append(config)
     return configs
 
 
 def get_instance_config(name):
-    config_filename, config_dict = _read_instance_config_dict(name)
-
-    if config_dict is None:
-        return None
+    config_dict = _read_instance_config_dict(name)
 
     if "service_account" not in config_dict:
         raise Exception(
-            f'Configuration {config_filename} is missing a value for "service_account". (This is a recent change to hermit)'
+            f'Configuration {name} is missing a value for "service_account". (This is a recent change to hermit)'
         )
 
     return InstanceConfig(**config_dict)
@@ -125,9 +122,10 @@ def delete_instance_config(name: str):
     assert name != "default"
 
     # check to see if this name is what default is pointing to
-    default_config = get_instance_config("default")
-    if default_config is not None and default_config.name == name:
-        os.unlink(os.path.join(config_dir, "default.json"))
+    if config_exists("default"):
+        default_config = get_instance_config("default")
+        if default_config.name == name:
+            os.unlink(os.path.join(config_dir, "default.json"))
 
     # now delete the config under its read name
     config_filename = os.path.join(config_dir, f"{name}.json")

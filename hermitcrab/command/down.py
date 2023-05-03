@@ -5,7 +5,6 @@ from ..config import get_instance_config, LONG_OPERATION_TIMEOUT
 
 def down(name: str):
     instance_config = get_instance_config(name)
-    assert instance_config is not None, f"Could not file config for {name}"
 
     if is_tunnel_running(instance_config.name):
         stop_tunnel(instance_config.name)

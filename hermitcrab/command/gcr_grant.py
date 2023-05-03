@@ -4,7 +4,6 @@ from ..config import get_instance_config
 
 def gcr_grant(project, instance_name, needs_write_access):
     config = get_instance_config(instance_name)
-    assert config is not None
     gcp.grant_access_to_gcr(project, instance_name, needs_write_access)
 
 

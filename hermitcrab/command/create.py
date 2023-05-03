@@ -5,6 +5,7 @@ from .. import gcp
 from ..config import (
     get_instance_config,
     get_instance_configs,
+    config_exists,
     write_instance_config,
     get_instance_names,
     InstanceConfig,
@@ -155,7 +156,6 @@ def find_unused_port():
     used_ports = []
     for name in get_instance_names():
         config = get_instance_config(name)
-        assert config is not None
         used_ports.append(config.local_port)
     if len(used_ports) > 0:
         return max(used_ports) + 1
@@ -182,9 +182,7 @@ def create(
 
     gcp.ensure_access_to_docker_image(service_account, docker_image)
 
-    assert (
-        get_instance_config(name) is None
-    ), f"{name} appears to already have a config stored"
+    assert not config_exists(name), f"{name} appears to already have a config stored"
 
     ensure_firewall_setup(project)
 

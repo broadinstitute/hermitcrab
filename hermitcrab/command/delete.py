@@ -9,7 +9,6 @@ from .down import is_tunnel_running
 
 def delete(name: str, force: bool):
     instance_config = get_min_instance_config(name)
-    assert instance_config is not None, f"Could not file config for {name}"
 
     assert not is_tunnel_running(
         instance_config.name
