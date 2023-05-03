@@ -1,12 +1,15 @@
 import os
 import json
-from typing import Dict
-from .gcp import get_default_service_account
+from typing import Dict, List
 
 from dataclasses import dataclass, asdict
 
 CONTAINER_SSHD_PORT = 3022
 LONG_OPERATION_TIMEOUT = 60 * 5
+
+
+class NoDefaultServiceAccount(Exception):
+    pass
 
 
 @dataclass
@@ -21,6 +24,14 @@ class InstanceConfig:
     service_account: str
     boot_disk_size_in_gb: int
     suspend_on_idle_timeout: int = 30
+
+
+@dataclass
+class MinInstanceConfig:
+    name: str
+    zone: str
+    project: str
+    pd_name: str
 
 
 def get_home_config_dir():
@@ -45,40 +56,64 @@ def ensure_dir_exists(config_dir):
         os.makedirs(config_dir)
 
 
-def get_instance_configs() -> Dict[str, InstanceConfig]:
-    configs = {}
+def get_instance_names() -> List[str]:
+    names = set()
     config_dir = get_instance_config_dir()
     if os.path.exists(config_dir):
         for filename in os.listdir(config_dir):
             if filename.endswith(".json"):
                 name = filename[: -len(".json")]  # drop the extension
-                configs[name] = get_instance_config(name)
-    if "default" in configs:
-        del configs["default"]
-    return configs
+                config = get_min_instance_config(name)
+                names.add(config.name)
+    return sorted(names)
 
 
-def get_instance_config(name):
+def _read_instance_config_dict(name):
     config_dir = get_instance_config_dir()
     config_filename = os.path.join(config_dir, f"{name}.json")
 
     if not os.path.exists(config_filename):
-        return None
+        return config_filename, None
 
     with open(config_filename, "rt") as fd:
         config_dict = json.load(fd)
 
-    if "service_account" not in config_dict:
-        print(
-            f'Configuration {config_filename} is missing a value for "service_account". (This is a recent change to hermit). Attempting to find default Compute Engine service account and will use that. Add this to the config manually to avoid this message in the future.'
-        )
-        service_account = get_default_service_account(config_dict["project"])
-        print(f"Identified {service_account} as the default service account.")
-        config_dict["service_account"] = service_account
-
     if "boot_disk_size_in_gb" not in config_dict:
         config_dict["boot_disk_size_in_gb"] = 10
-    # ), f'Missing "service_account" field on config for {name}. This field was added to hermit recently and you will need to manually add it to {config_filename}.'
+
+    return config_filename, config_dict
+
+
+def get_min_instance_config(name):
+    _, config_dict = _read_instance_config_dict(name)
+    assert isinstance(config_dict, dict)
+
+    min_config_dict = {}
+    for prop in ["name", "zone", "project", "pd_name"]:
+        min_config_dict[prop] = config_dict[prop]
+
+    return MinInstanceConfig(**min_config_dict)
+
+
+def get_instance_configs():
+    configs = []
+    for name in get_instance_names():
+        config = get_instance_config(name)
+        assert config is not None
+        configs.append(config)
+    return configs
+
+
+def get_instance_config(name):
+    config_filename, config_dict = _read_instance_config_dict(name)
+
+    if config_dict is None:
+        return None
+
+    if "service_account" not in config_dict:
+        raise Exception(
+            f'Configuration {config_filename} is missing a value for "service_account". (This is a recent change to hermit)'
+        )
 
     return InstanceConfig(**config_dict)
 
@@ -114,3 +149,24 @@ def write_instance_config(config: InstanceConfig):
         os.path.relpath(config_filename, config_dir),
         os.path.join(config_dir, "default.json"),
     )
+
+
+def _get_default_service_account_filename(project):
+    return os.path.join(get_home_config_dir(), "service-accounts", project)
+
+
+def write_default_service_account(project, name):
+    fn = _get_default_service_account_filename(project)
+    parent_dir = os.path.dirname(fn)
+    if not os.path.exists(parent_dir):
+        os.makedirs(parent_dir)
+    with open(fn, "wt") as fd:
+        fd.write(name)
+
+
+def read_default_service_account(project):
+    fn = _get_default_service_account_filename(project)
+    if not os.path.exists(fn):
+        raise NoDefaultServiceAccount()
+    with open(fn, "rt") as fd:
+        return fd.read().strip()

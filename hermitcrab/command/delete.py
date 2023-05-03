@@ -1,10 +1,14 @@
 from .. import gcp
-from ..config import get_instance_config, LONG_OPERATION_TIMEOUT, delete_instance_config
+from ..config import (
+    get_min_instance_config,
+    LONG_OPERATION_TIMEOUT,
+    delete_instance_config,
+)
 from .down import is_tunnel_running
 
 
 def delete(name: str, force: bool):
-    instance_config = get_instance_config(name)
+    instance_config = get_min_instance_config(name)
     assert instance_config is not None, f"Could not file config for {name}"
 
     assert not is_tunnel_running(
@@ -65,7 +69,8 @@ def add_command(subparser):
         default="default",
     )
     parser.add_argument(
-        "-f","--force",
+        "-f",
+        "--force",
         help="If specified, will not prompt user to confirm before deleting resources",
-        action="store_true"
+        action="store_true",
     )

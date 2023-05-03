@@ -1,9 +1,9 @@
-from ..config import get_instance_configs
+from ..config import get_instance_configs, get_instance_config
 from ..ssh import update_ssh_config
 
 
 def update_ssh():
-    update_ssh_config(list(get_instance_configs().values()))
+    update_ssh_config(get_instance_configs())
 
 
 def add_command(subparser):

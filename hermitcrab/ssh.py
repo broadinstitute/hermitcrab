@@ -45,11 +45,14 @@ def remove_section(content: str, start_marker: str, end_marker: str):
 
     return content[:start_index] + content[end_index:]
 
+
 def get_ssh_dir():
     return os.path.join(os.environ["HOME"], ".ssh")
 
+
 def get_ssh_config_path():
     return os.path.join(get_ssh_dir(), "config")
+
 
 def update_ssh_config(configs: Sequence[config.InstanceConfig]):
     # because default is an alias, we get dups in this sequence. Dedup them by name

@@ -1,4 +1,4 @@
-from ..import gcp
+from .. import gcp
 from ..tunnel import is_tunnel_running, stop_tunnel
 from ..config import get_instance_config, LONG_OPERATION_TIMEOUT
 

@@ -159,7 +159,7 @@ def stop_tunnel(name: str):
     start_time = time.time()
     while True:
         _check_procs()
-        
+
         if not is_pid_valid(pid):
             break
         elapsed = time.time() - start_time

@@ -6,12 +6,13 @@ from ..config import (
     get_instance_config,
     get_instance_configs,
     write_instance_config,
+    get_instance_names,
     InstanceConfig,
     CONTAINER_SSHD_PORT,
     LONG_OPERATION_TIMEOUT,
 )
 from ..ssh import update_ssh_config
-import json
+from . import create_service_account
 
 
 def create_volume(
@@ -151,10 +152,11 @@ def ensure_firewall_setup(project):
 
 
 def find_unused_port():
-    used_ports = [
-        instance_config.local_port
-        for instance_config in get_instance_configs().values()
-    ]
+    used_ports = []
+    for name in get_instance_names():
+        config = get_instance_config(name)
+        assert config is not None
+        used_ports.append(config.local_port)
     if len(used_ports) > 0:
         return max(used_ports) + 1
     return 3022
@@ -206,7 +208,7 @@ def create(
         )
     )
 
-    update_ssh_config(list(get_instance_configs().values()))
+    update_ssh_config(get_instance_configs())
 
 
 def assert_valid_gcp_name(description, name):
@@ -236,7 +238,11 @@ def add_command(subparser):
         if args.service_account:
             service_account = args.service_account
         else:
-            service_account = gcp.get_default_service_account(args.project)
+            service_account = (
+                create_service_account.get_or_create_default_service_account(
+                    args.project
+                )
+            )
 
         create(
             args.name,

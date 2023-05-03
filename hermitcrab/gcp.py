@@ -28,9 +28,11 @@ def _make_command(args):
 
     return cmd
 
-# a big of hack to work around the next for parents to reap threads. If children aren't reaped, then we can't check by pid 
+
+# a big of hack to work around the next for parents to reap threads. If children aren't reaped, then we can't check by pid
 # if tunnel has shut down
 _procs = []
+
 
 def gcloud_in_background(args: List[Union[str, int]], log_path: str):
     cmd = _make_command(args)
@@ -48,9 +50,11 @@ def gcloud_in_background(args: List[Union[str, int]], log_path: str):
 
     return proc
 
+
 def _check_procs():
     for proc in _procs:
         proc.poll()
+
 
 def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)
@@ -72,6 +76,10 @@ def gcloud_capturing_json_output(args: List[str]):
     return json.loads(stdout)
 
 
+class GCloudError(Exception):
+    pass
+
+
 def gcloud(args: List[str], timeout=10):
     cmd = _make_command(args)
 
@@ -83,9 +91,10 @@ def gcloud(args: List[str], timeout=10):
     assert stderr is None
     stdout = stdout.decode("utf8")
     log_info(f"output: {stdout}")
-    assert (
-        proc.returncode == 0
-    ), f"Executing {cmd} failed (return code: {proc.returncode}). Output: {stdout}"
+    if proc.returncode != 0:
+        raise GCloudError(
+            f"Executing {cmd} failed (return code: {proc.returncode}). Output: {stdout}"
+        )
 
 
 def get_instance_status(name, zone, project, one_or_none=False):
@@ -124,16 +133,11 @@ def wait_for_instance_status(name, zone, project, goal_status, max_time=5 * 60):
         time.sleep(5)
 
 
-def sanity_check_docker_image(service_account, docker_image):
-    "Tests to make sure that the given service account can read the docker_image. Throws an assertion error if not"
+class GCPPermissionError(Exception):
+    pass
 
-    # TODO: If this throws a permission error, try again after executing:
-    #   gcloud iam service-accounts add-iam-policy-binding PRIV_SA \
-    #     --member=serviceAccount:CALLER_SA --role=roles/iam.serviceAccountTokenCreator --format=json
-    access_token = gcloud_capturing_json_output(
-        ["auth", "print-access-token", "--format=json"]
-    )["token"]
 
+def _get_impersonating_access_token(access_token, service_account):
     # get an access token for impersonating service account so we can see if this account has rights to access the docker image
     res = requests.post(
         f"https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/{service_account}:generateAccessToken",
@@ -148,10 +152,53 @@ def sanity_check_docker_image(service_account, docker_image):
             }
         ),
     )
+    if res.status_code == 403:
+        raise GCPPermissionError()
     assert (
         res.status_code == 200
     ), f"Got an error trying to impersonate service account ({service_account}). status_code={res.status_code}, response content={res.content}"
     service_account_access_token = res.json()["accessToken"]
+    return service_account_access_token
+
+
+def _get_access_token():
+    access_token = gcloud_capturing_json_output(
+        ["auth", "print-access-token", "--format=json"]
+    )["token"]
+    return access_token
+
+
+def wait_for_impersonating_access_token_success(
+    service_account, retry_delay=5, max_wait=120
+):
+    print(
+        "Waiting for grant to take effect... (May take awhile, but this only needs to happen once)"
+    )
+    access_token = _get_access_token()
+    start = time.time()
+    attempts = 0
+    while True:
+        attempts += 1
+        try:
+            _get_impersonating_access_token(access_token, service_account)
+            break
+        except GCPPermissionError:
+            if (time.time() - start) > max_wait:
+                raise Exception(
+                    f"Failed to verify that permissions are set up for impersonification after {attempts} checks. Aborting"
+                )
+
+            time.sleep(retry_delay)
+
+
+def sanity_check_docker_image(service_account, docker_image):
+    "Tests to make sure that the given service account can read the docker_image. Throws an assertion error if not"
+
+    access_token = _get_access_token()
+
+    service_account_access_token = _get_impersonating_access_token(
+        access_token, service_account
+    )
 
     m = re.match("(^[^/]+)/([^:]+)(?::(.*))?", docker_image)
     assert m, f"Could not parse {docker_image} as an image name"
@@ -181,20 +228,3 @@ def sanity_check_docker_image(service_account, docker_image):
     raise AssertionError(
         f"Unexpected status_code={res.status_code} when fetching manifest from {manifest_url}, response body={res.content}"
     )
-
-
-def get_default_service_account(project):
-    service_accounts = gcloud_capturing_json_output(
-        [
-            "iam",
-            "service-accounts",
-            "list",
-            f"--project={project}",
-            "--filter=displayName='Compute Engine default service account'",
-            "--format=json",
-        ],
-    )
-    assert (
-        len(service_accounts) == 1
-    ), f"Could not determine default compute engine service account. (Find these possibilities: {service_accounts})"
-    return service_accounts[0]["email"]

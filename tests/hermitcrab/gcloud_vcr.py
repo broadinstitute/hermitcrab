@@ -12,9 +12,6 @@ from hermitcrab import tunnel
 from hermitcrab import gcp
 
 
-is_playback = pytest.mark.skipif("config.getoption('playback')")
-
-
 @dataclass
 class Raised:
     raised: Exception
@@ -181,14 +178,24 @@ def _get_test_name(request):
     return request.node.name
 
 
+import hermitcrab.command.create_service_account
+
+
 def setup_vcr(monkeypatch, request, mode=None):
     if mode is None:
-        if is_playback:
+        if request.config.getoption("playback"):
             mode = PLAYBACK
         else:
             mode = RECORDING
 
     test_name = _get_test_name(request)
+
+    # make sure we're consistently using the same service account
+    monkeypatch.setattr(
+        hermitcrab.command.create_service_account,
+        "get_or_create_default_service_account",
+        lambda project: "hermit-nrqacuv537@broad-achilles.iam.gserviceaccount.com",
+    )
 
     cassette_name = f"cassettes/{test_name}.json"
     vcr = VCR(mode)
