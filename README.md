@@ -120,6 +120,20 @@ ssh MACHINE_NAME
 which will log you into a session _inside_ the container running on
 `MACHINE_NAME`.
 
+If you encounter problems, you may want to look at the logs of the service which starts the inner container:
 
+```
+gcloud compute ssh MACHINE_NAME -- sudo journalctl -u container-sshd
+```
 
+Similar, if there's problems with the auto-suspend, you can look at the `suspend-on-idle` service:
 
+```
+gcloud compute ssh MACHINE_NAME -- sudo journalctl -u suspend-on-idle
+```
+
+Alternatively, you can always look at all the recent logs across the entire machine:
+
+```
+gcloud compute ssh MACHINE_NAME -- sudo journalctl --since "10 minutes ago"
+```
