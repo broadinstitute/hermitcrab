@@ -45,18 +45,20 @@ def poll(poll_frequency, activity_timeout, name, zone, project):
             log.info("%s", f"active (last_bytes_transmitted={last_bytes_transmitted})")
         elapsed_since_activity = time.time() - last_activity
         if elapsed_since_activity > activity_timeout:
-            break
+            suspend_instance(name, zone, project)
+            log.info("Suspend complete")
+            time.sleep(5 * 60)
+            # this is likely after the VM has been resumed
+            log.info("Resuming polling...")
         time.sleep(poll_frequency)
     log.info(
         "%s",
         f"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...",
     )
-    suspend_instance(name, zone, project)
-    log.info("Suspend complete")
 
 
 def suspend_instance(name, zone, project):
-    subprocess.check_call(
+    return_code = subprocess.run(
         [
             "docker",
             "run",
@@ -71,7 +73,14 @@ def suspend_instance(name, zone, project):
             "--project",
             project,
         ]
-    )
+    ).returncode
+
+    if return_code != 0:
+        log.info(
+            f"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead"
+        )
+        return_code = subprocess.run(["shutdown", "--poweroff"]).returncode
+        log.info(f"return code = {return_code}")
 
 
 def get_bytes_transmitted():
