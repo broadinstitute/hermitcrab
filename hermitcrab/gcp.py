@@ -202,6 +202,8 @@ def _check_access_to_docker_image(service_account, docker_image):
     m = re.match("(^[^/]+)/([^:]+)(?::(.*))?", docker_image)
     assert m, f"Could not parse {docker_image} as an image name"
     docker_repo_host, image_name, reference = m.groups()
+    if reference is None:
+        reference = "latest"
 
     # Now attempt to retreive the docker image manifest to see if we have access. Expecting either success, manifest doesn't exist, or permission denied
     manifest_url = f"https://{docker_repo_host}/v2/{image_name}/manifests/{reference}"
@@ -210,18 +212,20 @@ def _check_access_to_docker_image(service_account, docker_image):
         headers={"Authorization": f"Bearer {service_account_access_token}"},
     )
 
+    reconstructed_image_name = f"{docker_repo_host}/{image_name}:{reference}"
+
     if res.status_code == 200:
         # return if we were successful
         return
 
     if res.status_code == 404:
         raise Exception(
-            "Service account ({service_account}) has access to docker repo, but could not find image {docker_image}"
+            f"Service account ({service_account}) has access to docker repo, but could not find image {reconstructed_image_name}"
         )
 
     if res.status_code in [403, 401]:
         raise Exception(
-            "Service account ({service_account}) does not access to retreive image {docker_image}"
+            f"Service account ({service_account}) does not access to retreive image {reconstructed_image_name}"
         )
 
     raise AssertionError(
