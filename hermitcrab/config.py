@@ -86,7 +86,9 @@ def _read_instance_config_dict(name):
 
 def get_min_instance_config(name):
     _, config_dict = _read_instance_config_dict(name)
-    assert isinstance(config_dict, dict)
+    if config_dict is None:
+        return None
+        # raise Exception(f"Could not find configuration for \"{name}\"")
 
     min_config_dict = {}
     for prop in ["name", "zone", "project", "pd_name"]:
