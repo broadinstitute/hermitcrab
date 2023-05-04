@@ -31,6 +31,11 @@ docker image, we have the recipe for how that environment captured in the
 Dockerfile which created that image. Those images can be shared as well as
 versioned alongside the Dockerfiles used to create them.
 
+## Note: Containers must be set up specially for hermit
+
+See dockerimage/basic for an example of the minimium setup required for 
+an image to be compatible with Hermit.
+
 # Commands
 
 ```
