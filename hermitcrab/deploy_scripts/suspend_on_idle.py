@@ -17,6 +17,7 @@ def main():
     parser.add_argument("name")
     parser.add_argument("zone")
     parser.add_argument("project")
+    parser.add_argument("port")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO)
@@ -31,30 +32,31 @@ def main():
         args.name,
         args.zone,
         args.project,
+        args.port,
     )
 
 
-def poll(poll_frequency, activity_timeout, name, zone, project):
+def poll(poll_frequency, activity_timeout, name, zone, project, port):
     last_bytes_transmitted = None
     last_activity = time.time()
     while True:
-        bytes_transmitted = get_bytes_transmitted()
+        bytes_transmitted = get_bytes_transmitted(port)
         if last_bytes_transmitted != bytes_transmitted:
             last_bytes_transmitted = bytes_transmitted
             last_activity = time.time()
             log.info("%s", f"active (last_bytes_transmitted={last_bytes_transmitted})")
         elapsed_since_activity = time.time() - last_activity
         if elapsed_since_activity > activity_timeout:
+            log.info(
+                "%s",
+                f"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...",
+            )
             suspend_instance(name, zone, project)
             log.info("Suspend complete")
             time.sleep(5 * 60)
             # this is likely after the VM has been resumed
             log.info("Resuming polling...")
         time.sleep(poll_frequency)
-    log.info(
-        "%s",
-        f"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...",
-    )
 
 
 def suspend_instance(name, zone, project):
@@ -83,31 +85,25 @@ def suspend_instance(name, zone, project):
         log.info(f"return code = {return_code}")
 
 
-def get_bytes_transmitted():
-    output = subprocess.check_output(["iptables", "-nvxL", "DOCKER-USER"])
+def get_bytes_transmitted(port):
+    output = subprocess.check_output(["iptables", "-nvxL", "CONTAINER_SSH"])
     lines = output.decode("utf8").split("\n")
 
     def parse():
-        if len(lines) != 4:
-            print(f"expected 4 lines but was {len(lines)}")
-            return (
-                None  # could not parse because the output should always be three lines
-            )
-        m = re.match("\\s+(\\d+)\\s+(\\d+)\\s+.", lines[2])
-        if m is None:
-            return None  # again, don't know what this is
-        return int(m.group(2))
+        for line in lines:
+            if (
+                f"tcp dpt:{port}" in line
+            ):  # find the line for the rule for traffic on the port
+                m = re.match("\\s*(\\d+)\\s+(\\d+)\\s+.", line)
+                if m is not None:
+                    return int(m.group(2))
+        return None  # could not find the rule
 
     result = parse()
     if result is None:
         print(f"Could not parse: {output}")
     return result
 
-
-# sudo iptables -nvxL DOCKER-USER
-# Chain DOCKER-USER (1 references)
-#    pkts      bytes target     prot opt in     out     source               destination
-#      61    12560 RETURN     all  --  *      *       0.0.0.0/0            0.0.0.0/0
 
 if __name__ == "__main__":
     main()

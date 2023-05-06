@@ -6,6 +6,19 @@ from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
 import textwrap
 import pkg_resources
 
+# change the live-restore flag to false because its incompatible with swarm mode
+# (which is required by miniwdl). The other options were the values in the file before.
+docker_daemon_config = """
+{
+	"live-restore": false,
+	"log-opts": {
+                "tag": "{{.Name}}"
+        },
+	"storage-driver": "overlay2",
+	"mtu": 1460
+}
+"""
+
 
 def resume_instance(instance_config):
     print(f"Resuming suspended instance named {instance_config.name}...")
@@ -55,21 +68,40 @@ write_files:
 - path: /home/cloudservice/suspend_on_idle.py
   content: |
 {textwrap.indent(suspend_on_idle, "    ")}
+- path: /home/cloudservice/setup_firewall
+  content: |
+    # Create a chain for tracking traffic to ssh in container
+    iptables -N CONTAINER_SSH
+    iptables -I INPUT -j CONTAINER_SSH
+    iptables -A CONTAINER_SSH -p tcp --dport {CONTAINER_SSHD_PORT}
+    iptables -A INPUT -p tcp --dport {CONTAINER_SSHD_PORT} -j ACCEPT
+- path: /etc/systemd/system/config-firewall.service
+  permissions: 0644
+  owner: root
+  content: |
+    [Unit]
+    Description=Configures the host firewall
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=true
+    ExecStart=/bin/sh /home/cloudservice/setup_firewall
 - path: /etc/systemd/system/container-sshd.service
   permissions: "0644"
   owner: root
   content: |
     [Unit]
     Description=Container which we can connect via ssh
-    Wants=gcr-online.target
-    After=gcr-online.target
+    Wants=gcr-online.target config-firewall.service
+    After=gcr-online.target config-firewall.service
 
     [Service]
     Environment="HOME=/home/cloudservice"
     ExecStartPre=/usr/bin/docker-credential-gcr configure-docker
-    ExecStart=/usr/bin/docker run --rm --name=container-sshd -p{CONTAINER_SSHD_PORT}:22 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/disks/{instance_config.pd_name}/home/ubuntu:/home/ubuntu {instance_config.docker_image} /usr/sbin/sshd -D -e
+    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/{instance_config.pd_name}/home/ubuntu:/home/ubuntu {instance_config.docker_image} /usr/sbin/sshd -D -e -p {CONTAINER_SSHD_PORT}
     ExecStop=/usr/bin/docker stop container-sshd
     ExecStopPost=/usr/bin/docker rm container-sshd
+    Restart=always
 - path: /etc/systemd/system/suspend-on-idle.service
   permissions: "0644"
   owner: root
@@ -78,15 +110,22 @@ write_files:
     Description=Suspend when container is detected to be idle
     Wants=gcr-online.target
     After=gcr-online.target
-
+    
     [Service]
-    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 {instance_config.suspend_on_idle_timeout} {instance_config.name} {instance_config.zone} {instance_config.project}
+    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 {instance_config.suspend_on_idle_timeout} {instance_config.name} {instance_config.zone} {instance_config.project} {CONTAINER_SSHD_PORT}
+    Restart=always
+- path: /etc/docker/daemon.json
+  permissions: "0644"
+  owner: root
+  content: |
+  {textwrap.indent(docker_daemon_config, "   ")}
 runcmd:
   - 'usermod -u 2000 ubuntu'
   - 'groupmod -g 2000 ubuntu'
   - 'chown ubuntu:ubuntu /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys'
   - 'chmod 0666 /var/run/docker.sock'
   - systemctl daemon-reload
+  - systemctl restart docker
   - systemctl start container-sshd.service
   - systemctl start suspend-on-idle.service
 """
