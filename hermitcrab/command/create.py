@@ -226,7 +226,26 @@ def add_command(subparser):
         assert_valid_gcp_name("persistent disk name", pd_name)
 
         assert args.zone, "zone must be specified"
-        assert args.project, "project must be specified"
+        gcloud_defaults = gcp.gcloud_capturing_json_output(
+            ["config", "list", "--format=json"]
+        )
+        if args.project is None:
+            project = gcloud_defaults.get("core", {}).get("project")
+            assert (
+                project is not None
+            ), "no default project in gcloud config, so specified the project with the --project parameter"
+            print(f"Using project {project} (default according to gcloud)")
+        else:
+            project = args.project
+
+        if args.zone is None:
+            zone = gcloud_defaults.get("compute", {}).get("zone")
+            assert (
+                zone is not None
+            ), "no default zone in gcloud config, so specified the project with the --zone parameter"
+            print(f"Using zone {zone} (default according to gcloud)")
+        else:
+            zone = args.zone
 
         if args.local_port is None:
             local_port = find_unused_port()
@@ -248,8 +267,8 @@ def add_command(subparser):
             args.drive_type,
             args.machine_type,
             service_account,
-            args.project,
-            args.zone,
+            project,
+            zone,
             args.docker_image,
             pd_name,
             local_port,
@@ -264,12 +283,14 @@ def add_command(subparser):
         help="The name to use when creating instance",
     )
     parser.add_argument(
-        "drive_size",
-        help="Size of the home directory volume in GBs",
-    )
-    parser.add_argument(
         "docker_image",
         help="Name of the docker image to use",
+    )
+    parser.add_argument(
+        "--drive-size",
+        default=200,
+        help="Size of the home directory volume in GBs (Defaults to 200GB if not specified)",
+        dest="drive_size",
     )
     parser.add_argument(
         "--boot-disk-size",
