@@ -225,27 +225,28 @@ def add_command(subparser):
         assert_valid_gcp_name("instance name", args.name)
         assert_valid_gcp_name("persistent disk name", pd_name)
 
-        assert args.zone, "zone must be specified"
         gcloud_defaults = gcp.gcloud_capturing_json_output(
             ["config", "list", "--format=json"]
         )
         if args.project is None:
             project = gcloud_defaults.get("core", {}).get("project")
-            assert (
-                project is not None
-            ), "no default project in gcloud config, so specified the project with the --project parameter"
             print(f"Using project {project} (default according to gcloud)")
         else:
             project = args.project
 
+        assert (
+            project is not None
+        ), "no default project in gcloud config, so specified the project with the --project parameter"
+
         if args.zone is None:
             zone = gcloud_defaults.get("compute", {}).get("zone")
-            assert (
-                zone is not None
-            ), "no default zone in gcloud config, so specified the project with the --zone parameter"
             print(f"Using zone {zone} (default according to gcloud)")
         else:
             zone = args.zone
+
+        assert (
+            zone is not None
+        ), "no default zone in gcloud config, so specified the project with the --zone parameter"
 
         if args.local_port is None:
             local_port = find_unused_port()
@@ -256,15 +257,13 @@ def add_command(subparser):
             service_account = args.service_account
         else:
             service_account = (
-                create_service_account.get_or_create_default_service_account(
-                    args.project
-                )
+                create_service_account.get_or_create_default_service_account(project)
             )
 
         create(
             args.name,
-            args.drive_size,
-            args.drive_type,
+            args.disk_size,
+            args.disk_type,
             args.machine_type,
             service_account,
             project,
@@ -287,10 +286,10 @@ def add_command(subparser):
         help="Name of the docker image to use",
     )
     parser.add_argument(
-        "--drive-size",
+        "--disk-size",
         default=200,
         help="Size of the home directory volume in GBs (Defaults to 200GB if not specified)",
-        dest="drive_size",
+        dest="disk_size",
     )
     parser.add_argument(
         "--boot-disk-size",
@@ -300,9 +299,9 @@ def add_command(subparser):
         type=int,
     )
     parser.add_argument(
-        "--drive-type",
+        "--disk-type",
         default="pd-standard",
-        dest="drive_type",
+        dest="disk_type",
         help="The type of persistent disk to use for the home volume (see: https://cloud.google.com/compute/docs/disks )",
     )
     parser.add_argument(
