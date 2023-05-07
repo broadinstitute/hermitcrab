@@ -48,8 +48,7 @@ an image to be compatible with Hermit.
 # Commands
 
 ```
-hermit create [name] [disk_in_gb] [docker_image] \
-   --project [project] --zone [zone]
+hermit create [name] [docker_image]
 ```
 
 Creates a persistent disk to hold data, and creates a configuration file in
@@ -59,7 +58,7 @@ disk mounted.
 This will also update your `~/.ssh/config` file with information that ssh
 can use to seamlessly connect to your instance when its running.
 
-Example: `hermit create test-hermit 50 us.gcr.io/broad-achilles/hermitcrab --project broad-achilles --zone us-central1-a`
+Example: `hermit create test-hermit us.gcr.io/broad-achilles/hermitcrab`
 
 ```
 hermit up [name]
@@ -112,6 +111,25 @@ and suspend it.
 it's only checking network activity.)
 
 To unsuspend, simply re-run `hermit up`
+
+# Using hermit to build docker images
+
+Now that macs ship with non-intel processors, it can take a lot longer to
+build images locally. Fortunately, docker already supports building on
+remote machines. Hermit starts remote machines, so the two can work together
+seamlessly.
+
+First power up a machine ala (I named my machine 'image-builder'):
+
+```
+hermit up image-builder
+```
+
+And then you can run docker build using that host:
+
+```
+DOCKER_HOST=ssh://image-builder docker build . -t sample-image
+```
 
 # Troubleshooting
 
