@@ -4,6 +4,32 @@
     {
       "args": [
         [
+          "config",
+          "list",
+          "--format=json"
+        ]
+      ],
+      "kwargs": {}
+    },
+    {
+      "returned": {
+        "compute": {
+          "region": "us-central1",
+          "zone": "us-central1-a"
+        },
+        "core": {
+          "account": "pmontgom@broadinstitute.org",
+          "disable_usage_reporting": "False",
+          "project": "broad-achilles"
+        }
+      }
+    }
+  ],
+  [
+    "gcloud_capturing_json_output",
+    {
+      "args": [
+        [
           "compute",
           "firewall-rules",
           "list",
@@ -157,7 +183,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -247,11 +273,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -270,16 +296,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -343,7 +369,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -433,11 +459,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -456,16 +482,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -529,7 +555,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -619,11 +645,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -642,16 +668,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -715,7 +741,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -805,11 +831,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -828,16 +854,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -901,7 +927,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -991,11 +1017,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1014,16 +1040,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1087,7 +1113,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1177,11 +1203,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1200,16 +1226,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1273,7 +1299,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1363,11 +1389,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1386,16 +1412,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1459,7 +1485,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1549,11 +1575,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Pf_zGufctoI=",
-          "id": "4595424944669325548",
+          "fingerprint": "Sz_KSiJ6kWU=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1572,16 +1598,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1645,7 +1671,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1735,11 +1761,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "ZJF3PcHXDb0=",
-          "id": "4595424944669325548",
+          "fingerprint": "N-SOQYRPFAs=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1758,16 +1784,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.30.232.132",
+                  "natIP": "34.71.167.112",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "vwTa8lIOhIE=",
+              "fingerprint": "RfEteeOI-WY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1831,7 +1857,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Unknown CPU Platform",
-          "creationTimestamp": "2023-05-06T05:20:20.056-07:00",
+          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1921,12 +1947,12 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "2cUARqAMrq8=",
-          "id": "4595424944669325548",
+          "fingerprint": "7H4mPPt5K1U=",
+          "id": "1301467409852090148",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:20:26.544-07:00",
-          "lastStopTimestamp": "2023-05-06T05:21:17.943-07:00",
+          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStopTimestamp": "2023-05-06T18:08:23.590-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1949,11 +1975,11 @@
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "4AAGdbkj710=",
+              "fingerprint": "ZMo4OjlKyhU=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.44",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2105,7 +2131,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:21:32.110-07:00",
+          "creationTimestamp": "2023-05-06T18:08:35.486-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -2195,11 +2221,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "rkyU5OslBmw=",
-          "id": "5162686581399353508",
+          "fingerprint": "jffDh_vspes=",
+          "id": "1898129171465061629",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:21:38.115-07:00",
+          "lastStartTimestamp": "2023-05-06T18:08:40.790-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "CC3fe5kuBA4=",
@@ -2218,16 +2244,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.223.149.32",
+                  "natIP": "35.222.240.203",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "jn6zg8AY3-E=",
+              "fingerprint": "_U5vogr2mRw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.34",
+              "networkIP": "10.240.0.45",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2292,7 +2318,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T05:21:32.110-07:00",
+          "creationTimestamp": "2023-05-06T18:08:35.486-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -2382,11 +2408,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "rkyU5OslBmw=",
-          "id": "5162686581399353508",
+          "fingerprint": "jffDh_vspes=",
+          "id": "1898129171465061629",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T05:21:38.115-07:00",
+          "lastStartTimestamp": "2023-05-06T18:08:40.790-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "CC3fe5kuBA4=",
@@ -2405,16 +2431,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.223.149.32",
+                  "natIP": "35.222.240.203",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "jn6zg8AY3-E=",
+              "fingerprint": "_U5vogr2mRw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.34",
+              "networkIP": "10.240.0.45",
               "stackType": "IPV4_ONLY"
             }
           ],
