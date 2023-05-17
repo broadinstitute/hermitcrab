@@ -131,6 +131,39 @@ And then you can run docker build using that host:
 DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 ```
 
+# Tips and tricks
+
+## Resizing home directory
+
+You can use gcloud to resize the volume and you don't even have to bring the
+machine offline to do so. Execute the following where
+`DISK_NAME` is the value of `pd_name` in
+`$HOME/.hermit/instances/INSTANCE_NAME.json` and DISK_SIZE is the new size
+in GBs. 
+
+```
+gcloud compute disks resize DISK_NAME --size DISK_SIZE
+```
+
+Now that the drive is enlarged, you need tell the OS to use the new space.
+Connect to the host and run:
+
+```
+sudo resize2fs /dev/sdb
+```
+
+## Enlarging the docker volume
+
+The above works for the home directory, however, you may get an
+"unsufficient space" error from docker if you are pulling a lot of images,
+or building lots of images. These images are stored on the boot volume of 
+the VM so the easiest way to change the size is edit `$HOME/.hermit/instances/INSTANCE_NAME.json`
+and set `boot_disk_size_in_gb` to whatever you want.
+
+The boot volume is created during `hermit up` and destroyed during `hermit
+down` so to make the change take effect, just bring the instance down and
+then back up. After it's initialized the boot volume will be the new size.
+
 # Troubleshooting
 
 All gcloud commands are logged to hermit.log. That can be a good place to
