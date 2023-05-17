@@ -1,10 +1,16 @@
 from ..ssh import get_pub_key
 from .. import gcp
-from ..config import get_instance_config, CONTAINER_SSHD_PORT, LONG_OPERATION_TIMEOUT
+from ..config import (
+    get_instance_config,
+    get_instance_configs,
+    CONTAINER_SSHD_PORT,
+    LONG_OPERATION_TIMEOUT,
+)
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
 import textwrap
 import pkg_resources
+from ..ssh import update_ssh_config
 
 # change the live-restore flag to false because its incompatible with swarm mode
 # (which is required by miniwdl). The other options were the values in the file before.
@@ -55,10 +61,6 @@ bootcmd:
 - mkdir -p /mnt/disks/{instance_config.pd_name}
 - mount -t ext4 /dev/sdb /mnt/disks/{instance_config.pd_name}
 - mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
-- chown 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu
-- chmod -R 700 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
-- chown -R 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
-- mount --bind /mnt/disks/{instance_config.pd_name}/home/ubuntu/ /home/ubuntu
 
 write_files:
 - path: /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys
@@ -122,6 +124,11 @@ write_files:
 runcmd:
   - 'usermod -u 2000 ubuntu'
   - 'groupmod -g 2000 ubuntu'
+  - chown 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu
+  - chmod -R 700 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
+  - chown -R 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
+  - mount --bind /mnt/disks/{instance_config.pd_name}/home/ubuntu/ /home/ubuntu
+  - mount -o remount,exec /tmp
   - 'chown ubuntu:ubuntu /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys'
   - 'chmod 0666 /var/run/docker.sock'
   - systemctl daemon-reload
@@ -193,6 +200,8 @@ def up(name: str):
         instance_config.project,
         instance_config.local_port,
     )
+
+    update_ssh_config(get_instance_configs())
 
 
 def add_command(subparser):

@@ -183,7 +183,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -194,22 +194,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -273,11 +273,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -296,16 +296,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -369,7 +369,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -380,22 +380,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -459,11 +459,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -482,16 +482,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -555,7 +555,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -566,22 +566,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -645,11 +645,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -668,16 +668,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -741,7 +741,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -752,22 +752,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -831,11 +831,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -854,16 +854,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -927,7 +927,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -938,22 +938,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -1017,11 +1017,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1040,16 +1040,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1113,7 +1113,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1124,22 +1124,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -1203,11 +1203,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1226,16 +1226,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1299,7 +1299,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1310,22 +1310,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -1389,11 +1389,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "eyruTY70C60=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1412,16 +1412,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1485,7 +1485,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1496,22 +1496,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -1575,11 +1575,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "Sz_KSiJ6kWU=",
-          "id": "1301467409852090148",
+          "fingerprint": "WB0Lgm58NOA=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1598,16 +1598,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1641,7 +1641,7 @@
             "updateAutoLearnPolicy": true
           },
           "startRestricted": false,
-          "status": "RUNNING",
+          "status": "STOPPING",
           "tags": {
             "fingerprint": "42WmSpB8rSM="
           },
@@ -1671,7 +1671,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1682,22 +1682,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -1761,11 +1761,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "N-SOQYRPFAs=",
-          "id": "1301467409852090148",
+          "fingerprint": "WB0Lgm58NOA=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1784,16 +1784,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.71.167.112",
+                  "natIP": "34.70.15.210",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "RfEteeOI-WY=",
+              "fingerprint": "fH6gBzqQHTw=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1857,7 +1857,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Unknown CPU Platform",
-          "creationTimestamp": "2023-05-06T18:07:24.851-07:00",
+          "creationTimestamp": "2023-05-17T12:45:12.536-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1868,22 +1868,22 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -1947,12 +1947,12 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "7H4mPPt5K1U=",
-          "id": "1301467409852090148",
+          "fingerprint": "2W5ZzRnpLuo=",
+          "id": "5801739485536882728",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:07:31.708-07:00",
-          "lastStopTimestamp": "2023-05-06T18:08:23.590-07:00",
+          "lastStartTimestamp": "2023-05-17T12:45:17.477-07:00",
+          "lastStopTimestamp": "2023-05-17T12:46:06.346-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1975,11 +1975,11 @@
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZMo4OjlKyhU=",
+              "fingerprint": "6vRnLdG8hXU=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.44",
+              "networkIP": "10.240.0.59",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2096,7 +2096,7 @@
           "--zone=us-central1-a",
           "--project=broad-achilles",
           "--machine-type=n2-standard-2",
-          "--metadata-from-file=user-data=<#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- fsck.ext4 -tvy /dev/sdb\n- mkdir -p /mnt/disks/hermit-demo-pd\n- mount -t ext4 /dev/sdb /mnt/disks/hermit-demo-pd\n- mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n- chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa X\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n>",
+          "--metadata-from-file=user-data=<#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- fsck.ext4 -tvy /dev/sdb\n- mkdir -p /mnt/disks/hermit-demo-pd\n- mount -t ext4 /dev/sdb /mnt/disks/hermit-demo-pd\n- mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa X\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - mount -o remount,exec /tmp\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n>",
           "--disk=name=hermit-demo-pd,device-name=hermit-demo-pd,auto-delete=no",
           "--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw",
           "--service-account=hermit-nrqacuv537@broad-achilles.iam.gserviceaccount.com"
@@ -2131,7 +2131,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:08:35.486-07:00",
+          "creationTimestamp": "2023-05-17T12:46:21.691-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -2142,22 +2142,22 @@
               "diskSizeGb": "55",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -2221,18 +2221,18 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "jffDh_vspes=",
-          "id": "1898129171465061629",
+          "fingerprint": "l-325xArOpc=",
+          "id": "5261524095388389859",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:08:40.790-07:00",
+          "lastStartTimestamp": "2023-05-17T12:46:38.162-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
-            "fingerprint": "CC3fe5kuBA4=",
+            "fingerprint": "2M7-NF6VbzY=",
             "items": [
               {
                 "key": "user-data",
-                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- fsck.ext4 -tvy /dev/sdb\n- mkdir -p /mnt/disks/hermit-demo-pd\n- mount -t ext4 /dev/sdb /mnt/disks/hermit-demo-pd\n- mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n- chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n"
+                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- fsck.ext4 -tvy /dev/sdb\n- mkdir -p /mnt/disks/hermit-demo-pd\n- mount -t ext4 /dev/sdb /mnt/disks/hermit-demo-pd\n- mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - mount -o remount,exec /tmp\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n"
               }
             ],
             "kind": "compute#metadata"
@@ -2244,16 +2244,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.222.240.203",
+                  "natIP": "34.135.90.100",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "_U5vogr2mRw=",
+              "fingerprint": "vO9BlEZMeEk=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.45",
+              "networkIP": "10.240.0.60",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2318,7 +2318,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2023-05-06T18:08:35.486-07:00",
+          "creationTimestamp": "2023-05-17T12:46:21.691-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -2329,22 +2329,22 @@
               "diskSizeGb": "55",
               "guestOsFeatures": [
                 {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
                   "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
                   "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "GVNIC"
                 },
                 {
-                  "type": "GVNIC"
+                  "type": "SEV_SNP_CAPABLE"
+                },
+                {
+                  "type": "UEFI_COMPATIBLE"
+                },
+                {
+                  "type": "SEV_CAPABLE"
                 }
               ],
               "index": 0,
@@ -2408,18 +2408,18 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "jffDh_vspes=",
-          "id": "1898129171465061629",
+          "fingerprint": "l-325xArOpc=",
+          "id": "5261524095388389859",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2023-05-06T18:08:40.790-07:00",
+          "lastStartTimestamp": "2023-05-17T12:46:38.162-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
-            "fingerprint": "CC3fe5kuBA4=",
+            "fingerprint": "2M7-NF6VbzY=",
             "items": [
               {
                 "key": "user-data",
-                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- fsck.ext4 -tvy /dev/sdb\n- mkdir -p /mnt/disks/hermit-demo-pd\n- mount -t ext4 /dev/sdb /mnt/disks/hermit-demo-pd\n- mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n- chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n- mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n"
+                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- fsck.ext4 -tvy /dev/sdb\n- mkdir -p /mnt/disks/hermit-demo-pd\n- mount -t ext4 /dev/sdb /mnt/disks/hermit-demo-pd\n- mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - mount -o remount,exec /tmp\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n"
               }
             ],
             "kind": "compute#metadata"
@@ -2431,16 +2431,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.222.240.203",
+                  "natIP": "34.135.90.100",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "_U5vogr2mRw=",
+              "fingerprint": "vO9BlEZMeEk=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.45",
+              "networkIP": "10.240.0.60",
               "stackType": "IPV4_ONLY"
             }
           ],
