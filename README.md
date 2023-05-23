@@ -146,10 +146,9 @@ gcloud compute disks resize DISK_NAME --size DISK_SIZE
 ```
 
 Now that the drive is enlarged, you need tell the OS to use the new space.
-Connect to the host and run:
 
 ```
-sudo resize2fs /dev/sdb
+gcloud compute ssh INSTANCE_NAME -- sudo resize2fs /dev/sdb
 ```
 
 ## Enlarging the docker volume
