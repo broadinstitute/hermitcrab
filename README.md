@@ -133,6 +133,14 @@ DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 
 # Tips and tricks
 
+## Changing machine type 
+
+In order to change how much memory or number of CPUs you are using, change the machine type of your instance.
+
+Since the "hermit down" command deletes the VM and "hermit up" creates a new VM each time, it's trivial to change what type of machine you want to use at any time. Just bring your instance offline via `hermit down` and then edit the config `$HOME/.hermit/instances/INSTANCE_NAME.json`, updating the value of `machine_type` to be which ever machine type you want.
+
+Once you've saved your changes, do a `hermit up` and the new instance will be created with that machine type.
+
 ## Resizing home directory
 
 You can use gcloud to resize the volume and you don't even have to bring the
