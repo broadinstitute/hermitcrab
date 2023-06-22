@@ -89,8 +89,10 @@ system files to their original state from the docker image.
 
 Since "ssh name" takes to you to a shell within a container, and the docker
 demon runs _outside_ of the container, you may encounter surprising
-behavior. For example mounting directories other than /home/ubuntu will not
+behavior. For example mounting directories other than /home/ubuntu or /tmp will not
 work as expected because it will use the filepath outside of the container.
+
+(For example you may see an error like "invalid mount config for type bind ... bind source path not does exist")
 
 Mounting locations under /home/ubuntu, however, will work because the 
 same directory named /home/ubuntu exists inside and outside of the
