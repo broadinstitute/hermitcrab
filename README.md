@@ -89,8 +89,10 @@ system files to their original state from the docker image.
 
 Since "ssh name" takes to you to a shell within a container, and the docker
 demon runs _outside_ of the container, you may encounter surprising
-behavior. For example mounting directories other than /home/ubuntu will not
+behavior. For example mounting directories other than /home/ubuntu or /tmp will not
 work as expected because it will use the filepath outside of the container.
+
+(For example you may see an error like "invalid mount config for type bind ... bind source path not does exist")
 
 Mounting locations under /home/ubuntu, however, will work because the 
 same directory named /home/ubuntu exists inside and outside of the
@@ -133,6 +135,14 @@ DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 
 # Tips and tricks
 
+## Changing machine type 
+
+In order to change how much memory or number of CPUs you are using, change the machine type of your instance.
+
+Since the "hermit down" command deletes the VM and "hermit up" creates a new VM each time, it's trivial to change what type of machine you want to use at any time. Just bring your instance offline via `hermit down` and then edit the config `$HOME/.hermit/instances/INSTANCE_NAME.json`, updating the value of `machine_type` to be which ever machine type you want.
+
+Once you've saved your changes, do a `hermit up` and the new instance will be created with that machine type.
+
 ## Resizing home directory
 
 You can use gcloud to resize the volume and you don't even have to bring the
@@ -146,10 +156,9 @@ gcloud compute disks resize DISK_NAME --size DISK_SIZE
 ```
 
 Now that the drive is enlarged, you need tell the OS to use the new space.
-Connect to the host and run:
 
 ```
-sudo resize2fs /dev/sdb
+gcloud compute ssh INSTANCE_NAME -- sudo resize2fs /dev/sdb
 ```
 
 ## Enlarging the docker volume
