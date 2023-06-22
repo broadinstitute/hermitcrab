@@ -142,7 +142,12 @@ def write_instance_config(config: InstanceConfig):
     with open(config_filename, "wt") as fd:
         fd.write(json.dumps(config_dict, indent=2, sort_keys=True))
 
-    print(f"Setting {config.name} as the 'default' instance config")
+
+def set_default_instance_config(name):
+    config_dir = get_instance_config_dir()
+    config_filename = os.path.join(config_dir, f"{name}.json")
+
+    print(f"Setting {name} as the 'default' instance config")
     if os.path.exists(os.path.join(config_dir, "default.json")):
         os.unlink(os.path.join(config_dir, "default.json"))
     os.symlink(

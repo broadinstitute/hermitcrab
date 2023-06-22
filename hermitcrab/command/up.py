@@ -5,6 +5,7 @@ from ..config import (
     get_instance_configs,
     CONTAINER_SSHD_PORT,
     LONG_OPERATION_TIMEOUT,
+    set_default_instance_config,
 )
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
@@ -57,6 +58,11 @@ users:
 - name: ubuntu
 
 bootcmd:
+- echo in-bootcmd
+- mount
+- umount /tmp
+- echo in-bootcmd-after-umount
+- mount
 - fsck.ext4 -tvy /dev/sdb
 - mkdir -p /mnt/disks/{instance_config.pd_name}
 - mount -t ext4 /dev/sdb /mnt/disks/{instance_config.pd_name}
@@ -122,13 +128,14 @@ write_files:
   content: |
   {textwrap.indent(docker_daemon_config, "   ")}
 runcmd:
+  - echo in-runcmd
+  - mount
   - 'usermod -u 2000 ubuntu'
   - 'groupmod -g 2000 ubuntu'
   - chown 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu
   - chmod -R 700 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
   - chown -R 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
   - mount --bind /mnt/disks/{instance_config.pd_name}/home/ubuntu/ /home/ubuntu
-  - mount -o remount,exec /tmp
   - 'chown ubuntu:ubuntu /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys'
   - 'chmod 0666 /var/run/docker.sock'
   - systemctl daemon-reload
@@ -202,6 +209,7 @@ def up(name: str):
     )
 
     update_ssh_config(get_instance_configs())
+    set_default_instance_config(instance_config.name)
 
 
 def add_command(subparser):

@@ -11,6 +11,7 @@ from ..config import (
     InstanceConfig,
     CONTAINER_SSHD_PORT,
     LONG_OPERATION_TIMEOUT,
+    set_default_instance_config,
 )
 from ..ssh import update_ssh_config
 from . import create_service_account
@@ -207,6 +208,7 @@ def create(
     )
 
     update_ssh_config(get_instance_configs())
+    set_default_instance_config(name)
 
 
 def assert_valid_gcp_name(description, name):
