@@ -61,6 +61,7 @@ bootcmd:
 - echo in-bootcmd
 - mount
 - umount /tmp
+- mount --bind /var/tmp /tmp
 - echo in-bootcmd-after-umount
 - mount
 - fsck.ext4 -tvy /dev/sdb
