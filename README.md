@@ -45,6 +45,32 @@ explictly managing grants.
 See dockerimage/basic for an example of the minimium setup required for 
 an image to be compatible with Hermit.
 
+# Installation
+
+The recommended way to install hermit-crab is in it's own python virtual environment via [poetry][1]. ( To install poetry see [here][2] but I personally use `brew install poetry` )
+
+Assuming you have poetry installed, you should be able to check out this repo and run 
+
+```
+poetry install
+```
+
+...which should create a virtual environment and download and install all dependencies. I also like the being able to run `hermit` without having to activate the virtual environment, so to do that, I also recommend putting a symlink to the `hermit` executable script into your path.
+
+For example, I do this by running:
+
+```
+sudo ln -s `poetry run which hermit` /usr/local/bin
+```
+
+Once this is done, you should be able to run
+
+```
+hermit version
+```
+
+to verify successful installation.
+
 # Commands
 
 ```
