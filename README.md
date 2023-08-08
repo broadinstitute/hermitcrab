@@ -161,11 +161,19 @@ DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 
 # Tips and tricks
 
-## Changing machine type 
+## Changing machine type (ie: how to increase memory on the VM)
 
 In order to change how much memory or number of CPUs you are using, change the machine type of your instance.
 
 Since the "hermit down" command deletes the VM and "hermit up" creates a new VM each time, it's trivial to change what type of machine you want to use at any time. Just bring your instance offline via `hermit down` and then edit the config `$HOME/.hermit/instances/INSTANCE_NAME.json`, updating the value of `machine_type` to be which ever machine type you want.
+
+You'll need to select a machine type. Perhaps the easiest way is to use gcloud to list the configurations that are availible by running (where ZONE is the zone from `$HOME/.hermit/instances/INSTANCE_NAME.json`):
+
+```
+gcloud compute machine-types list --zones <ZONE>
+```
+
+The full documentation on the various machine types can be found at https://cloud.google.com/compute/docs/machine-resource but in general, unless you have some unusual requirements, you most likely want to either pick a machine type from the `n2-` (intel), `n2d-` (AMD) series. Or if you need more memory per cpu, you can select from the `m1-`, `m2-` or `m3-` series.
 
 Once you've saved your changes, do a `hermit up` and the new instance will be created with that machine type.
 
