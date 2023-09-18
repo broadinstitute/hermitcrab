@@ -65,6 +65,8 @@ def create_service_account(project, name):
             "--member",
             f"user:{user_account}",
             f"--role=roles/iam.serviceAccountTokenCreator",
+            "--project",
+            project,
         ]
     )
 
