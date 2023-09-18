@@ -45,6 +45,32 @@ explictly managing grants.
 See dockerimage/basic for an example of the minimium setup required for 
 an image to be compatible with Hermit.
 
+# Installation
+
+The recommended way to install hermit-crab is in it's own python virtual environment via [poetry][1]. ( To install poetry see [here][2] but I personally use `brew install poetry` )
+
+Assuming you have poetry installed, you should be able to check out this repo and run 
+
+```
+poetry install
+```
+
+...which should create a virtual environment and download and install all dependencies. I also like the being able to run `hermit` without having to activate the virtual environment, so to do that, I also recommend putting a symlink to the `hermit` executable script into your path.
+
+For example, I do this by running:
+
+```
+sudo ln -s `poetry run which hermit` /usr/local/bin
+```
+
+Once this is done, you should be able to run
+
+```
+hermit version
+```
+
+to verify successful installation.
+
 # Commands
 
 ```
@@ -135,11 +161,21 @@ DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 
 # Tips and tricks
 
-## Changing machine type 
+## Changing machine type (ie: how to increase memory on the VM)
 
 In order to change how much memory or number of CPUs you are using, change the machine type of your instance.
 
 Since the "hermit down" command deletes the VM and "hermit up" creates a new VM each time, it's trivial to change what type of machine you want to use at any time. Just bring your instance offline via `hermit down` and then edit the config `$HOME/.hermit/instances/INSTANCE_NAME.json`, updating the value of `machine_type` to be which ever machine type you want.
+
+You'll need to select a machine type. Perhaps the easiest way is to use gcloud to list the configurations that are availible by running (where ZONE is the zone from `$HOME/.hermit/instances/INSTANCE_NAME.json`):
+
+```
+gcloud compute machine-types list --zones <ZONE>
+```
+
+That command will list a table with the name of each machine type, how many CPUs it has and how much memory it has, which are often the most relevant parameters when choosing a machine type.
+
+The full documentation on the various machine types can be found at https://cloud.google.com/compute/docs/machine-resource but in general, unless you have some unusual requirements, you most likely want to either pick a machine type from the `n2-` (intel), `n2d-` (AMD) series. Or if you need more memory per cpu, you can select from the `m1-`, `m2-` or `m3-` series.
 
 Once you've saved your changes, do a `hermit up` and the new instance will be created with that machine type.
 
