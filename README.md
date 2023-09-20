@@ -109,6 +109,21 @@ This is primarily to shut down the instance to save on costs. However,
 shutting it down are bringing it back up is also a good way to reset the
 system files to their original state from the docker image.
 
+# Connecting VSCode to a hermit machine
+
+This should be no different then using VSCode with any other remote linux machine and you can find full instructions here: https://code.visualstudio.com/docs/remote/ssh
+
+A brief summary is:
+
+1. Install the "Remote-SSH" extension in VSCode.
+2. In VS Code, select "Remote-SSH: Connect to Host..." from the Command Palette (F1, ⇧⌘P) and select the name of the hermit machine.
+
+And then you should be taken to a new VSCode session which will allow to open remote folders and work on that remote machine.
+
+## Working with jupyter notebooks in VSCode on a remote machine
+
+[todo]
+
 # Cautionary notes
 
 ## Docker
