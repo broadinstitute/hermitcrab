@@ -120,9 +120,21 @@ A brief summary is:
 
 And then you should be taken to a new VSCode session which will allow to open remote folders and work on that remote machine.
 
+3. Lastly, "install in SSH" any extensions you need that VSC reports as disabled. 
+
+It seems that when you create a remote-ssh session, it doesn't install your locally installed VSCode extensions on that remote host. As a result, it'll look like you have the extension installed, but the extension won't do anything.
+
+To fix this, open the "marketplace" tab of VSC and filter to only show "disabled" extensions and review the list. 
+
+![VSC screenshot](docs/vsc-ext-show-disabled.png)
+
+For all extensions that you want enabled and have an option to "install in SSH", click the button to install them on the remote machine. They will then work with the remote SSH session.
+
 ## Working with jupyter notebooks in VSCode on a remote machine
 
-[todo]
+VSCode has native support for working with Juypter notebooks. To use notebooks in VSCode first make sure to install jupyter into a python environment and that VSCode is using that environment by opening the command pallete and selecting "Python: Select Interpreter". Then, to create a notebook, simply create a few file with an ".ipynb" extension and you should be shown their notebook UI and be able to run individual cells. 
+
+If it prompts you to select a kernel, and attempting to do so results in a suggestion to install the VSCode jupyter or python exception, _and_ clicking that button does nothing, it's likely you _do_ have them installed but one or both of them are disabled. See the instructions above regarding "install in SSH" for disabled extensions.
 
 # Cautionary notes
 
