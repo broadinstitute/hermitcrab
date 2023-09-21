@@ -132,9 +132,9 @@ For all extensions that you want enabled and have an option to "install in SSH",
 
 ## Working with jupyter notebooks in VSCode on a remote machine
 
-VSCode has native support for working with Juypter notebooks. To use notebooks in VSCode first make sure to install jupyter into a python environment and that VSCode is using that environment by opening the command pallete and selecting "Python: Select Interpreter". Then, to create a notebook, simply create a few file with an ".ipynb" extension and you should be shown their notebook UI and be able to run individual cells. 
+VSCode has native support for working with Juypter notebooks. To use notebooks in VSCode first make sure to install jupyter into a python environment and that VSCode is using that environment by opening the command pallete and selecting "Python: Select Interpreter". Then, to create a notebook, simply create a new file with an ".ipynb" extension and you should be shown their notebook UI and then be able to run individual cells. 
 
-If it prompts you to select a kernel, and attempting to do so results in a suggestion to install the VSCode jupyter or python exception, _and_ clicking that button does nothing, it's likely you _do_ have them installed but one or both of them are disabled. See the instructions above regarding "install in SSH" for disabled extensions.
+If it prompts you to select a kernel, and attempting to do so results in a suggestion to install the VSCode jupyter or python exception, _and_ clicking that button does nothing, it's likely you _do_ have those extensions installed but one or both of them are disabled. See the instructions above regarding "install in SSH" for disabled extensions.
 
 # Cautionary notes
 
