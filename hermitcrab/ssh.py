@@ -71,6 +71,13 @@ def update_ssh_config(configs: Sequence[config.InstanceConfig]):
 
     config_content = remove_section(config_content, START_MARKER, END_MARKER)
 
+    # make sure that the configuration content ends with a newline. If it doesn't
+    # when we concatenate, we'll add the START_MARKER on the end of a config statement
+    # which ssh does not like and results in an error like ".ssh/config line 4: keyword identityfile extra arguments at end of line"
+
+    if config_content != "" and not config_content.endswith("\n"):
+        config_content = "\n"
+
     if len(configs) > 0:
         new_section = [
             """#
