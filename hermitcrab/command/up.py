@@ -42,7 +42,14 @@ def resume_instance(instance_config):
     )
 
 
-def create_instance(instance_config):
+from ..config import InstanceConfig
+from .. import __version__
+import os
+
+
+def create_instance(instance_config: InstanceConfig):
+    username = os.getlogin()
+
     ssh_pub_key = get_pub_key()
 
     suspend_on_idle = pkg_resources.resource_string(
@@ -61,12 +68,38 @@ bootcmd:
 - echo in-bootcmd
 - mount
 - umount /tmp
+"""
+        )
+        # if we have no local ssd drives, use /var/tmp for /tmp
+        if instance_config.local_ssd_count == 0:
+            tmp.write(
+                """
 - mount --bind /var/tmp /tmp
-- echo in-bootcmd-after-umount
+"""
+            )
+        else:
+            for i in range(instance_config.local_ssd_count):
+                tmp.write(
+                    f"""- mkfs -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i}
+- mkdir -p /mnt/disks/local-ssd-{i}
+- mount -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i} /mnt/disks/local-ssd-{i}
+"""
+                )
+                # if we're using at least one local ssd drive, mount it at /tmp
+                if i == 0:
+                    tmp.write(
+                        f"""- mkdir /mnt/disks/local-ssd-{i}/tmp
+- chmod 1777 /mnt/disks/local-ssd-{i}/tmp
+- mount --bind /mnt/disks/local-ssd-{i}/tmp /tmp
+"""
+                    )
+
+        tmp.write(
+            f"""- echo in-bootcmd-after-tmp-remount
 - mount
-- fsck.ext4 -tvy /dev/sdb
+- fsck.ext4 -tvy /dev/disk/by-id/google-{instance_config.pd_name}
 - mkdir -p /mnt/disks/{instance_config.pd_name}
-- mount -t ext4 /dev/sdb /mnt/disks/{instance_config.pd_name}
+- mount -t ext4 /dev/disk/by-id/google-{instance_config.pd_name} /mnt/disks/{instance_config.pd_name}
 - mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
 
 write_files:
@@ -149,25 +182,33 @@ runcmd:
 
         cloudinit_path = tmp.name
         print(f"Creating new instance named {instance_config.name}...")
+        create_options = [
+            f"--description=hermit v{__version__} VM started user {username}",
+            "--image-family=cos-stable",
+            "--image-project=cos-cloud",
+            f"--boot-disk-size={instance_config.boot_disk_size_in_gb}GB",
+            f"--zone={instance_config.zone}",
+            f"--project={instance_config.project}",
+            f"--machine-type={instance_config.machine_type}",
+            f"--metadata-from-file=user-data={cloudinit_path}",
+            f"--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no",
+            # use scopes that are equivilent to 'default' from https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes
+            # but also add compute-rw so that the instance can suspend itself down when idle.
+            f"--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw",
+            f"--service-account={instance_config.service_account}",
+        ]
+
+        for i in range(instance_config.local_ssd_count):
+            create_options.extend(["--local-ssd=interface=nvme"])
+
         gcp.gcloud(
             [
                 "compute",
                 "instances",
                 "create",
                 instance_config.name,
-                "--image-family=cos-stable",
-                "--image-project=cos-cloud",
-                f"--boot-disk-size={instance_config.boot_disk_size_in_gb}GB",
-                f"--zone={instance_config.zone}",
-                f"--project={instance_config.project}",
-                f"--machine-type={instance_config.machine_type}",
-                f"--metadata-from-file=user-data={cloudinit_path}",
-                f"--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no",
-                # use scopes that are equivilent to 'default' from https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes
-                # but also add compute-rw so that the instance can suspend itself down when idle.
-                f"--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw",
-                f"--service-account={instance_config.service_account}",
-            ],
+            ]
+            + create_options,
             timeout=LONG_OPERATION_TIMEOUT,
         )
 
@@ -188,6 +229,11 @@ def up(name: str):
         one_or_none=True,
     )
 
+    if status == "TERMINATED":
+        raise Exception(
+            "Found existing stopped instance. You'll need to manually delete it before proceeding"
+        )
+
     if status is None:
         create_instance(instance_config)
     elif status == "RUNNING":
@@ -196,7 +242,7 @@ def up(name: str):
         resume_instance(instance_config)
     else:
         raise Exception(
-            "Instance status is {status}, and this tool doesn't know what to do with that status."
+            f"Instance status is {status}, and this tool doesn't know what to do with that status."
         )
 
     if is_tunnel_running(instance_config.name):

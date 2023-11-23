@@ -15,6 +15,7 @@ from ..config import (
 )
 from ..ssh import update_ssh_config
 from . import create_service_account
+from .. import __version__
 
 
 def create_volume(
@@ -45,6 +46,8 @@ def create_volume(
         existing_status is None
     ), f"Expected there to be no instance with name {name}, but found one with status {existing_status}"
 
+    username = os.getlogin()
+
     print(f"Creating persistent disk named {pd_name}")
     # gcloud compute disks create test-create-vol --size=50 --zone=us-central1-a --type=pd-standard
     gcp.gcloud(
@@ -53,6 +56,7 @@ def create_volume(
             "disks",
             "create",
             pd_name,
+            f"--description=hermit v{__version__} VM started user {username}",
             f"--size={drive_size}",
             f"--zone={zone}",
             f"--type={drive_type}",
@@ -176,6 +180,7 @@ def create(
     local_port: int,
     idle_timeout: int,
     boot_disk_size_in_gb: int,
+    local_ssd_count: int,
 ):
     assert zone
     assert project
@@ -204,6 +209,7 @@ def create(
             suspend_on_idle_timeout=idle_timeout,
             service_account=service_account,
             boot_disk_size_in_gb=boot_disk_size_in_gb,
+            local_ssd_count=local_ssd_count,
         )
     )
 
@@ -275,6 +281,7 @@ def add_command(subparser):
             local_port,
             args.idle_timeout,
             args.boot_disk_size_in_gb,
+            args.local_ssd_count,
         )
 
     parser = subparser.add_parser("create", help="Create a new instance config")
@@ -338,4 +345,11 @@ def add_command(subparser):
         "--service-account",
         dest="service_account",
         help="If specified, the id of the service account to assign to the host as the default service account",
+    )
+    parser.add_argument(
+        "--local-ssd-count",
+        dest="local_ssd_count",
+        type=int,
+        default=0,
+        help="The number of local SSD drives to attach. If at least one local SSD drive is attached, it will be used for the /tmp volume. Note: locally attached SSD drives lose their contents during shutdown, so only temporary files should be placed on these volumes. (Default: 0)",
     )

@@ -24,6 +24,7 @@ class InstanceConfig:
     service_account: str
     boot_disk_size_in_gb: int
     suspend_on_idle_timeout: int = 30
+    local_ssd_count: int = 0
 
 
 @dataclass

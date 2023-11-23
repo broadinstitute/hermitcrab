@@ -5,6 +5,9 @@ from ..config import (
     read_default_service_account,
     NoDefaultServiceAccount,
 )
+import os
+from .. import __version__
+
 
 roles_to_add = [
     "roles/editor",  # Eventually figure out the minimal permissions
@@ -30,6 +33,7 @@ def create_service_account(project, name):
     if name is None:
         name = f"hermit-{random_string(10).lower()}"
 
+    username = os.getlogin()
     print(f'Creating service account "{name}" in project "{project}"...')
     gcp.gcloud(
         [
@@ -40,7 +44,7 @@ def create_service_account(project, name):
             "--project",
             project,
             "--display-name",
-            "Service account for hermit",
+            f"Service account for hermit (v{__version__}, created by {username})",
         ]
     )
     service_account_name = f"{name}@{project}.iam.gserviceaccount.com"
