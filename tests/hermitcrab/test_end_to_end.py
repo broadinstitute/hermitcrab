@@ -18,7 +18,7 @@ def test_end_to_end(vcr, tmphomedir):
         ]
     )
     main(["status"])
-    main(["up"])
+    main(["up", "hermit-demo"])
     main(["status"])
-    main(["down"])
-    main(["delete", "-f"])
+    main(["down", "hermit-demo"])
+    main(["delete", "-f", "hermit-demo"])
