@@ -179,6 +179,7 @@ def _get_test_name(request):
 
 
 import hermitcrab.command.create_service_account
+import os
 
 
 def setup_vcr(monkeypatch, request, mode=None):
@@ -196,6 +197,9 @@ def setup_vcr(monkeypatch, request, mode=None):
         "get_or_create_default_service_account",
         lambda project: "hermit-nrqacuv537@broad-achilles.iam.gserviceaccount.com",
     )
+
+    # and that os.getlogin always reports the same thing
+    monkeypatch.setattr(os, "getlogin", lambda: "hermit-test")
 
     cassette_name = f"cassettes/{test_name}.json"
     vcr = VCR(mode)
