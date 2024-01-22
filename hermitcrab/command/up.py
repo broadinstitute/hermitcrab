@@ -12,6 +12,8 @@ from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
 import textwrap
 import pkg_resources
 from ..ssh import update_ssh_config
+import time
+import re
 
 # change the live-restore flag to false because its incompatible with swarm mode
 # (which is required by miniwdl). The other options were the values in the file before.
@@ -66,6 +68,7 @@ users:
 
 bootcmd:
 - echo in-bootcmd
+- 'echo "Starting cloudinit bootcmd..." >> /var/log/hermit.log'
 - mount
 - umount /tmp
 """
@@ -96,11 +99,14 @@ bootcmd:
 
         tmp.write(
             f"""- echo in-bootcmd-after-tmp-remount
-- mount
-- fsck.ext4 -tvy /dev/disk/by-id/google-{instance_config.pd_name}
-- mkdir -p /mnt/disks/{instance_config.pd_name}
-- mount -t ext4 /dev/disk/by-id/google-{instance_config.pd_name} /mnt/disks/{instance_config.pd_name}
-- mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
+- 'mount'
+- 'echo "Checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log'
+- 'fsck -C 0 -a /dev/disk/by-id/google-{instance_config.pd_name} >> /var/log/hermit.log'
+- 'echo "Finished checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log'
+- 'mkdir -p /mnt/disks/{instance_config.pd_name}'
+- 'echo "Mounting /dev/disk/by-id/google-{instance_config.pd_name}" as /mnt/disks/{instance_config.pd_name} >> /var/log/hermit.log'
+- 'mount -t ext4 /dev/disk/by-id/google-{instance_config.pd_name} /mnt/disks/{instance_config.pd_name}'
+- 'mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh'
 
 write_files:
 - path: /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys
@@ -139,6 +145,7 @@ write_files:
 
     [Service]
     Environment="HOME=/home/cloudservice"
+    StandardOutput=append:/var/log/hermit.log
     ExecStartPre=/usr/bin/docker-credential-gcr configure-docker
     ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/{instance_config.pd_name}/home/ubuntu:/home/ubuntu {instance_config.docker_image} /usr/sbin/sshd -D -e -p {CONTAINER_SSHD_PORT}
     ExecStop=/usr/bin/docker stop container-sshd
@@ -163,19 +170,23 @@ write_files:
   {textwrap.indent(docker_daemon_config, "   ")}
 runcmd:
   - echo in-runcmd
+  - 'echo "Setting up ubuntu home directory permissions..." >> /var/log/hermit.log'
   - mount
   - 'usermod -u 2000 ubuntu'
   - 'groupmod -g 2000 ubuntu'
   - chown 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu
   - chmod -R 700 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
   - chown -R 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
+  - 'echo "Mounting home directory into place..." >> /var/log/hermit.log'
   - mount --bind /mnt/disks/{instance_config.pd_name}/home/ubuntu/ /home/ubuntu
   - 'chown ubuntu:ubuntu /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys'
   - 'chmod 0666 /var/run/docker.sock'
+  - 'echo "Starting up services..." >> /var/log/hermit.log'
   - systemctl daemon-reload
   - systemctl restart docker
   - systemctl start container-sshd.service
   - systemctl start suspend-on-idle.service
+  - 'echo "Cloudinit runcmd complete." >> /var/log/hermit.log'
 """
         )
         tmp.flush()
@@ -213,14 +224,18 @@ runcmd:
         )
 
 
-def up(name: str):
+from hermitcrab.config import is_assumption_present, record_assumption
+
+
+def up(name: str, verbose: bool):
     instance_config = get_instance_config(name)
 
-    # check again just in case something has changed since we created this config. Shouldn't really be
-    # needed, but hopefully this check is fairly cheap.
-    gcp.ensure_access_to_docker_image(
-        instance_config.service_account, instance_config.docker_image
-    )
+    has_access_to_docker_image_assumption = f"{instance_config.service_account} has access to {instance_config.docker_image}"
+    if not is_assumption_present(has_access_to_docker_image_assumption):
+        gcp.ensure_access_to_docker_image(
+            instance_config.service_account, instance_config.docker_image
+        )
+        record_assumption(has_access_to_docker_image_assumption)
 
     status = gcp.get_instance_status(
         instance_config.name,
@@ -245,6 +260,8 @@ def up(name: str):
             f"Instance status is {status}, and this tool doesn't know what to do with that status."
         )
 
+    wait_for_instance_start(instance_config, verbose, timeout=10 * 60)
+
     if is_tunnel_running(instance_config.name):
         stop_tunnel(instance_config.name)
 
@@ -259,9 +276,91 @@ def up(name: str):
     set_default_instance_config(instance_config.name)
 
 
+def wait_for_instance_start(
+    instance_config: InstanceConfig,
+    verbose: bool,
+    timeout: float,
+    output_callback=print,
+    poll_frequency=1,
+):
+    # the lines of status we've already shown to the user
+    printed_status = set()
+    previous_printed = ""
+
+    start_time = time.time()
+    # breakpoint()
+    while True:
+        stdout, stderr = gcp.gcloud_capturing_output(
+            [
+                "compute",
+                "ssh",
+                instance_config.name,
+                f"--command",
+                "cat /var/log/hermit.log",
+            ],
+            ignore_error=True,
+        )
+
+        if stdout == "" and "Connection refused" in stderr:
+            output_callback(f"Can't connect yet, will retry... ({stderr})")
+        else:
+            # if log file does not exist yet, stderr will contain error and stdout will
+            # be blank.
+
+            if verbose:
+                new_output = stdout[len(previous_printed) :]
+                output_callback(new_output, end="")
+                previous_printed = stdout
+
+            is_ssh_ready, status = get_status_from_log(stdout)
+            # print(f"get_status_from_log -> f{(is_ssh_ready, status)}")
+
+            # show the user and status updates we haven't already shown
+            for line in status:
+                if line not in printed_status:
+                    output_callback(f"[from /var/log/hermit.log] {line}")
+                    printed_status.add(line)
+
+            if is_ssh_ready:
+                break
+
+        elapsed = time.time() - start_time
+        if elapsed > timeout:
+            raise TimeoutError(
+                f"{elapsed} seconds elapsed waiting for log entry saying ssh is listening"
+            )
+
+        if verbose:
+            print(f"sleeping for {poll_frequency} seconds")
+        time.sleep(poll_frequency)
+
+
+def get_status_from_log(log_content):
+    "Given the contents of /var/logs/hermit.log, return a tuple of (ssh_ready:bool, summary:List[str])"
+
+    ssh_ready = False
+    status = []
+
+    for pattern in [
+        "^(Checking filesystem)",
+        "^(Finished checking filesystem)",
+        "(Pulling from \\S+)$",
+    ]:
+        m = re.search(pattern, log_content, re.MULTILINE)
+        if m:
+            status.append(m.group(1))
+
+    m = re.search("^(Server listening on 0.0.0.0.*)$", log_content, re.MULTILINE)
+    if m:
+        status.append(m.group(1))
+        ssh_ready = True
+
+    return ssh_ready, status
+
+
 def add_command(subparser):
     def _up(args):
-        up(args.name)
+        up(args.name, args.verbose)
 
     parser = subparser.add_parser(
         "up", help="Start a compute instance based on the named configuration"
@@ -272,4 +371,10 @@ def add_command(subparser):
         help="The name to use when creating instance",
         nargs="?",
         default="default",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="If set, will print more logging information showing the server coming online",
     )

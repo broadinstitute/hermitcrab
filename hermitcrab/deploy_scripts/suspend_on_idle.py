@@ -60,6 +60,7 @@ def poll(poll_frequency, activity_timeout, name, zone, project, port):
 
 
 def suspend_instance(name, zone, project):
+    start_time = time.time()
     return_code = subprocess.run(
         [
             "docker",
@@ -76,6 +77,19 @@ def suspend_instance(name, zone, project):
             project,
         ]
     ).returncode
+    end_time = time.time()
+    elapsed = end_time - start_time
+
+    if elapsed > 10 * 60:
+        # it's been observed that this command often reports failure even though the vm successfully suspended.
+        # Specificly, it gets a timeout trying to read the response, because while it was
+        # reading, the VM got suspended. This is a bit of a hack, but lets try to detect
+        # this case by seeing how long that command took. If it took a _long_ time
+        # it's probably because the machine was suspended and woke up much later
+        log.info(
+            f"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})"
+        )
+        return_code = 0
 
     if return_code != 0:
         log.info(

@@ -1,6 +1,7 @@
 import os
 import json
 from typing import Dict, List
+import sqlite3
 
 from dataclasses import dataclass, asdict
 
@@ -45,6 +46,10 @@ def get_instance_config_dir():
     return os.path.join(get_home_config_dir(), "instances")
 
 
+def get_assumption_cache():
+    return os.path.join(get_home_config_dir(), "assumptions")
+
+
 def get_tunnel_status_dir(create_if_missing=False):
     path = os.path.join(get_home_config_dir(), "tunnels")
     if create_if_missing:
@@ -55,6 +60,32 @@ def get_tunnel_status_dir(create_if_missing=False):
 def ensure_dir_exists(config_dir):
     if not os.path.exists(config_dir):
         os.makedirs(config_dir)
+
+
+def record_assumption(name):
+    filename = get_assumption_cache()
+    new_db = not os.path.exists(filename)
+    connection = sqlite3.connect(filename)
+    if new_db:
+        connection.execute(
+            "CREATE TABLE assumption (name varchar(100), primary key (name))"
+        )
+    cur = connection.cursor()
+    cur.execute("insert into assumption ( name ) values ( ? )", [name])
+    connection.commit()
+    connection.close()
+
+
+def is_assumption_present(name):
+    filename = get_assumption_cache()
+    if not os.path.exists(filename):
+        return False
+    connection = sqlite3.connect(filename)
+    cur = connection.cursor()
+    cur.execute("select name from assumption where name = ?", [name])
+    rows = cur.fetchall()
+    connection.close()
+    return len(rows) > 0
 
 
 def get_instance_names() -> List[str]:

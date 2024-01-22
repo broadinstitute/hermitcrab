@@ -56,6 +56,27 @@ def _check_procs():
         proc.poll()
 
 
+def gcloud_capturing_output(args: List[str], ignore_error: bool = False):
+    cmd = _make_command(args)
+
+    log_debug(f"Executing, capturing output: {cmd}")
+
+    proc = subprocess.Popen(
+        cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL
+    )
+    stdout, stderr = proc.communicate(timeout=10)
+    stdout = stdout.decode("utf8")
+    stderr = stderr.decode("utf8")
+    log_debug(f"stdout: {stdout}")
+    log_debug(f"stderr: {stderr}")
+    if not ignore_error:
+        assert (
+            proc.returncode == 0
+        ), f"Executing {cmd} failed (return code: {proc.returncode}). Stderr: {stderr}"
+
+    return stdout, stderr
+
+
 def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)
 

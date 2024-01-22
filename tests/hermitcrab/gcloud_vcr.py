@@ -10,6 +10,8 @@ from functools import wraps
 
 from hermitcrab import tunnel
 from hermitcrab import gcp
+import hermitcrab.command.create_service_account
+import os
 
 
 @dataclass
@@ -176,10 +178,6 @@ def _get_test_name(request):
     if test_class:
         return "{}.{}".format(test_class.__name__, request.node.name)
     return request.node.name
-
-
-import hermitcrab.command.create_service_account
-import os
 
 
 def setup_vcr(monkeypatch, request, mode=None):
