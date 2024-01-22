@@ -1,3 +1,5 @@
+import typing
+
 log_updates = [
     """Starting cloudinit bootcmd...
 Checking filesystem /dev/disk/by-id/google-test-miniwdl-pd
@@ -129,11 +131,14 @@ def test_status_updates(monkeypatch):
 
     output = []
 
-    def capture_output(text):
+    def capture_output(text: str):
         output.append(text)
 
     hermitcrab.command.up.wait_for_instance_start(
-        MagicMock(), verbose=False, timeout=10 * 60, output_callback=capture_output
+        MagicMock(),
+        verbose=False,
+        timeout=10 * 60,
+        output_callback=(typing.cast(typing.Any, capture_output)),
     )
 
     assert output == [
