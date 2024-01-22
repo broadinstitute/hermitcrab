@@ -120,7 +120,7 @@
           "disks",
           "create",
           "hermit-demo-pd",
-          "--description=hermit vunknown VM started user hermit-test",
+          "--description=MASKED",
           "--size=50",
           "--zone=us-central1-a",
           "--type=pd-standard",
@@ -184,7 +184,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -277,11 +277,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -300,16 +300,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -373,7 +373,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -466,11 +466,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -489,16 +489,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -562,7 +562,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -655,11 +655,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -678,16 +678,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -751,7 +751,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -844,11 +844,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -867,16 +867,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -940,7 +940,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1033,11 +1033,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1056,16 +1056,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1129,7 +1129,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1222,11 +1222,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1245,16 +1245,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1318,7 +1318,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1411,11 +1411,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "OPlWTEaeES8=",
-          "id": "2289129658219960738",
+          "fingerprint": "UxuPW38Fsq8=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1434,16 +1434,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1507,7 +1507,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1600,11 +1600,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "QWmKU26_288=",
-          "id": "2289129658219960738",
+          "fingerprint": "8oUzO0YUk9g=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1623,16 +1623,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1696,7 +1696,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1789,11 +1789,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "QWmKU26_288=",
-          "id": "2289129658219960738",
+          "fingerprint": "8oUzO0YUk9g=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1812,16 +1812,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.69.20.158",
+                  "natIP": "35.224.19.250",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "t4_qxw1oZYg=",
+              "fingerprint": "oer8DFs0VC0=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1885,7 +1885,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Unknown CPU Platform",
-          "creationTimestamp": "2024-01-22T09:35:12.773-08:00",
+          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1978,12 +1978,12 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "8mZLRyolqt8=",
-          "id": "2289129658219960738",
+          "fingerprint": "5BGHRskQmEA=",
+          "id": "5034598282832346760",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:35:19.564-08:00",
-          "lastStopTimestamp": "2024-01-22T09:36:10.168-08:00",
+          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStopTimestamp": "2024-01-22T11:23:11.613-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -2006,11 +2006,11 @@
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "2YIxy92do_A=",
+              "fingerprint": "C27IdybEcCA=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.106",
+              "networkIP": "10.240.0.24",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2121,7 +2121,7 @@
           "instances",
           "create",
           "hermit-demo",
-          "--description=hermit vunknown VM started user hermit-test",
+          "--description=MASKED",
           "--image-family=cos-stable",
           "--image-project=cos-cloud",
           "--boot-disk-size=55GB",
@@ -2140,6 +2140,282 @@
     },
     {
       "returned": null
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "",
+        "ssh: connect to host 34.133.246.241 port 22: Connection refused\r\n\nRecommendation: To check for possible causes of SSH connectivity issues and get\nrecommendations, rerun the ssh command with the --troubleshoot option.\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot\n\nOr, to investigate an IAP tunneling issue:\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot --tunnel-through-iap\n\nERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].\n"
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "",
+        "Warning: Permanently added 'compute.3051633945516146241' (ED25519) to the list of known hosts.\r\ncat: /var/log/hermit.log: No such file or directory\n"
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "",
+        "cat: /var/log/hermit.log: No such file or directory\n"
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
+        ""
+      ]
     }
   ],
   [
@@ -2163,9 +2439,9 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:36:25.708-08:00",
+          "creationTimestamp": "2024-01-22T11:23:27.961-08:00",
           "deletionProtection": false,
-          "description": "hermit vunknown VM started user hermit-test",
+          "description": "hermit v1.4.0 VM started user hermit-test",
           "disks": [
             {
               "architecture": "X86_64",
@@ -2257,11 +2533,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "zcRCX5kajUY=",
-          "id": "4191529827926481271",
+          "fingerprint": "mmV_2Do5CNg=",
+          "id": "3051633945516146241",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:36:35.849-08:00",
+          "lastStartTimestamp": "2024-01-22T11:23:34.734-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "f23qkISemA8=",
@@ -2280,16 +2556,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.133.246.241",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "QyUV5LiwSfY=",
+              "fingerprint": "jsKenbqIn_A=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.18",
+              "networkIP": "10.240.0.17",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2354,9 +2630,9 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T09:36:25.708-08:00",
+          "creationTimestamp": "2024-01-22T11:23:27.961-08:00",
           "deletionProtection": false,
-          "description": "hermit vunknown VM started user hermit-test",
+          "description": "hermit v1.4.0 VM started user hermit-test",
           "disks": [
             {
               "architecture": "X86_64",
@@ -2448,11 +2724,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "zcRCX5kajUY=",
-          "id": "4191529827926481271",
+          "fingerprint": "mmV_2Do5CNg=",
+          "id": "3051633945516146241",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T09:36:35.849-08:00",
+          "lastStartTimestamp": "2024-01-22T11:23:34.734-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "f23qkISemA8=",
@@ -2471,16 +2747,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.133.246.241",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "QyUV5LiwSfY=",
+              "fingerprint": "jsKenbqIn_A=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.18",
+              "networkIP": "10.240.0.17",
               "stackType": "IPV4_ONLY"
             }
           ],

@@ -44,7 +44,9 @@ def _rewrite_metadata_param(args):
     new_args = []
     prefix = "--metadata-from-file=user-data="
     for arg in args:
-        if arg.startswith(prefix):
+        if arg.startswith("--description="):  # descriptions often contain the version
+            new_args.append("--description=MASKED")
+        elif arg.startswith(prefix):
             filename = arg[len(prefix) :]
             with open(filename, "rt") as fd:
                 content = fd.read()
@@ -118,7 +120,7 @@ def make_playback_wrapper(f, vcr):
 def _simplify_struct(x):
     if isinstance(x, dict):
         return {k: _simplify_struct(v) for k, v in x.items()}
-    elif isinstance(x, list):
+    elif isinstance(x, list) or isinstance(x, tuple):
         return [_simplify_struct(v) for v in x]
     else:
         assert (
@@ -206,7 +208,12 @@ def setup_vcr(monkeypatch, request, mode=None):
     if vcr.is_playback():
         vcr.read_recording(cassette_name)
 
-    for fn in ["gcloud_capturing_json_output", "gcloud_in_background", "gcloud"]:
+    for fn in [
+        "gcloud_capturing_json_output",
+        "gcloud_in_background",
+        "gcloud",
+        "gcloud_capturing_output",
+    ]:
         if vcr.is_recording():
             monkeypatch.setattr(
                 gcp, fn, make_recording_wrapper(getattr(gcp, fn), vcr.record)

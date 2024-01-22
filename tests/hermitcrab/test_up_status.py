@@ -96,6 +96,7 @@ Connection closed by 35.235.245.130 port 32949
 import hermitcrab.gcp
 import hermitcrab.command.up
 from unittest.mock import MagicMock
+import time
 
 
 def test_get_status_from_log():
@@ -128,6 +129,8 @@ def test_status_updates(monkeypatch):
     monkeypatch.setattr(
         hermitcrab.gcp, "gcloud_capturing_output", _mock_gcloud_capturing_output
     )
+
+    monkeypatch.setattr(time, "sleep", lambda x: None)
 
     output = []
 
