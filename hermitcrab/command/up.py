@@ -101,7 +101,7 @@ bootcmd:
             f"""- echo in-bootcmd-after-tmp-remount
 - 'mount'
 - 'echo "Checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log'
-- 'fsck -C 0 -a /dev/disk/by-id/google-{instance_config.pd_name} >> /var/log/hermit.log'
+- 'fsck -C 1 -a /dev/disk/by-id/google-{instance_config.pd_name} >> /var/log/hermit.log'
 - 'echo "Finished checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log'
 - 'mkdir -p /mnt/disks/{instance_config.pd_name}'
 - 'echo "Mounting /dev/disk/by-id/google-{instance_config.pd_name}" as /mnt/disks/{instance_config.pd_name} >> /var/log/hermit.log'
@@ -302,7 +302,8 @@ def wait_for_instance_start(
         )
 
         if stdout == "" and "Connection refused" in stderr:
-            output_callback(f"Can't connect yet, will retry... ({stderr})")
+            if verbose:
+                output_callback(f"Can't connect yet, will retry... ({stderr})")
         else:
             # if log file does not exist yet, stderr will contain error and stdout will
             # be blank.
@@ -341,14 +342,32 @@ def get_status_from_log(log_content):
     ssh_ready = False
     status = []
 
-    for pattern in [
-        "^(Checking filesystem)",
-        "^(Finished checking filesystem)",
-        "(Pulling from \\S+)$",
-    ]:
-        m = re.search(pattern, log_content, re.MULTILINE)
-        if m:
-            status.append(m.group(1))
+    check_fs_m = re.search("^(Checking filesystem)", log_content, re.MULTILINE)
+    if check_fs_m:
+        status.append(check_fs_m.group(1))
+
+    finished_check_fs_m = re.search(
+        "^(Finished checking filesystem)", log_content, re.MULTILINE
+    )
+    if finished_check_fs_m:
+        status.append(finished_check_fs_m.group(1))
+
+    if check_fs_m and not finished_check_fs_m:
+        progress_matches = re.findall(
+            "^(\\d+) (\\d+) (\\d+) (\\S+)$", log_content, re.MULTILINE
+        )  # 5 3199 3200 /dev/sdb
+        if len(progress_matches) > 0:
+            last_progress_match = progress_matches[-1]
+            phase = int(last_progress_match[0])
+            current_value = int(last_progress_match[1])
+            max_value = int(last_progress_match[2])
+            status.append(
+                f"Progress (Phase {phase}): {int(current_value*100/max_value)}%"
+            )
+
+    m = re.search("(Pulling from \\S+)$", log_content, re.MULTILINE)
+    if m:
+        status.append(m.group(1))
 
     m = re.search("^(Server listening on 0.0.0.0.*)$", log_content, re.MULTILINE)
     if m:

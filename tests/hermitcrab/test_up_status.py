@@ -100,7 +100,7 @@ def test_get_status_from_log():
     assert (
         False,
         [
-            "Mounting /dev/disk/by-id/google-test-miniwdl-pd as /mnt/disks/test-miniwdl-pd",
+            "Checking filesystem",
             "Pulling from depmap-omics/hermit-dev-env",
         ],
     ) == hermitcrab.command.up.get_status_from_log(log_updates[0])
@@ -114,7 +114,7 @@ def test_get_status_from_log():
 def test_status_updates(monkeypatch):
     output_index = 0
 
-    def _mock_gcloud_capturing_output(*args):
+    def _mock_gcloud_capturing_output(*args, **kwargs):
         nonlocal output_index
         output_index += 1
         output = ""
@@ -137,7 +137,58 @@ def test_status_updates(monkeypatch):
     )
 
     assert output == [
-        "[hermit] Mounting /dev/disk/by-id/google-test-miniwdl-pd as /mnt/disks/test-miniwdl-pd",
-        "[hermit] Pulling from depmap-omics/hermit-dev-env",
-        "[hermit] Server listening on 0.0.0.0 port 3022.",
+        "[from /var/log/hermit.log] Checking filesystem",
+        "[from /var/log/hermit.log] Pulling from depmap-omics/hermit-dev-env",
+        "[from /var/log/hermit.log] Server listening on 0.0.0.0 port 3022.",
     ]
+
+
+fsck_log_messages = [
+    """
+Starting cloudinit bootcmd...
+Checking filesystem /dev/disk/by-id/google-test-miniwdl-pd
+fsck from util-linux 2.38.1
+1 0 1600 /dev/sdb
+1 1 1600 /dev/sdb
+1 2 1600 /dev/sdb
+1 3 1600 /dev/sdb
+""",
+    """1 123 1600 /dev/sdb
+1 124 1600 /dev/sdb
+1 125 1600 /dev/sdb
+1 126 1600 /dev/sdb
+1 127 1600 /dev/sdb
+""",
+    """5 3198 3200 /dev/sdb
+5 3199 3200 /dev/sdb
+5 3200 3200 /dev/sdb
+/dev/sdb: 219827/13107200 files (5.2% non-contiguous), 13578676/52428800 blocks
+Finished checking filesystem /dev/disk/by-id/google-test-miniwdl-pd
+Mounting /dev/disk/by-id/google-test-miniwdl-pd as /mnt/disks/test-miniwdl-pd
+Setting up ubuntu home directory permissions...
+Mounting home directory into place...
+""",
+]
+
+
+def test_fsck_progress_from_log():
+    assert (
+        False,
+        [
+            "Checking filesystem",
+            "Progress (Phase 1): 0%",
+        ],
+    ) == hermitcrab.command.up.get_status_from_log(fsck_log_messages[0])
+
+    assert (
+        False,
+        [
+            "Checking filesystem",
+            "Progress (Phase 1): 7%",
+        ],
+    ) == hermitcrab.command.up.get_status_from_log("".join(fsck_log_messages[0:2]))
+
+    assert (
+        False,
+        ["Checking filesystem", "Finished checking filesystem"],
+    ) == hermitcrab.command.up.get_status_from_log("".join(fsck_log_messages))
