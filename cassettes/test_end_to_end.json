@@ -184,7 +184,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -277,11 +277,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -300,16 +300,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -373,7 +373,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -466,11 +466,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -489,16 +489,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -562,7 +562,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -655,11 +655,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -678,16 +678,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -751,7 +751,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -844,11 +844,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -867,16 +867,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -940,7 +940,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1033,11 +1033,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1056,16 +1056,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1129,7 +1129,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1222,11 +1222,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1245,16 +1245,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1318,7 +1318,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1411,11 +1411,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "UxuPW38Fsq8=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1434,16 +1434,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1507,7 +1507,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1600,11 +1600,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "8oUzO0YUk9g=",
-          "id": "5034598282832346760",
+          "fingerprint": "6q4ij-ObHE8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1623,16 +1623,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1666,7 +1666,7 @@
             "updateAutoLearnPolicy": true
           },
           "startRestricted": false,
-          "status": "STOPPING",
+          "status": "RUNNING",
           "tags": {
             "fingerprint": "42WmSpB8rSM="
           },
@@ -1696,7 +1696,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1789,11 +1789,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "8oUzO0YUk9g=",
-          "id": "5034598282832346760",
+          "fingerprint": "a2rceIzzH7A=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1812,16 +1812,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "35.224.19.250",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "oer8DFs0VC0=",
+              "fingerprint": "hVMBo4DvmQE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1885,7 +1885,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Unknown CPU Platform",
-          "creationTimestamp": "2024-01-22T11:22:15.965-08:00",
+          "creationTimestamp": "2024-01-24T07:13:17.032-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1978,12 +1978,12 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "5BGHRskQmEA=",
-          "id": "5034598282832346760",
+          "fingerprint": "6-7r7pa5eP8=",
+          "id": "3700974713671817187",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:22:21.892-08:00",
-          "lastStopTimestamp": "2024-01-22T11:23:11.613-08:00",
+          "lastStartTimestamp": "2024-01-24T07:13:23.107-08:00",
+          "lastStopTimestamp": "2024-01-24T07:14:16.057-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -2006,11 +2006,11 @@
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "C27IdybEcCA=",
+              "fingerprint": "pev8nPozgUY=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.24",
+              "networkIP": "10.240.0.28",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2128,7 +2128,7 @@
           "--zone=us-central1-a",
           "--project=broad-achilles",
           "--machine-type=n2-standard-2",
-          "--metadata-from-file=user-data=<#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- echo in-bootcmd\n- 'echo \"Starting cloudinit bootcmd...\" >> /var/log/hermit.log'\n- mount\n- umount /tmp\n\n- mount --bind /var/tmp /tmp\n- echo in-bootcmd-after-tmp-remount\n- 'mount'\n- 'echo \"Checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'fsck -C 1 -a /dev/disk/by-id/google-hermit-demo-pd >> /var/log/hermit.log'\n- 'echo \"Finished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'mkdir -p /mnt/disks/hermit-demo-pd'\n- 'echo \"Mounting /dev/disk/by-id/google-hermit-demo-pd\" as /mnt/disks/hermit-demo-pd >> /var/log/hermit.log'\n- 'mount -t ext4 /dev/disk/by-id/google-hermit-demo-pd /mnt/disks/hermit-demo-pd'\n- 'mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh'\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa X\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        start_time = time.time()\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n        end_time = time.time()\n        elapsed = end_time - start_time\n\n        if elapsed > 10 * 60:\n            # it's been observed that this command often reports failure even though the vm successfully suspended.\n            # Specificly, it gets a timeout trying to read the response, because while it was\n            # reading, the VM got suspended. This is a bit of a hack, but lets try to detect\n            # this case by seeing how long that command took. If it took a _long_ time\n            # it's probably because the machine was suspended and woke up much later\n            log.info(\n                f\"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})\"\n            )\n            return_code = 0\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    StandardOutput=append:/var/log/hermit.log\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - echo in-runcmd\n  - 'echo \"Setting up ubuntu home directory permissions...\" >> /var/log/hermit.log'\n  - mount\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - 'echo \"Mounting home directory into place...\" >> /var/log/hermit.log'\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - 'echo \"Starting up services...\" >> /var/log/hermit.log'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n  - 'echo \"Cloudinit runcmd complete.\" >> /var/log/hermit.log'\n>",
+          "--metadata-from-file=user-data=<#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- echo in-bootcmd\n- 'echo \"Starting cloudinit bootcmd...\" >> /var/log/hermit.log'\n- mount\n- umount /tmp\n\n- mount --bind /var/tmp /tmp\n- echo in-bootcmd-after-tmp-remount\n- 'mount'\n- 'echo \"Checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'fsck -C 1 -a /dev/disk/by-id/google-hermit-demo-pd >> /var/log/hermit.log'\n- 'echo \"Finished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'mkdir -p /mnt/disks/hermit-demo-pd'\n- 'echo \"Mounting /dev/disk/by-id/google-hermit-demo-pd\" as /mnt/disks/hermit-demo-pd >> /var/log/hermit.log'\n- 'mount -t ext4 /dev/disk/by-id/google-hermit-demo-pd /mnt/disks/hermit-demo-pd'\n- 'mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh'\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa X\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n    import os\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        has_ssd = os.path.exists(\"/mnt/disks/local-ssd-0\")\n        start_time = time.time()\n        cmd = [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n    \n        if has_ssd:\n            cmd.append(\"--discard-local-ssd=false\")\n\n        return_code = subprocess.run(\n            cmd\n        ).returncode\n        end_time = time.time()\n        elapsed = end_time - start_time\n\n        if elapsed > 10 * 60:\n            # it's been observed that this command often reports failure even though the vm successfully suspended.\n            # Specificly, it gets a timeout trying to read the response, because while it was\n            # reading, the VM got suspended. This is a bit of a hack, but lets try to detect\n            # this case by seeing how long that command took. If it took a _long_ time\n            # it's probably because the machine was suspended and woke up much later\n            log.info(\n                f\"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})\"\n            )\n            return_code = 0\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    StandardOutput=append:/var/log/hermit.log\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - echo in-runcmd\n  - 'echo \"Setting up ubuntu home directory permissions...\" >> /var/log/hermit.log'\n  - mount\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - 'echo \"Mounting home directory into place...\" >> /var/log/hermit.log'\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - 'echo \"Starting up services...\" >> /var/log/hermit.log'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n  - 'echo \"Cloudinit runcmd complete.\" >> /var/log/hermit.log'\n>",
           "--disk=name=hermit-demo-pd,device-name=hermit-demo-pd,auto-delete=no",
           "--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw",
           "--service-account=hermit-nrqacuv537@broad-achilles.iam.gserviceaccount.com"
@@ -2161,7 +2161,7 @@
     {
       "returned": [
         "",
-        "ssh: connect to host 34.133.246.241 port 22: Connection refused\r\n\nRecommendation: To check for possible causes of SSH connectivity issues and get\nrecommendations, rerun the ssh command with the --troubleshoot option.\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot\n\nOr, to investigate an IAP tunneling issue:\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot --tunnel-through-iap\n\nERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].\n"
+        "ssh: connect to host 34.28.132.90 port 22: Connection refused\r\n\nRecommendation: To check for possible causes of SSH connectivity issues and get\nrecommendations, rerun the ssh command with the --troubleshoot option.\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot\n\nOr, to investigate an IAP tunneling issue:\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot --tunnel-through-iap\n\nERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].\n"
       ]
     }
   ],
@@ -2184,7 +2184,7 @@
     {
       "returned": [
         "",
-        "Warning: Permanently added 'compute.3051633945516146241' (ED25519) to the list of known hosts.\r\ncat: /var/log/hermit.log: No such file or directory\n"
+        "Warning: Permanently added 'compute.199797569601968061' (ED25519) to the list of known hosts.\r\ncat: /var/log/hermit.log: No such file or directory\n"
       ]
     }
   ],
@@ -2275,7 +2275,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n",
         ""
       ]
     }
@@ -2298,7 +2298,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n",
         ""
       ]
     }
@@ -2321,7 +2321,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\n",
         ""
       ]
     }
@@ -2344,7 +2344,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\n",
         ""
       ]
     }
@@ -2367,7 +2367,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n",
         ""
       ]
     }
@@ -2390,7 +2390,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\n",
         ""
       ]
     }
@@ -2413,7 +2413,53 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
         ""
       ]
     }
@@ -2439,9 +2485,9 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:23:27.961-08:00",
+          "creationTimestamp": "2024-01-24T07:14:27.800-08:00",
           "deletionProtection": false,
-          "description": "hermit v1.4.0 VM started user hermit-test",
+          "description": "hermit v1.5.0 VM started user hermit-test",
           "disks": [
             {
               "architecture": "X86_64",
@@ -2533,18 +2579,18 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "mmV_2Do5CNg=",
-          "id": "3051633945516146241",
+          "fingerprint": "JvPjLyHTui8=",
+          "id": "199797569601968061",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:23:34.734-08:00",
+          "lastStartTimestamp": "2024-01-24T07:14:33.219-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
-            "fingerprint": "f23qkISemA8=",
+            "fingerprint": "TyEphZRANmY=",
             "items": [
               {
                 "key": "user-data",
-                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- echo in-bootcmd\n- 'echo \"Starting cloudinit bootcmd...\" >> /var/log/hermit.log'\n- mount\n- umount /tmp\n\n- mount --bind /var/tmp /tmp\n- echo in-bootcmd-after-tmp-remount\n- 'mount'\n- 'echo \"Checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'fsck -C 1 -a /dev/disk/by-id/google-hermit-demo-pd >> /var/log/hermit.log'\n- 'echo \"Finished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'mkdir -p /mnt/disks/hermit-demo-pd'\n- 'echo \"Mounting /dev/disk/by-id/google-hermit-demo-pd\" as /mnt/disks/hermit-demo-pd >> /var/log/hermit.log'\n- 'mount -t ext4 /dev/disk/by-id/google-hermit-demo-pd /mnt/disks/hermit-demo-pd'\n- 'mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh'\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        start_time = time.time()\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n        end_time = time.time()\n        elapsed = end_time - start_time\n\n        if elapsed > 10 * 60:\n            # it's been observed that this command often reports failure even though the vm successfully suspended.\n            # Specificly, it gets a timeout trying to read the response, because while it was\n            # reading, the VM got suspended. This is a bit of a hack, but lets try to detect\n            # this case by seeing how long that command took. If it took a _long_ time\n            # it's probably because the machine was suspended and woke up much later\n            log.info(\n                f\"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})\"\n            )\n            return_code = 0\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    StandardOutput=append:/var/log/hermit.log\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - echo in-runcmd\n  - 'echo \"Setting up ubuntu home directory permissions...\" >> /var/log/hermit.log'\n  - mount\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - 'echo \"Mounting home directory into place...\" >> /var/log/hermit.log'\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - 'echo \"Starting up services...\" >> /var/log/hermit.log'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n  - 'echo \"Cloudinit runcmd complete.\" >> /var/log/hermit.log'\n"
+                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- echo in-bootcmd\n- 'echo \"Starting cloudinit bootcmd...\" >> /var/log/hermit.log'\n- mount\n- umount /tmp\n\n- mount --bind /var/tmp /tmp\n- echo in-bootcmd-after-tmp-remount\n- 'mount'\n- 'echo \"Checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'fsck -C 1 -a /dev/disk/by-id/google-hermit-demo-pd >> /var/log/hermit.log'\n- 'echo \"Finished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'mkdir -p /mnt/disks/hermit-demo-pd'\n- 'echo \"Mounting /dev/disk/by-id/google-hermit-demo-pd\" as /mnt/disks/hermit-demo-pd >> /var/log/hermit.log'\n- 'mount -t ext4 /dev/disk/by-id/google-hermit-demo-pd /mnt/disks/hermit-demo-pd'\n- 'mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh'\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n    import os\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        has_ssd = os.path.exists(\"/mnt/disks/local-ssd-0\")\n        start_time = time.time()\n        cmd = [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n    \n        if has_ssd:\n            cmd.append(\"--discard-local-ssd=false\")\n\n        return_code = subprocess.run(\n            cmd\n        ).returncode\n        end_time = time.time()\n        elapsed = end_time - start_time\n\n        if elapsed > 10 * 60:\n            # it's been observed that this command often reports failure even though the vm successfully suspended.\n            # Specificly, it gets a timeout trying to read the response, because while it was\n            # reading, the VM got suspended. This is a bit of a hack, but lets try to detect\n            # this case by seeing how long that command took. If it took a _long_ time\n            # it's probably because the machine was suspended and woke up much later\n            log.info(\n                f\"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})\"\n            )\n            return_code = 0\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    StandardOutput=append:/var/log/hermit.log\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - echo in-runcmd\n  - 'echo \"Setting up ubuntu home directory permissions...\" >> /var/log/hermit.log'\n  - mount\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - 'echo \"Mounting home directory into place...\" >> /var/log/hermit.log'\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - 'echo \"Starting up services...\" >> /var/log/hermit.log'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n  - 'echo \"Cloudinit runcmd complete.\" >> /var/log/hermit.log'\n"
               }
             ],
             "kind": "compute#metadata"
@@ -2556,16 +2602,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.133.246.241",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "jsKenbqIn_A=",
+              "fingerprint": "7DroFn920pc=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.17",
+              "networkIP": "10.240.0.29",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2630,9 +2676,9 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-22T11:23:27.961-08:00",
+          "creationTimestamp": "2024-01-24T07:14:27.800-08:00",
           "deletionProtection": false,
-          "description": "hermit v1.4.0 VM started user hermit-test",
+          "description": "hermit v1.5.0 VM started user hermit-test",
           "disks": [
             {
               "architecture": "X86_64",
@@ -2724,18 +2770,18 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "mmV_2Do5CNg=",
-          "id": "3051633945516146241",
+          "fingerprint": "JvPjLyHTui8=",
+          "id": "199797569601968061",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-22T11:23:34.734-08:00",
+          "lastStartTimestamp": "2024-01-24T07:14:33.219-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
-            "fingerprint": "f23qkISemA8=",
+            "fingerprint": "TyEphZRANmY=",
             "items": [
               {
                 "key": "user-data",
-                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- echo in-bootcmd\n- 'echo \"Starting cloudinit bootcmd...\" >> /var/log/hermit.log'\n- mount\n- umount /tmp\n\n- mount --bind /var/tmp /tmp\n- echo in-bootcmd-after-tmp-remount\n- 'mount'\n- 'echo \"Checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'fsck -C 1 -a /dev/disk/by-id/google-hermit-demo-pd >> /var/log/hermit.log'\n- 'echo \"Finished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'mkdir -p /mnt/disks/hermit-demo-pd'\n- 'echo \"Mounting /dev/disk/by-id/google-hermit-demo-pd\" as /mnt/disks/hermit-demo-pd >> /var/log/hermit.log'\n- 'mount -t ext4 /dev/disk/by-id/google-hermit-demo-pd /mnt/disks/hermit-demo-pd'\n- 'mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh'\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        start_time = time.time()\n        return_code = subprocess.run(\n            [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n        ).returncode\n        end_time = time.time()\n        elapsed = end_time - start_time\n\n        if elapsed > 10 * 60:\n            # it's been observed that this command often reports failure even though the vm successfully suspended.\n            # Specificly, it gets a timeout trying to read the response, because while it was\n            # reading, the VM got suspended. This is a bit of a hack, but lets try to detect\n            # this case by seeing how long that command took. If it took a _long_ time\n            # it's probably because the machine was suspended and woke up much later\n            log.info(\n                f\"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})\"\n            )\n            return_code = 0\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    StandardOutput=append:/var/log/hermit.log\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - echo in-runcmd\n  - 'echo \"Setting up ubuntu home directory permissions...\" >> /var/log/hermit.log'\n  - mount\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - 'echo \"Mounting home directory into place...\" >> /var/log/hermit.log'\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - 'echo \"Starting up services...\" >> /var/log/hermit.log'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n  - 'echo \"Cloudinit runcmd complete.\" >> /var/log/hermit.log'\n"
+                "value": "#cloud-config\n\nusers:\n- name: ubuntu\n\nbootcmd:\n- echo in-bootcmd\n- 'echo \"Starting cloudinit bootcmd...\" >> /var/log/hermit.log'\n- mount\n- umount /tmp\n\n- mount --bind /var/tmp /tmp\n- echo in-bootcmd-after-tmp-remount\n- 'mount'\n- 'echo \"Checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'fsck -C 1 -a /dev/disk/by-id/google-hermit-demo-pd >> /var/log/hermit.log'\n- 'echo \"Finished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\" >> /var/log/hermit.log'\n- 'mkdir -p /mnt/disks/hermit-demo-pd'\n- 'echo \"Mounting /dev/disk/by-id/google-hermit-demo-pd\" as /mnt/disks/hermit-demo-pd >> /var/log/hermit.log'\n- 'mount -t ext4 /dev/disk/by-id/google-hermit-demo-pd /mnt/disks/hermit-demo-pd'\n- 'mkdir -p /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh'\n\nwrite_files:\n- path: /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys\n  permissions: \"0700\"\n  content: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaYC3J7bMkK6IbJlDYpDu1KiESCo0a9jOjRNsaMocRz+P6ZF8nByuY75h8b2FgzA3yhL9/jXYkdmeX5FXYdc8mbyAg/uTXm176Eo1TghhwoGyOatoHr4ogBKsHsqpdl+QOukG7S2OyBXXrarGLgBKKSwTtz8dM1gtjR+cFzUZGn1cz7EVrXGiZLAoqtoNPmcG6ro3SHyeofPOMcBMM/HrC04ihJJ3Lfwcv9WRSDmQkUPeo119rPv59r4HHovSFK23oV9C+MPTq1AMcMn7jnUC5v3SLqIFq2icc3sxO52zbgfXuOjBhq5nFAxqHnPiyPDEQiQBiMdafnvNwNPzE6Mq3 pmontgom@MBRCF0-08B\n\n- path: /home/cloudservice/suspend_on_idle.py\n  content: |\n    import subprocess\n    import re\n    import time\n    import argparse\n    import os\n\n    # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}\n    # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient\n    import logging\n\n    log = logging.getLogger(__name__)\n\n\n    def main():\n        parser = argparse.ArgumentParser()\n        parser.add_argument(\"poll_frequency\", type=float)\n        parser.add_argument(\"activity_timeout\", type=float)\n        parser.add_argument(\"name\")\n        parser.add_argument(\"zone\")\n        parser.add_argument(\"project\")\n        parser.add_argument(\"port\")\n        args = parser.parse_args()\n\n        logging.basicConfig(level=logging.INFO)\n\n        # fetch docker image at the beginning just to make sure it's successful and we don't wait until\n        # we actually need it.\n        subprocess.check_call([\"docker\", \"pull\", \"google/cloud-sdk\"])\n\n        poll(\n            args.poll_frequency * 60,\n            args.activity_timeout * 60,\n            args.name,\n            args.zone,\n            args.project,\n            args.port,\n        )\n\n\n    def poll(poll_frequency, activity_timeout, name, zone, project, port):\n        last_bytes_transmitted = None\n        last_activity = time.time()\n        while True:\n            bytes_transmitted = get_bytes_transmitted(port)\n            if last_bytes_transmitted != bytes_transmitted:\n                last_bytes_transmitted = bytes_transmitted\n                last_activity = time.time()\n                log.info(\"%s\", f\"active (last_bytes_transmitted={last_bytes_transmitted})\")\n            elapsed_since_activity = time.time() - last_activity\n            if elapsed_since_activity > activity_timeout:\n                log.info(\n                    \"%s\",\n                    f\"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...\",\n                )\n                suspend_instance(name, zone, project)\n                log.info(\"Suspend complete\")\n                time.sleep(5 * 60)\n                # this is likely after the VM has been resumed\n                log.info(\"Resuming polling...\")\n            time.sleep(poll_frequency)\n\n\n    def suspend_instance(name, zone, project):\n        has_ssd = os.path.exists(\"/mnt/disks/local-ssd-0\")\n        start_time = time.time()\n        cmd = [\n                \"docker\",\n                \"run\",\n                \"google/cloud-sdk\",\n                \"gcloud\",\n                \"compute\",\n                \"instances\",\n                \"suspend\",\n                name,\n                \"--zone\",\n                zone,\n                \"--project\",\n                project,\n            ]\n    \n        if has_ssd:\n            cmd.append(\"--discard-local-ssd=false\")\n\n        return_code = subprocess.run(\n            cmd\n        ).returncode\n        end_time = time.time()\n        elapsed = end_time - start_time\n\n        if elapsed > 10 * 60:\n            # it's been observed that this command often reports failure even though the vm successfully suspended.\n            # Specificly, it gets a timeout trying to read the response, because while it was\n            # reading, the VM got suspended. This is a bit of a hack, but lets try to detect\n            # this case by seeing how long that command took. If it took a _long_ time\n            # it's probably because the machine was suspended and woke up much later\n            log.info(\n                f\"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})\"\n            )\n            return_code = 0\n\n        if return_code != 0:\n            log.info(\n                f\"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead\"\n            )\n            return_code = subprocess.run([\"shutdown\", \"--poweroff\"]).returncode\n            log.info(f\"return code = {return_code}\")\n\n\n    def get_bytes_transmitted(port):\n        output = subprocess.check_output([\"iptables\", \"-nvxL\", \"CONTAINER_SSH\"])\n        lines = output.decode(\"utf8\").split(\"\\n\")\n\n        def parse():\n            for line in lines:\n                if (\n                    f\"tcp dpt:{port}\" in line\n                ):  # find the line for the rule for traffic on the port\n                    m = re.match(\"\\\\s*(\\\\d+)\\\\s+(\\\\d+)\\\\s+.\", line)\n                    if m is not None:\n                        return int(m.group(2))\n            return None  # could not find the rule\n\n        result = parse()\n        if result is None:\n            print(f\"Could not parse: {output}\")\n        return result\n\n\n    if __name__ == \"__main__\":\n        main()\n\n- path: /home/cloudservice/setup_firewall\n  content: |\n    # Create a chain for tracking traffic to ssh in container\n    iptables -N CONTAINER_SSH\n    iptables -I INPUT -j CONTAINER_SSH\n    iptables -A CONTAINER_SSH -p tcp --dport 3022\n    iptables -A INPUT -p tcp --dport 3022 -j ACCEPT\n- path: /etc/systemd/system/config-firewall.service\n  permissions: 0644\n  owner: root\n  content: |\n    [Unit]\n    Description=Configures the host firewall\n\n    [Service]\n    Type=oneshot\n    RemainAfterExit=true\n    ExecStart=/bin/sh /home/cloudservice/setup_firewall\n- path: /etc/systemd/system/container-sshd.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Container which we can connect via ssh\n    Wants=gcr-online.target config-firewall.service\n    After=gcr-online.target config-firewall.service\n\n    [Service]\n    Environment=\"HOME=/home/cloudservice\"\n    StandardOutput=append:/var/log/hermit.log\n    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker\n    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/hermit-demo-pd/home/ubuntu:/home/ubuntu us.gcr.io/broad-achilles/hermitcrab:with-docker /usr/sbin/sshd -D -e -p 3022\n    ExecStop=/usr/bin/docker stop container-sshd\n    ExecStopPost=/usr/bin/docker rm container-sshd\n    Restart=always\n- path: /etc/systemd/system/suspend-on-idle.service\n  permissions: \"0644\"\n  owner: root\n  content: |\n    [Unit]\n    Description=Suspend when container is detected to be idle\n    Wants=gcr-online.target\n    After=gcr-online.target\n    \n    [Service]\n    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 30 hermit-demo us-central1-a broad-achilles 3022\n    Restart=always\n- path: /etc/docker/daemon.json\n  permissions: \"0644\"\n  owner: root\n  content: |\n  \n   {\n   \t\"live-restore\": false,\n   \t\"log-opts\": {\n                   \"tag\": \"{{.Name}}\"\n           },\n   \t\"storage-driver\": \"overlay2\",\n   \t\"mtu\": 1460\n   }\n\nruncmd:\n  - echo in-runcmd\n  - 'echo \"Setting up ubuntu home directory permissions...\" >> /var/log/hermit.log'\n  - mount\n  - 'usermod -u 2000 ubuntu'\n  - 'groupmod -g 2000 ubuntu'\n  - chown 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu\n  - chmod -R 700 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - chown -R 2000:2000 /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh\n  - 'echo \"Mounting home directory into place...\" >> /var/log/hermit.log'\n  - mount --bind /mnt/disks/hermit-demo-pd/home/ubuntu/ /home/ubuntu\n  - 'chown ubuntu:ubuntu /mnt/disks/hermit-demo-pd/home/ubuntu/.ssh/authorized_keys'\n  - 'chmod 0666 /var/run/docker.sock'\n  - 'echo \"Starting up services...\" >> /var/log/hermit.log'\n  - systemctl daemon-reload\n  - systemctl restart docker\n  - systemctl start container-sshd.service\n  - systemctl start suspend-on-idle.service\n  - 'echo \"Cloudinit runcmd complete.\" >> /var/log/hermit.log'\n"
               }
             ],
             "kind": "compute#metadata"
@@ -2747,16 +2793,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.133.246.241",
+                  "natIP": "34.28.132.90",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "jsKenbqIn_A=",
+              "fingerprint": "7DroFn920pc=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.17",
+              "networkIP": "10.240.0.29",
               "stackType": "IPV4_ONLY"
             }
           ],

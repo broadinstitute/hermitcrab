@@ -2,6 +2,7 @@ import subprocess
 import re
 import time
 import argparse
+import os
 
 # cmd to suspend: docker run google/cloud-sdk gcloud compute instances suspend {name} --zone {zone}
 # but needs additional scopes/permissions. Create a service account for this? Actually just a broadening the scope looks sufficient
@@ -60,23 +61,27 @@ def poll(poll_frequency, activity_timeout, name, zone, project, port):
 
 
 def suspend_instance(name, zone, project):
+    has_ssd = os.path.exists("/mnt/disks/local-ssd-0")
     start_time = time.time()
-    return_code = subprocess.run(
-        [
-            "docker",
-            "run",
-            "google/cloud-sdk",
-            "gcloud",
-            "compute",
-            "instances",
-            "suspend",
-            name,
-            "--zone",
-            zone,
-            "--project",
-            project,
-        ]
-    ).returncode
+    cmd = [
+        "docker",
+        "run",
+        "google/cloud-sdk",
+        "gcloud",
+        "compute",
+        "instances",
+        "suspend",
+        name,
+        "--zone",
+        zone,
+        "--project",
+        project,
+    ]
+
+    if has_ssd:
+        cmd.append("--discard-local-ssd=false")
+
+    return_code = subprocess.run(cmd).returncode
     end_time = time.time()
     elapsed = end_time - start_time
 
