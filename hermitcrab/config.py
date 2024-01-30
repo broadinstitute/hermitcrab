@@ -88,12 +88,17 @@ def is_assumption_present(name):
     return len(rows) > 0
 
 
+import re
+
+INSTANCE_NAME_REGEX = "^[a-z0-9-]+.json$"
+
+
 def get_instance_names() -> List[str]:
     names = set()
     config_dir = get_instance_config_dir()
     if os.path.exists(config_dir):
         for filename in os.listdir(config_dir):
-            if filename.endswith(".json"):
+            if re.match(INSTANCE_NAME_REGEX, filename):
                 name = filename[: -len(".json")]  # drop the extension
                 config = get_min_instance_config(name)
                 names.add(config.name)

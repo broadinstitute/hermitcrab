@@ -59,7 +59,7 @@ def _check_procs():
 def gcloud_capturing_output(args: List[str], ignore_error: bool = False):
     cmd = _make_command(args)
 
-    log_debug(f"Executing, capturing output: {cmd}")
+    log_info(f"Executing, capturing output: {cmd}")
 
     proc = subprocess.Popen(
         cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL
@@ -80,7 +80,7 @@ def gcloud_capturing_output(args: List[str], ignore_error: bool = False):
 def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)
 
-    log_debug(f"Executing, expecting json output: {cmd}")
+    log_info(f"Executing, expecting json output: {cmd}")
 
     proc = subprocess.Popen(
         cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL

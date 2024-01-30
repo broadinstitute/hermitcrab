@@ -232,10 +232,17 @@ def up(name: str, verbose: bool):
 
     has_access_to_docker_image_assumption = f"{instance_config.service_account} has access to {instance_config.docker_image}"
     if not is_assumption_present(has_access_to_docker_image_assumption):
+        gcp.log_info(
+            f"Verifying {instance_config.service_account} has access to {instance_config.docker_image} "
+        )
         gcp.ensure_access_to_docker_image(
             instance_config.service_account, instance_config.docker_image
         )
         record_assumption(has_access_to_docker_image_assumption)
+    else:
+        gcp.log_info(
+            f"Assuming {instance_config.service_account} has access to {instance_config.docker_image} "
+        )
 
     status = gcp.get_instance_status(
         instance_config.name,
@@ -250,21 +257,29 @@ def up(name: str, verbose: bool):
         )
 
     if status is None:
+        gcp.log_info(f"Creating instance")
         create_instance(instance_config)
     elif status == "RUNNING":
+        gcp.log_info(f"Instance is running")
         print(f"Instance {instance_config.name} is already running.")
     elif status == "SUSPENDED":
+        gcp.log_info(f"Instance is suspended")
         resume_instance(instance_config)
     else:
         raise Exception(
             f"Instance status is {status}, and this tool doesn't know what to do with that status."
         )
 
+    gcp.log_info(f"Waiting for instance to start")
     wait_for_instance_start(instance_config, verbose, timeout=10 * 60)
 
     if is_tunnel_running(instance_config.name):
+        gcp.log_info(f"Stopping tunnel process")
         stop_tunnel(instance_config.name)
+    else:
+        gcp.log_info(f"Tunnel is not running running")
 
+    gcp.log_info(f"Starting tunnel")
     start_tunnel(
         instance_config.name,
         instance_config.zone,
@@ -272,7 +287,10 @@ def up(name: str, verbose: bool):
         instance_config.local_port,
     )
 
+    gcp.log_info(f"Updating ssh config")
     update_ssh_config(get_instance_configs())
+
+    gcp.log_info(f"setting default instance config to {instance_config.name}")
     set_default_instance_config(instance_config.name)
 
 
@@ -303,6 +321,7 @@ def wait_for_instance_start(
 
         if stdout == "" and "Connection refused" in stderr:
             if verbose:
+                gcp.log_info(f"Got connection refused: {stderr}")
                 output_callback(f"Can't connect yet, will retry... ({stderr})")
         else:
             # if log file does not exist yet, stderr will contain error and stdout will
@@ -314,7 +333,6 @@ def wait_for_instance_start(
                 previous_printed = stdout
 
             is_ssh_ready, status = get_status_from_log(stdout)
-            # print(f"get_status_from_log -> f{(is_ssh_ready, status)}")
 
             # show the user and status updates we haven't already shown
             for line in status:
