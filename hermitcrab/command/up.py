@@ -313,16 +313,24 @@ def wait_for_instance_start(
                 "compute",
                 "ssh",
                 instance_config.name,
+                f"--project",
+                instance_config.project,
+                f"--zone",
+                instance_config.zone,
                 f"--command",
                 "cat /var/log/hermit.log",
             ],
             ignore_error=True,
         )
 
-        if stdout == "" and "Connection refused" in stderr:
-            if verbose:
-                gcp.log_info(f"Got connection refused: {stderr}")
-                output_callback(f"Can't connect yet, will retry... ({stderr})")
+        if stderr != "":
+            gcp.log_info(f"stderr from compute ssh poll command: {stderr}")
+
+        if stdout == "":
+            if "Connection refused" in stderr:
+                if verbose:
+                    gcp.log_info(f"Got connection refused: {stderr}")
+                    output_callback(f"Can't connect yet, will retry... ({stderr})")
         else:
             # if log file does not exist yet, stderr will contain error and stdout will
             # be blank.

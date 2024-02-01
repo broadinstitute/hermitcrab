@@ -20,7 +20,7 @@
         "core": {
           "account": "pmontgom@broadinstitute.org",
           "disable_usage_reporting": "False",
-          "project": "broad-achilles"
+          "project": "broad-qqin"
         }
       }
     }
@@ -184,7 +184,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -195,34 +195,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -277,11 +277,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "crT-GMDmMAc=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -300,16 +300,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -373,7 +373,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -384,34 +384,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -466,11 +466,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "crT-GMDmMAc=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -489,16 +489,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -562,7 +562,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -573,34 +573,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -655,11 +655,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "crT-GMDmMAc=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -678,16 +678,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -751,7 +751,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -762,34 +762,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -844,11 +844,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "crT-GMDmMAc=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -867,16 +867,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -940,7 +940,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -951,34 +951,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -1033,11 +1033,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "crT-GMDmMAc=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1056,16 +1056,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1129,7 +1129,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1140,34 +1140,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -1222,11 +1222,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "crT-GMDmMAc=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1245,16 +1245,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1318,7 +1318,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1329,34 +1329,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -1411,11 +1411,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "0MdQV0JDHMw=",
-          "id": "6421189609188527847",
+          "fingerprint": "kCbv0OcVS6E=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1434,205 +1434,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
-              "stackType": "IPV4_ONLY"
-            }
-          ],
-          "scheduling": {
-            "automaticRestart": true,
-            "onHostMaintenance": "MIGRATE",
-            "preemptible": false,
-            "provisioningModel": "STANDARD"
-          },
-          "selfLink": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/instances/hermit-demo",
-          "serviceAccounts": [
-            {
-              "email": "hermit-nrqacuv537@broad-achilles.iam.gserviceaccount.com",
-              "scopes": [
-                "https://www.googleapis.com/auth/devstorage.read_only",
-                "https://www.googleapis.com/auth/logging.write",
-                "https://www.googleapis.com/auth/monitoring.write",
-                "https://www.googleapis.com/auth/pubsub",
-                "https://www.googleapis.com/auth/service.management.readonly",
-                "https://www.googleapis.com/auth/servicecontrol",
-                "https://www.googleapis.com/auth/trace.append"
-              ]
-            }
-          ],
-          "shieldedInstanceConfig": {
-            "enableIntegrityMonitoring": true,
-            "enableSecureBoot": false,
-            "enableVtpm": true
-          },
-          "shieldedInstanceIntegrityPolicy": {
-            "updateAutoLearnPolicy": true
-          },
-          "startRestricted": false,
-          "status": "RUNNING",
-          "tags": {
-            "fingerprint": "42WmSpB8rSM="
-          },
-          "zone": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a"
-        }
-      ]
-    }
-  ],
-  [
-    "gcloud_capturing_json_output",
-    {
-      "args": [
-        [
-          "compute",
-          "instances",
-          "list",
-          "--filter=name=hermit-demo",
-          "--format=json",
-          "--zones=us-central1-a",
-          "--project=broad-achilles"
-        ]
-      ],
-      "kwargs": {}
-    },
-    {
-      "returned": [
-        {
-          "canIpForward": false,
-          "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
-          "deletionProtection": false,
-          "disks": [
-            {
-              "architecture": "X86_64",
-              "autoDelete": true,
-              "boot": true,
-              "deviceName": "persistent-disk-0",
-              "diskSizeGb": "10",
-              "guestOsFeatures": [
-                {
-                  "type": "UEFI_COMPATIBLE"
-                },
-                {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
-                },
-                {
-                  "type": "SEV_SNP_CAPABLE"
-                },
-                {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
-                },
-                {
-                  "type": "SEV_CAPABLE"
-                },
-                {
-                  "type": "GVNIC"
-                },
-                {
-                  "type": "SEV_LIVE_MIGRATABLE"
-                }
-              ],
-              "index": 0,
-              "interface": "SCSI",
-              "kind": "compute#attachedDisk",
-              "licenses": [
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
-              ],
-              "mode": "READ_WRITE",
-              "shieldedInstanceInitialState": {
-                "dbs": [
-                  {
-                    "content": "MIIEDTCCAvWgAwIBAgIQRtEbux4j2WDjYimBMkIBYjANBgkqhkiG9w0BAQsFADCBizELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMR8wHQYDVQQLExZDb250YWluZXIgT3B0aW1pemVkIE9TMRgwFgYDVQQDEw9VRUZJIERCIEtleSB2MTAwHhcNMjAwODA2MTk0ODU1WhcNMzAwODA0MTk0ODU1WjCBizELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMR8wHQYDVQQLExZDb250YWluZXIgT3B0aW1pemVkIE9TMRgwFgYDVQQDEw9VRUZJIERCIEtleSB2MTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDQzJHu5A61uBNU6UUUZ5MiXjXwy8Du44BHhisNBpi6cTVHZddJ85iNldE5cPL7hZFJP9n77KyFRCCLxT2CVDNkwMyE2jvJkTz2x2qWvJ-uIuL25Asfgbrv7t1h2Jn790ZLwb9U3qQvqMLvIh_cTtNLat0DaZJsdnJo1MTnFAWrYZZ19KB4j6JJpG_QBnQ-s8XibeSSoa_bMEQTn2OEQFeEcume3CeuZKzXyytMLKkV_z4z-CYddyRwkOFivWUHWq2nVecQQgdyDNWYxGnY4MNsTMYFfv-mhyRzMwhxBFMwMAaEwhTFWsIP6VNwrwIgQaDw3o1fUEuzavTfdNhULaJLAgMBAAGjazBpMA8GA1UdEwEB_wQFMAMBAf8wKQYDVR0OBCIEIEtOsnFY2N1KW7dg9Wd_GEcIwV_a-U2DCn5ZyUsGWickMCsGA1UdIwQkMCKAIEtOsnFY2N1KW7dg9Wd_GEcIwV_a-U2DCn5ZyUsGWickMA0GCSqGSIb3DQEBCwUAA4IBAQCOd9V3WYv589dVov5ZOYo4zSs5PXpts1_8sYvMwvzLBr46LaejfG7KjjIY665Cnik__Zy9N3ZS9-fEeGKrBPE8ClwC06QhLbWDSFIqj2y9qq5FyBW0k1no2UQBnvx4CnLw_BgU3eae0wjv1lpDIbMwxe3E_aucVmzaIX3O83cw2JL9lLm1Psum0L2VHDZSCTP24vzrWoXXo4USHO_tBt_NkYrdkQH5CqGJYtxzKRwHHKEar3vzsiW4DPzlW8kUjRual1eBOKT5YKGbrOA_PJXV9x_7v1f2uAIrqh3HyppDTaGJ7Lux1MDf_hKuwAFI5QJTy9NEojbuUk1tzB4ys_W8",
-                    "fileType": "X509"
-                  }
-                ],
-                "dbxs": [
-                  {
-                    "content": "MIIEaDCCA1CgAwIBAgIJAKqfsrCdjyCoMA0GCSqGSIb3DQEBCwUAMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgTExDLjEUMBIGA1UECxMLQ2hyb21pdW0gT1MxFzAVBgNVBAMTDlVFRkkgREIgS2V5IHYxMB4XDTE4MTIwODAxMTk0MVoXDTI4MTIwNTAxMTk0MVowfzELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMRQwEgYDVQQLEwtDaHJvbWl1bSBPUzEXMBUGA1UEAxMOVUVGSSBEQiBLZXkgdjEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCtZ9U4P5aWlBwiTocmkUjOn2XpvHUlUOnsnhvsm994hAb0MNk2d3fXa8Nz14v9JiBTSf70KU2Zhxb_bSN3KAIv-f7F2AuXte7U9SnzZ02UDmK4TU1bFQW67Y3Gc2hWprCHYEjiRQD4J3WPWhuZnAXqzXQk3uDWVPETi-G9KAM1R-yNxZfoEjfIKhLabDsWqDtnMSovObLoVfwTdnm0WCuYTFtY_CKNxuxeKuzDsC5Su9N3dSFbpGhXJjwUaXPLWY5MFIqIQNBfhmWzDd4PItXaXV3V44IqWTXclE2aSUqkwNrEZ1cRpHG4PYM1aHVmjcO_dWlvthcepTIMIEMAXg2LAgMBAAGjgeYwgeMwHQYDVR0OBBYEFNXbmmdkM0aIsPMyEIv25JRaOPA-MIGzBgNVHSMEgaswgaiAFNXbmmdkM0aIsPMyEIv25JRaOPA-oYGEpIGBMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgTExDLjEUMBIGA1UECxMLQ2hyb21pdW0gT1MxFzAVBgNVBAMTDlVFRkkgREIgS2V5IHYxggkAqp-ysJ2PIKgwDAYDVR0TBAUwAwEB_zANBgkqhkiG9w0BAQsFAAOCAQEAJ2vbNymAKTUbRvxnAohHozVUByrKHCq1o8b-bKrgv7Ch0X4itfG8Uwvt0xG7CTpl_Dno92MtpOpFv4ydqox-pP1kTsRcnFNggndXdjpGILIB94KmFiYJvB6RzocJsXsXBa0tULOR24qiB9f93kfITS7Ec60WjFfpgYKEnuEgcV0yBuZzAZbxo1uF4n1hhmVUnKtEI9pX-8geYIIqIYiwwT2jnhFogWw4PeSyg-HMR1CLwwJeH2XDa924LpgHFuR-AbikipAE2vIE0yqJzo0o4tn9-sRuMaQcZ4VQqIzMiniW5H7nGeoQY3ktHX5eq6x-4jFvdLnzzq_D4sS-UWHzOA==",
-                    "fileType": "X509"
-                  },
-                  {
-                    "content": "MIIEiTCCA3GgAwIBAgIJAOzm3xz71Vu6MA0GCSqGSIb3DQEBCwUAMIGJMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIExMQy4xFDASBgNVBAsTC0Nocm9taXVtIE9TMSEwHwYDVQQDExhVRUZJIEtleSBFeGNoYW5nZSBLZXkgdjEwHhcNMTgxMjA4MDExOTQwWhcNMjgxMjA1MDExOTQwWjCBiTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMRQwEgYDVQQLEwtDaHJvbWl1bSBPUzEhMB8GA1UEAxMYVUVGSSBLZXkgRXhjaGFuZ2UgS2V5IHYxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwg5hvVH6fJSBNji7ynBl1SQzWceL5P3ul6RcB-1s5wXqzXlIHiyRqBdj4hj2pLzpKJGmXWnerIwJOkdsFg7IwZpA4xHE1F-M8XlpuuUn_Xdfccef36ddZEUH6QLwNm96T89F4ujt0omJ-0GV37vBsxEY-hwR3O8XBgyx8TvvYxNnVyTgi19qQdb2ES8-yWJkebdzgugcmNf9K-55fnEiyxWtrvEQb2sowWIS3-b1I_BP85pW2pldh9yQWfb3OY2NJhGSbQSnLi3J0IhRXROEtAXCU4MLTq2cHOpGX0DtJP_g_jD1pnC1O6CCZgVycK4DgZXeDzOG_2Uimhr0y1rcewIDAQABo4HxMIHuMB0GA1UdDgQWBBQEqlpkrYWCzJe69eMUdF1byztBmzCBvgYDVR0jBIG2MIGzgBQEqlpkrYWCzJe69eMUdF1byztBm6GBj6SBjDCBiTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMRQwEgYDVQQLEwtDaHJvbWl1bSBPUzEhMB8GA1UEAxMYVUVGSSBLZXkgRXhjaGFuZ2UgS2V5IHYxggkA7ObfHPvVW7owDAYDVR0TBAUwAwEB_zANBgkqhkiG9w0BAQsFAAOCAQEAWsd3mq0dADTD7Tx2uYcDeJcJHO0x91hO26p2cqUSox4wPgc4_xk5yiteMgDB5CWLwgcuneDAYYMO1PmktpEvLu9a82gCGxGiww-w78OJTOrs68VM1zB0jqA3X5EyVSwVJqi8idgrnnGsJAcSBosnUI8pNi9SDC3MRPE1q1EUjuDNjsE7t_ItBe-MSMWCH2hpG8unZ7uwWCRfAV3Fkdnq_S5HzDy6-kKyGdj-rprhVeDz2xSyMOlNIJig4uuqU166DTfoQA2TxnMG_TuHt69Z4uZcVwx_HwPs2-vUCCYqZDwuuHKNIEm8kIK8sSPSsp22sC8h-7Klb8wj_d0lzShgkg==",
-                    "fileType": "X509"
-                  },
-                  {
-                    "content": "MIID0zCCArugAwIBAgIJANuXsNG_1HHxMA0GCSqGSIb3DQEBCwUAMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKDAtHb29nbGUgTExDLjEUMBIGA1UECwwLQ2hyb21pdW0gT1MxFzAVBgNVBAMMDlVFRkkgREIgS2V5IHYxMCAXDTE4MDQyNzE1MDYzN1oYDzIyMTgwMzEwMTUwNjM3WjB_MQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNTW91bnRhaW4gVmlldzEUMBIGA1UECgwLR29vZ2xlIExMQy4xFDASBgNVBAsMC0Nocm9taXVtIE9TMRcwFQYDVQQDDA5VRUZJIERCIEtleSB2MTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALWzFg8obysKXCjnbBTpAM8dMFC2pHX7GpwESNG-FYQI218Y1Ao1p5BttGqPoU5lGNeYUXxgxIqfN18ALHH10gRCRfqbC54faPU1lMr0e0jvi67GgGztyLl4ltAgK7HHTHmtZwghYNS45pKz_LFGm-TlKg-HPZBFT9GtbjRZe5IS2xdKkWM_sPA8qXwzvqmLN3OQckf0KchSUQmB3-wh4vYFV2TEjz10oR0FZO8LFFOOeooukcRDYy219XrdM21APnfszHmfKhzAFddOcYdwKwOL-w9TKVUwCIM70GL_YOtywA17mQkEm0ON79oyQ0daDlZ0ngDxC8xUIASYsRRPOkkCAwEAAaNQME4wHQYDVR0OBBYEFFO6MYgG9CvYp6qAqn_Jm-MANGpvMB8GA1UdIwQYMBaAFFO6MYgG9CvYp6qAqn_Jm-MANGpvMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAIGyOB_3oFo6f3WoFrdBzimb_weH8hejtCggpcL-8Wdex9VRl5MKi_1GlGbietMDsr1alwdaagam9RafuIQplohTSBnQrU-u-LbtRlCF9C25GDQ70S0QlxAQmt41Sc7kSFTPm6BHauF3b_Raf9AX30MamptoXoAhgMnHAitCn6yCOsRJ_d1t04lqsiqefhf26xItvRnkuxG7-IQnbyGFCGPcjFNAE1thLpL_6y_dprVwTLsvZnsWYj-1Gg1yUkOnCN8Kl3Q3RDVqo98mORUc0bKB-B8_FQsbtmzbb-29nXQJW1FJx0ejqJyDGGBPHAGpwEJTVB3mwWXzBU6Ny7T3dlk=",
-                    "fileType": "X509"
-                  },
-                  {
-                    "content": "MIID6TCCAtGgAwIBAgIJAKgdcZ45rGMDMA0GCSqGSIb3DQEBCwUAMIGJMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNTW91bnRhaW4gVmlldzEUMBIGA1UECgwLR29vZ2xlIExMQy4xFDASBgNVBAsMC0Nocm9taXVtIE9TMSEwHwYDVQQDDBhVRUZJIEtleSBFeGNoYW5nZSBLZXkgdjEwIBcNMTgwNDI3MTUwNjM3WhgPMjIxODAzMTAxNTA2MzdaMIGJMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNTW91bnRhaW4gVmlldzEUMBIGA1UECgwLR29vZ2xlIExMQy4xFDASBgNVBAsMC0Nocm9taXVtIE9TMSEwHwYDVQQDDBhVRUZJIEtleSBFeGNoYW5nZSBLZXkgdjEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCbIdHPMQZZU68jI5kz5rmwvo-DQZZJ5amRnAUnBpNllhNQB6TaLUS_D9TIo_0X1e8T21Xk4Pf3D5ckbuQxsJzQ5OVEOb59sJ9AhjVUoxQxuVW-iBzD0mWbxKf2cASy2YRIEcaAAI5QT2SwO8gZy_G8LwAk-vO0vIbynN0WuFLl1Dp2cMQ3CxLSPH-QPSZyGd6o6ewUU9JzboppujXpk43EQH5ZJE_wJb_ujUFWcFzKHb_EkV1hI1TmBJ1-vR2kao4_1hQO6k1zLUR-MyBHY0SRU2OQxBpSez-qt7oItMBc1EanXvq9tqx0ndCTmXQYQplT5wtkPbE9sd5zwbDt8btHAgMBAAGjUDBOMB0GA1UdDgQWBBS5Tmmv3JM8w1mfP9V5xAIdjBhb7TAfBgNVHSMEGDAWgBS5Tmmv3JM8w1mfP9V5xAIdjBhb7TAMBgNVHRMEBTADAQH_MA0GCSqGSIb3DQEBCwUAA4IBAQB9BRTP37ik4jF2BmJJspMA6NHS7mxIckFCYKl-TO8zGFd3mlA6dnEw5WY-tUcBNJpAaHNJV_rzagGPpWMIoy-nAaLSSpnyhEXYTnQvzejYRijN3N0V9tmM0qgViHNBqTxdfcwlst5OUesGHPqgBOt5RRu5OGJ0rkuymWwxHOKIw43hz5FW7vhumbtJ3iy8HSFQIjSYMkr0sOzJhmvnHlpZ4pOoPNyNA9DM6smriH-2-MnJFM9w8bg6zsV5X-6KL464_FuXL_X_IWmAsAbi8Ge8ZMJjEaDrF1qkD4aLvu0MshzEdvrvQO-3Gn3Lmi_RYKR0HKZp7jXTySj76sxt9QK4",
-                    "fileType": "X509"
-                  }
-                ],
-                "keks": [
-                  {
-                    "content": "MIIEIjCCAwqgAwIBAgIRAKxVeWkn5a0pF1C0o_HUM6owDQYJKoZIhvcNAQELBQAwgZUxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgTExDLjEfMB0GA1UECxMWQ29udGFpbmVyIE9wdGltaXplZCBPUzEiMCAGA1UEAxMZVUVGSSBLZXkgRXhjaGFuZ2UgS2V5IHYxMDAeFw0yMDA4MDYxOTQ4NTBaFw0zMDA4MDQxOTQ4NTBaMIGVMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIExMQy4xHzAdBgNVBAsTFkNvbnRhaW5lciBPcHRpbWl6ZWQgT1MxIjAgBgNVBAMTGVVFRkkgS2V5IEV4Y2hhbmdlIEtleSB2MTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC6ZCJ4Oldm1z3gwwAjWqiHRMFrXPwq0XmVmLWoaGUBzeL41VwHK76iQTxl11HYhqaAr_0nmVQAM3M6so6cmydd7l1RPYJpZ3Shy3qO4xxgy30kp4zW00m9EVEdkmh9-9zi_G89uutz7wOb34M2Wrybwa7D5U102DmSoJAoq5z2YrvpjZoGLRGqBBP6A1l-_gRGMAgUMqKbhD1HF1VKXZnIGq9UJcpHhRvQxOG3nlVWk6z8dH-Rnp_9YfEPRORAUF5PUnUL5-I3wr5derIIoeYxc7G2ZuTyRWsF9WVyZ7OquYwxAY4l4xkDJpAvSomHkbfNgtCZyTm2pMIkRou0up5lAgMBAAGjazBpMA8GA1UdEwEB_wQFMAMBAf8wKQYDVR0OBCIEINDkWV5HwgIi6aogGQUbZwWC5Es_Vx9SX5kG8i1xiXxKMCsGA1UdIwQkMCKAINDkWV5HwgIi6aogGQUbZwWC5Es_Vx9SX5kG8i1xiXxKMA0GCSqGSIb3DQEBCwUAA4IBAQCOTmuK7QQ4sP_8qYI2-bkvbQg1Vpq0W_aWtm0AQDw2iEVgfIq8JxNHu61ZhkmBiEhsdaaj7bYt_8owpvxfRnmzMPhQ6iB51vkExjWipD9spgSb8tfp0te6MqTT3omyYI9x4L13wn9ufZtlhZXlVgbjUN1QyevHwNt7Kms8Nd9Jbk9JCV9JoOIjkBpUjpCWCDfdGDD-iGIPzGdS-KjrNiA4udnzkdkO83dFMMvu69a1snCRUshNvHBNPbPRwbRYV9lS_QTwfft7EgbNF0455gblZbejvGJgR1Vhyen0jIPouVWxXe0X7AnGK8Mc3DUQBPVGT4ZR0WChbcwiOavh2t2X",
-                    "fileType": "X509"
-                  }
-                ],
-                "pk": {
-                  "content": "MIIEGTCCAwGgAwIBAgIQYB8C9RH--O1hXkpp2FVSXjANBgkqhkiG9w0BAQsFADCBkTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMR8wHQYDVQQLExZDb250YWluZXIgT3B0aW1pemVkIE9TMR4wHAYDVQQDExVVRUZJIFBsYXRmb3JtIEtleSB2MTAwHhcNMjAwODA2MTk0ODQ0WhcNMzAwODA0MTk0ODQ0WjCBkTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC0dvb2dsZSBMTEMuMR8wHQYDVQQLExZDb250YWluZXIgT3B0aW1pemVkIE9TMR4wHAYDVQQDExVVRUZJIFBsYXRmb3JtIEtleSB2MTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQClSQ15LUf193eJfM6b5etGgz8auvdI72Cclo3fHvwXBzsm5T1QamwYAqrCTcS7MxauCTkmkXTS9ejM4NNpQWF6KG82nR88vRyKO_MnSNL8ZP-rtRu0p1X_mUYXwi0_nPkyPKLR2QJ9H2EOrw_RChWvwnu281WtfUPCYs2t2SjBCF_mgzZI8o3s8wOtL8y-Dmi9T0bGO1wYX2okz51PKbhgVGQA7KJRmeekIxEkiN7GOb_2VQqcdM9c846OlC-8abwgDvrL3YqKqhw8DnSM2AbNpZIgUTd1Ut3X-PWXVKBj3qdxjAyRez8dPWymXDji-CBoBzLsWEkUW87S1coggOABAgMBAAGjazBpMA8GA1UdEwEB_wQFMAMBAf8wKQYDVR0OBCIEIMk0-K2sxOjtSpl-2pXmBWwwvSMGEIThmdDsSxQk2XZQMCsGA1UdIwQkMCKAIMk0-K2sxOjtSpl-2pXmBWwwvSMGEIThmdDsSxQk2XZQMA0GCSqGSIb3DQEBCwUAA4IBAQA7Pmaixb0FuDtpesNGvaBkTGWWMO7bDtx4rQom7zprEnliFJZung08FS3r73ob1urH0lzZm9022nRp8xqcSGk3wDkE9xQppWhvjhf6SOHdwM9_OxVq6no_BPz1PkRYsg4V07cgYPCtp7Ck7ZBI7m3MbLUyg8EG14_tvjKX9Xh2h0FSGuGg8_jjGYCGDtaSPkXBpAWurZ5mC2o9CzGaBJR4f_51I5C2AfHMG0H5T0Kehuyb_IzX9mAwArGmt62e4T9SxdP7LZUNPMEzOrhW1RzXvsD6Vod4uA9h2n_lbZHiBBExM2PMwuoobb-io-W0ARL4OCN5jah0a7q1ax6UYJK-",
-                  "fileType": "X509"
-                }
-              },
-              "source": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/disks/hermit-demo",
-              "type": "PERSISTENT"
-            },
-            {
-              "autoDelete": false,
-              "boot": false,
-              "deviceName": "hermit-demo-pd",
-              "diskSizeGb": "50",
-              "index": 1,
-              "interface": "SCSI",
-              "kind": "compute#attachedDisk",
-              "mode": "READ_WRITE",
-              "source": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/disks/hermit-demo-pd",
-              "type": "PERSISTENT"
-            }
-          ],
-          "fingerprint": "nAbTEQo8si8=",
-          "id": "6421189609188527847",
-          "kind": "compute#instance",
-          "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
-          "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
-          "metadata": {
-            "fingerprint": "-6e5jZ7CRZs=",
-            "items": [
-              {
-                "key": "user-data",
-                "value": "#cloud-config\n\nbootcmd:\n- mkfs /dev/sdb\n- shutdown -h now\n        "
-              }
-            ],
-            "kind": "compute#metadata"
-          },
-          "name": "hermit-demo",
-          "networkInterfaces": [
-            {
-              "accessConfigs": [
-                {
-                  "kind": "compute#accessConfig",
-                  "name": "external-nat",
-                  "natIP": "34.27.86.121",
-                  "networkTier": "PREMIUM",
-                  "type": "ONE_TO_ONE_NAT"
-                }
-              ],
-              "fingerprint": "Ug8bYVscbUo=",
-              "kind": "compute#networkInterface",
-              "name": "nic0",
-              "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1696,7 +1507,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1707,34 +1518,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -1789,11 +1600,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "nAbTEQo8si8=",
-          "id": "6421189609188527847",
+          "fingerprint": "kCbv0OcVS6E=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1812,16 +1623,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.27.86.121",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "Ug8bYVscbUo=",
+              "fingerprint": "kQdetsU2uOs=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1885,7 +1696,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Unknown CPU Platform",
-          "creationTimestamp": "2024-01-24T07:43:05.600-08:00",
+          "creationTimestamp": "2024-02-01T07:04:23.417-08:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1896,34 +1707,34 @@
               "diskSizeGb": "10",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -1978,12 +1789,12 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "8ENx8A4WMOc=",
-          "id": "6421189609188527847",
+          "fingerprint": "p7miGhQBqeI=",
+          "id": "1420398498843855897",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:43:17.759-08:00",
-          "lastStopTimestamp": "2024-01-24T07:44:07.434-08:00",
+          "lastStartTimestamp": "2024-02-01T07:04:30.229-08:00",
+          "lastStopTimestamp": "2024-02-01T07:05:12.399-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -2006,11 +1817,11 @@
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "YnwJWLlFmj8=",
+              "fingerprint": "BNrxM4x0SeA=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.21",
+              "networkIP": "10.240.0.42",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2150,6 +1961,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2161,7 +1976,7 @@
     {
       "returned": [
         "",
-        "ssh: connect to host 34.28.132.90 port 22: Connection refused\r\n\nRecommendation: To check for possible causes of SSH connectivity issues and get\nrecommendations, rerun the ssh command with the --troubleshoot option.\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot\n\nOr, to investigate an IAP tunneling issue:\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot --tunnel-through-iap\n\nERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].\n"
+        "ssh: connect to host 34.122.208.29 port 22: Connection refused\r\n\nRecommendation: To check for possible causes of SSH connectivity issues and get\nrecommendations, rerun the ssh command with the --troubleshoot option.\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot\n\nOr, to investigate an IAP tunneling issue:\n\ngcloud compute ssh hermit-demo --project=broad-achilles --zone=us-central1-a --troubleshoot --tunnel-through-iap\n\nERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].\n"
       ]
     }
   ],
@@ -2173,6 +1988,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2184,7 +2003,7 @@
     {
       "returned": [
         "",
-        "Warning: Permanently added 'compute.4166160027341328058' (ED25519) to the list of known hosts.\r\ncat: /var/log/hermit.log: No such file or directory\n"
+        "Warning: Permanently added 'compute.4975417550504857048' (ED25519) to the list of known hosts.\r\ncat: /var/log/hermit.log: No such file or directory\n"
       ]
     }
   ],
@@ -2196,6 +2015,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2219,6 +2042,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2229,7 +2056,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\n",
         ""
       ]
     }
@@ -2242,6 +2069,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2252,7 +2083,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\n",
         ""
       ]
     }
@@ -2265,6 +2096,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2275,7 +2110,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\n",
         ""
       ]
     }
@@ -2288,6 +2123,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2298,7 +2137,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\n",
         ""
       ]
     }
@@ -2311,6 +2150,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2321,7 +2164,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n",
         ""
       ]
     }
@@ -2334,6 +2177,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2344,7 +2191,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n",
         ""
       ]
     }
@@ -2357,6 +2204,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2367,7 +2218,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\n",
         ""
       ]
     }
@@ -2380,6 +2231,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2390,7 +2245,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n",
         ""
       ]
     }
@@ -2403,6 +2258,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2413,7 +2272,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\n",
         ""
       ]
     }
@@ -2426,6 +2285,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2436,7 +2299,7 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
         ""
       ]
     }
@@ -2449,6 +2312,10 @@
           "compute",
           "ssh",
           "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
           "--command",
           "cat /var/log/hermit.log"
         ]
@@ -2459,7 +2326,61 @@
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n2ab09b027e7f: Waiting\nb63c54b8bb61: Waiting\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: \nThe superblock could not be read or does not describe a valid ext2/ext3/ext4\nfilesystem.  If the device is valid and it really contains an ext2/ext3/ext4\nfilesystem (and not swap or ufs or something else), then the superblock\nis corrupt, and you might try running e2fsck with an alternate superblock:\n    e2fsck -b 8193 <device>\n or\n    e2fsck -b 32768 <device>\n\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring default registries....\nWARNING: A long list of credential helpers may cause delays running 'docker build'.\nWe recommend passing the registry names via the --registries flag for the specific registries you are using\nAdding config for all GCR registries.\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us.gcr.io/broad-achilles/hermitcrab:with-docker' locally\nwith-docker: Pulling from broad-achilles/hermitcrab\n2ab09b027e7f: Pulling fs layer\nb63c54b8bb61: Pulling fs layer\n1d6ebe73e6cc: Pulling fs layer\nc2fe20a4dd63: Pulling fs layer\n34d4f150e761: Pulling fs layer\nddf93e54aa9b: Pulling fs layer\nd58e402755e9: Pulling fs layer\n555f9348540e: Pulling fs layer\n1d6ebe73e6cc: Waiting\nc2fe20a4dd63: Waiting\n34d4f150e761: Waiting\nddf93e54aa9b: Waiting\nd58e402755e9: Waiting\n555f9348540e: Waiting\n2ab09b027e7f: Verifying Checksum\n2ab09b027e7f: Download complete\n2ab09b027e7f: Pull complete\nb63c54b8bb61: Verifying Checksum\nb63c54b8bb61: Download complete\nc2fe20a4dd63: Verifying Checksum\nc2fe20a4dd63: Download complete\n34d4f150e761: Verifying Checksum\n34d4f150e761: Download complete\n1d6ebe73e6cc: Verifying Checksum\n1d6ebe73e6cc: Download complete\n555f9348540e: Verifying Checksum\n555f9348540e: Download complete\nddf93e54aa9b: Verifying Checksum\nddf93e54aa9b: Download complete\nd58e402755e9: Verifying Checksum\nd58e402755e9: Download complete\nb63c54b8bb61: Pull complete\n1d6ebe73e6cc: Pull complete\nc2fe20a4dd63: Pull complete\n34d4f150e761: Pull complete\nddf93e54aa9b: Pull complete\nd58e402755e9: Pull complete\n555f9348540e: Pull complete\nDigest: sha256:566dcd02aea05ff962b1b6614fb2335c0acd4e8a927664317734d0310b268db2\nStatus: Downloaded newer image for us.gcr.io/broad-achilles/hermitcrab:with-docker\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
         ""
       ]
     }
@@ -2485,7 +2406,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:44:22.731-08:00",
+          "creationTimestamp": "2024-02-01T07:05:28.517-08:00",
           "deletionProtection": false,
           "description": "hermit v1.5.0 VM started user hermit-test",
           "disks": [
@@ -2497,34 +2418,34 @@
               "diskSizeGb": "55",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -2579,11 +2500,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "rlbETPsB9Wo=",
-          "id": "4166160027341328058",
+          "fingerprint": "f4MAWx8MTsw=",
+          "id": "4975417550504857048",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:44:30.359-08:00",
+          "lastStartTimestamp": "2024-02-01T07:05:33.890-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "DCWbMN2dspc=",
@@ -2602,16 +2523,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.28.132.90",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "U1FjNLQXczg=",
+              "fingerprint": "YroWLrYoCvE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.62",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2676,7 +2597,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-01-24T07:44:22.731-08:00",
+          "creationTimestamp": "2024-02-01T07:05:28.517-08:00",
           "deletionProtection": false,
           "description": "hermit v1.5.0 VM started user hermit-test",
           "disks": [
@@ -2688,34 +2609,34 @@
               "diskSizeGb": "55",
               "guestOsFeatures": [
                 {
-                  "type": "UEFI_COMPATIBLE"
+                  "type": "SEV_CAPABLE"
                 },
                 {
-                  "type": "VIRTIO_SCSI_MULTIQUEUE"
+                  "type": "UEFI_COMPATIBLE"
                 },
                 {
                   "type": "SEV_SNP_CAPABLE"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE_V2"
+                  "type": "SEV_LIVE_MIGRATABLE"
                 },
                 {
-                  "type": "SEV_CAPABLE"
+                  "type": "VIRTIO_SCSI_MULTIQUEUE"
                 },
                 {
                   "type": "GVNIC"
                 },
                 {
-                  "type": "SEV_LIVE_MIGRATABLE"
+                  "type": "SEV_LIVE_MIGRATABLE_V2"
                 }
               ],
               "index": 0,
               "interface": "SCSI",
               "kind": "compute#attachedDisk",
               "licenses": [
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos",
                 "https://www.googleapis.com/compute/v1/projects/cos-cloud-shielded/global/licenses/shielded-cos",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid",
-                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos"
+                "https://www.googleapis.com/compute/v1/projects/cos-cloud/global/licenses/cos-pcid"
               ],
               "mode": "READ_WRITE",
               "shieldedInstanceInitialState": {
@@ -2770,11 +2691,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "rlbETPsB9Wo=",
-          "id": "4166160027341328058",
+          "fingerprint": "f4MAWx8MTsw=",
+          "id": "4975417550504857048",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-01-24T07:44:30.359-08:00",
+          "lastStartTimestamp": "2024-02-01T07:05:33.890-08:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "DCWbMN2dspc=",
@@ -2793,16 +2714,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.28.132.90",
+                  "natIP": "34.122.208.29",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "U1FjNLQXczg=",
+              "fingerprint": "YroWLrYoCvE=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.33",
+              "networkIP": "10.240.0.62",
               "stackType": "IPV4_ONLY"
             }
           ],
