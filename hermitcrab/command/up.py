@@ -317,6 +317,7 @@ def wait_for_instance_start(
                 instance_config.project,
                 f"--zone",
                 instance_config.zone,
+                "--tunnel-through-iap",
                 f"--command",
                 "cat /var/log/hermit.log",
             ],
