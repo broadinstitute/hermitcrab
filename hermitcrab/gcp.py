@@ -89,6 +89,8 @@ def gcloud_capturing_output(
                 raise ex
             print(f"Attempt {attempt}: got {ex}. Retrying...")
 
+    raise Exception("Code should not be reachable")
+
 
 def gcloud_capturing_json_output(args: List[str]):
     cmd = _make_command(args)
@@ -288,7 +290,7 @@ def ensure_access_to_docker_image(service_account, docker_image, grant_mode):
             )
     elif grant_mode.startswith(GRANT_MODE_ARTIFACT_REGISTRY + ":"):
         _, project = grant_mode.split(":")
-        _do_grant_access_to_artifact_registry(project, service_account)
+        _do_grant_access_to_artifact_registry(project, service_account, docker_image)
 
     elif grant_mode == GRANT_MODE_INFER:
         m = re.match("[^.]+.pkg.dev/([^/]+)/(.+)", docker_image)
@@ -298,7 +300,9 @@ def ensure_access_to_docker_image(service_account, docker_image, grant_mode):
             print(
                 f"Based on the name, {docker_image} appears to be hosted on google's Artifact Registry. Granting access to {service_account} to make sure image can be pulled by VM"
             )
-            _do_grant_access_to_artifact_registry(project, service_account)
+            _do_grant_access_to_artifact_registry(
+                project, service_account, docker_image
+            )
     else:
         assert grant_mode == GRANT_MODE_NONE
         _check_access_to_docker_image(service_account, docker_image)
@@ -341,7 +345,7 @@ def wait_for_artifact_registry_access(
 
             if (time.time() - start) > max_wait:
                 raise Exception(
-                    f"Failed to verify that permissions are set up for impersonification after {attempts} checks. Aborting"
+                    f"Failed to verify that permissions are set up for impersonification after {attempt} checks. Aborting"
                 )
 
             time.sleep(retry_delay)

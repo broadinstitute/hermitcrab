@@ -4,7 +4,7 @@ from ..config import get_instance_config
 
 def gcr_grant(project, instance_name, needs_write_access):
     config = get_instance_config(instance_name)
-    gcp.grant_access_to_gcr(project, instance_name, needs_write_access)
+    gcp.grant_access_to_artifact_registry(project, instance_name, needs_write_access)
 
 
 def add_command(subparser):
@@ -13,7 +13,7 @@ def add_command(subparser):
 
     parser = subparser.add_parser(
         "gcr-grant",
-        help="grant access to pull (and optionally push) to GCR docker repo in specified project",
+        help="grant access to pull (and optionally push) to artifact registry docker repo in specified project",
     )
     parser.set_defaults(func=_gcr_grant)
     parser.add_argument(
