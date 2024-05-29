@@ -5,6 +5,7 @@ import logging
 import json
 import requests
 import re
+from .config import GRANT_MODE_ARTIFACT_REGISTRY, GRANT_MODE_INFER, GRANT_MODE_NONE
 
 log = logging.getLogger(__name__)
 
@@ -270,26 +271,36 @@ def _check_access_to_docker_image(service_account, docker_image):
     )
 
 
-def ensure_access_to_docker_image(service_account, docker_image):
+def _do_grant_access_to_artifact_registry(project, service_account, docker_image):
+    grant_access_to_artifact_registry(project, service_account, False)
+    wait_for_artifact_registry_access(service_account, docker_image)
+
+
+def ensure_access_to_docker_image(service_account, docker_image, grant_mode):
     "If the docker image is hosted on artifact registry, will grant the required permissions to access the repo that contains the image"
 
-    m = re.match("us.gcr.io/([^/]+)/(.+)", docker_image)
+    if grant_mode == GRANT_MODE_INFER:
+        m = re.match("us.gcr.io/([^/]+)/(.+)", docker_image)
 
-    if m is not None:
-        raise Exception(
-            "Docker image name suggests the image is hosted on google's (now deprecated) Container Registry service. These docker images are no longer supported. Its possible that this docker image may actually be hosted on Google's Artifact Registry service, and if so, edit the name to use the artifact registry name of this image"
-        )
+        if m is not None:
+            raise Exception(
+                "Docker image name suggests the image is hosted on google's (now deprecated) Container Registry service. These docker images are no longer supported. Its possible that this docker image may actually be hosted on Google's Artifact Registry service, and if so, set grant_mode in config file to \"artifact-registry:PROJECT_ID\" where PROJECT_ID is the owning google project ID"
+            )
+    elif grant_mode.startswith(GRANT_MODE_ARTIFACT_REGISTRY + ":"):
+        _, project = grant_mode.split(":")
+        _do_grant_access_to_artifact_registry(project, service_account)
 
-    m = re.match("[^.]+.pkg.dev/([^/]+)/(.+)", docker_image)
-    if m is not None:
-        project = m.group(1)
+    elif grant_mode == GRANT_MODE_INFER:
+        m = re.match("[^.]+.pkg.dev/([^/]+)/(.+)", docker_image)
+        if m is not None:
+            project = m.group(1)
 
-        print(
-            f"Based on the name, {docker_image} appears to be hosted on google's Artifact Registry. Granting access to {service_account} to make sure image can be pulled by VM"
-        )
-        grant_access_to_artifact_registry(project, service_account, False)
-        wait_for_artifact_registry_access(service_account, docker_image)
+            print(
+                f"Based on the name, {docker_image} appears to be hosted on google's Artifact Registry. Granting access to {service_account} to make sure image can be pulled by VM"
+            )
+            _do_grant_access_to_artifact_registry(project, service_account)
     else:
+        assert grant_mode == GRANT_MODE_NONE
         _check_access_to_docker_image(service_account, docker_image)
 
 

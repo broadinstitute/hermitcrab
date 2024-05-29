@@ -236,7 +236,9 @@ def up(name: str, verbose: bool):
             f"Verifying {instance_config.service_account} has access to {instance_config.docker_image} "
         )
         gcp.ensure_access_to_docker_image(
-            instance_config.service_account, instance_config.docker_image
+            instance_config.service_account,
+            instance_config.docker_image,
+            instance_config.grant_mode,
         )
         record_assumption(has_access_to_docker_image_assumption)
     else:
@@ -322,7 +324,7 @@ def wait_for_instance_start(
                 "cat /var/log/hermit.log",
             ],
             ignore_error=True,
-            retries_on_timeout=5,
+            retries_on_timeout=10,
         )
 
         if stderr != "":

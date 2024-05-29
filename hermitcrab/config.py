@@ -9,6 +9,11 @@ CONTAINER_SSHD_PORT = 3022
 LONG_OPERATION_TIMEOUT = 60 * 5
 
 
+GRANT_MODE_INFER = "infer"
+GRANT_MODE_ARTIFACT_REGISTRY = "artifact-registry"
+GRANT_MODE_NONE = "none"
+
+
 class NoDefaultServiceAccount(Exception):
     pass
 
@@ -26,6 +31,7 @@ class InstanceConfig:
     boot_disk_size_in_gb: int
     suspend_on_idle_timeout: int = 30
     local_ssd_count: int = 0
+    grant_mode: str = GRANT_MODE_INFER
 
 
 @dataclass
@@ -114,6 +120,9 @@ def _read_instance_config_dict(name):
 
     if "boot_disk_size_in_gb" not in config_dict:
         config_dict["boot_disk_size_in_gb"] = 10
+
+    if "grant_mode" not in config_dict:
+        config_dict["grant_mode"] = GRANT_MODE_INFER
 
     return config_dict
 

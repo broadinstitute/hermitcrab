@@ -184,7 +184,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -280,11 +280,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -303,16 +303,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -377,7 +377,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -473,11 +473,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -496,16 +496,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -570,7 +570,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -666,11 +666,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -689,16 +689,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -763,7 +763,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -859,11 +859,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -882,16 +882,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -956,7 +956,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1052,11 +1052,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1075,16 +1075,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1149,7 +1149,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1245,11 +1245,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1268,16 +1268,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1342,7 +1342,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1438,11 +1438,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "dIDHNcvcpT4=",
-          "id": "6971924593979890311",
+          "fingerprint": "z6-hasmomi8=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1461,16 +1461,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1535,7 +1535,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1631,11 +1631,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "iYUDWxImHjU=",
-          "id": "6971924593979890311",
+          "fingerprint": "t6x1Ds6UWP4=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1654,16 +1654,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "104.198.247.158",
+                  "natIP": "35.193.145.185",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "ZUSmr1Gy7Xs=",
+              "fingerprint": "Z9UDO3HDjHQ=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -1728,7 +1728,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Unknown CPU Platform",
-          "creationTimestamp": "2024-05-28T20:43:37.310-07:00",
+          "creationTimestamp": "2024-05-29T05:25:49.544-07:00",
           "deletionProtection": false,
           "disks": [
             {
@@ -1824,12 +1824,12 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "WlonovYGKm0=",
-          "id": "6971924593979890311",
+          "fingerprint": "SHMOrHMD8Dg=",
+          "id": "9084179056202260515",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:43:43.647-07:00",
-          "lastStopTimestamp": "2024-05-28T20:44:31.755-07:00",
+          "lastStartTimestamp": "2024-05-29T05:25:54.915-07:00",
+          "lastStopTimestamp": "2024-05-29T05:26:41.698-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "-6e5jZ7CRZs=",
@@ -1852,11 +1852,11 @@
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "OJlI3LUXYC8=",
+              "fingerprint": "malKRXgC4zM=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.46",
+              "networkIP": "10.240.0.50",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2008,13 +2008,13 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\n",
-        "Warning: Permanently added 'compute.3427728056745925188' (ED25519) to the list of known hosts.\r\n"
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\n",
+        "Warning: Permanently added 'compute.4706154484336337376' (ED25519) to the list of known hosts.\r\n"
       ]
     }
   ],
@@ -2037,12 +2037,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n",
         ""
       ]
     }
@@ -2066,12 +2066,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n",
         ""
       ]
     }
@@ -2095,12 +2095,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
         ""
       ]
     }
@@ -2124,12 +2124,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
         ""
       ]
     }
@@ -2153,12 +2153,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
         ""
       ]
     }
@@ -2182,12 +2182,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n",
         ""
       ]
     }
@@ -2211,12 +2211,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
         ""
       ]
     }
@@ -2240,12 +2240,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
         ""
       ]
     }
@@ -2269,12 +2269,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
         ""
       ]
     }
@@ -2298,12 +2298,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
         ""
       ]
     }
@@ -2327,12 +2327,12 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n8792a6636857: Pull complete\nDigest: sha256:52150323a61388610ad57bafb3003d960cff2517ef88f14caa84fea1ed37f308\nStatus: Downloaded newer image for us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
         ""
       ]
     }
@@ -2356,12 +2356,70 @@
       ],
       "kwargs": {
         "ignore_error": true,
-        "retries_on_timeout": 5
+        "retries_on_timeout": 10
       }
     },
     {
       "returned": [
-        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n8792a6636857: Pull complete\nDigest: sha256:52150323a61388610ad57bafb3003d960cff2517ef88f14caa84fea1ed37f308\nStatus: Downloaded newer image for us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
+          "--tunnel-through-iap",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true,
+        "retries_on_timeout": 10
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n8792a6636857: Pull complete\nDigest: sha256:52150323a61388610ad57bafb3003d960cff2517ef88f14caa84fea1ed37f308\nStatus: Downloaded newer image for us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1\n",
+        ""
+      ]
+    }
+  ],
+  [
+    "gcloud_capturing_output",
+    {
+      "args": [
+        [
+          "compute",
+          "ssh",
+          "hermit-demo",
+          "--project",
+          "broad-achilles",
+          "--zone",
+          "us-central1-a",
+          "--tunnel-through-iap",
+          "--command",
+          "cat /var/log/hermit.log"
+        ]
+      ],
+      "kwargs": {
+        "ignore_error": true,
+        "retries_on_timeout": 10
+      }
+    },
+    {
+      "returned": [
+        "Starting cloudinit bootcmd...\nChecking filesystem /dev/disk/by-id/google-hermit-demo-pd\nfsck from util-linux 2.38.1\n/dev/sdb: clean, 11/3276800 files, 218931/13107200 blocks\nFinished checking filesystem /dev/disk/by-id/google-hermit-demo-pd\nMounting /dev/disk/by-id/google-hermit-demo-pd as /mnt/disks/hermit-demo-pd\nSetting up ubuntu home directory permissions...\nMounting home directory into place...\nStarting up services...\nConfiguring supplied registries....\nAdding config for registries: us-central1-docker.pkg.dev\n/home/cloudservice/.docker/config.json configured to use this credential helper for GCR registries\nCloudinit runcmd complete.\nUnable to find image 'us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1' locally\nv1: Pulling from depmap-omics/docker/hermit-dev-env\ndbf6a9befcde: Pulling fs layer\nd6b748fe7fad: Pulling fs layer\n3f6b49d80f24: Pulling fs layer\nf58ce966cd39: Pulling fs layer\n089ba640f011: Pulling fs layer\n6b22df04d12c: Pulling fs layer\n01dcbecd78e4: Pulling fs layer\n40a3ebe5ad01: Pulling fs layer\n5fc4c2d637fa: Pulling fs layer\n9f37869d1686: Pulling fs layer\n0832c10da011: Pulling fs layer\n8792a6636857: Pulling fs layer\n01dcbecd78e4: Waiting\n40a3ebe5ad01: Waiting\n5fc4c2d637fa: Waiting\n9f37869d1686: Waiting\n0832c10da011: Waiting\n8792a6636857: Waiting\ndbf6a9befcde: Waiting\nd6b748fe7fad: Waiting\n3f6b49d80f24: Waiting\nf58ce966cd39: Waiting\n089ba640f011: Waiting\n6b22df04d12c: Waiting\ndbf6a9befcde: Verifying Checksum\ndbf6a9befcde: Download complete\n3f6b49d80f24: Verifying Checksum\n3f6b49d80f24: Download complete\nd6b748fe7fad: Verifying Checksum\nd6b748fe7fad: Download complete\nf58ce966cd39: Verifying Checksum\nf58ce966cd39: Download complete\n089ba640f011: Verifying Checksum\n089ba640f011: Download complete\n6b22df04d12c: Verifying Checksum\n6b22df04d12c: Download complete\n01dcbecd78e4: Verifying Checksum\n01dcbecd78e4: Download complete\n5fc4c2d637fa: Verifying Checksum\n5fc4c2d637fa: Download complete\n9f37869d1686: Verifying Checksum\n9f37869d1686: Download complete\n0832c10da011: Verifying Checksum\n0832c10da011: Download complete\n40a3ebe5ad01: Verifying Checksum\n40a3ebe5ad01: Download complete\n8792a6636857: Verifying Checksum\n8792a6636857: Download complete\ndbf6a9befcde: Pull complete\nd6b748fe7fad: Pull complete\n3f6b49d80f24: Pull complete\nf58ce966cd39: Pull complete\n089ba640f011: Pull complete\n6b22df04d12c: Pull complete\n01dcbecd78e4: Pull complete\n40a3ebe5ad01: Pull complete\n5fc4c2d637fa: Pull complete\n9f37869d1686: Pull complete\n0832c10da011: Pull complete\n8792a6636857: Pull complete\nDigest: sha256:52150323a61388610ad57bafb3003d960cff2517ef88f14caa84fea1ed37f308\nStatus: Downloaded newer image for us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1\nServer listening on 0.0.0.0 port 3022.\r\nServer listening on :: port 3022.\r\n",
         ""
       ]
     }
@@ -2387,7 +2445,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:44:44.765-07:00",
+          "creationTimestamp": "2024-05-29T05:26:56.052-07:00",
           "deletionProtection": false,
           "description": "hermit v1.5.0 VM started user hermit-test",
           "disks": [
@@ -2484,11 +2542,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "DwARJPKcSL8=",
-          "id": "3427728056745925188",
+          "fingerprint": "SYo-rewWCzw=",
+          "id": "4706154484336337376",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:44:49.568-07:00",
+          "lastStartTimestamp": "2024-05-29T05:27:01.370-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "tQ8MvtPrZjw=",
@@ -2507,16 +2565,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.132.103.7",
+                  "natIP": "34.69.16.42",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "F43lGvOiISo=",
+              "fingerprint": "JfqRTw7RQ6Q=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.47",
+              "networkIP": "10.240.0.34",
               "stackType": "IPV4_ONLY"
             }
           ],
@@ -2582,7 +2640,7 @@
         {
           "canIpForward": false,
           "cpuPlatform": "Intel Cascade Lake",
-          "creationTimestamp": "2024-05-28T20:44:44.765-07:00",
+          "creationTimestamp": "2024-05-29T05:26:56.052-07:00",
           "deletionProtection": false,
           "description": "hermit v1.5.0 VM started user hermit-test",
           "disks": [
@@ -2679,11 +2737,11 @@
               "type": "PERSISTENT"
             }
           ],
-          "fingerprint": "DwARJPKcSL8=",
-          "id": "3427728056745925188",
+          "fingerprint": "SYo-rewWCzw=",
+          "id": "4706154484336337376",
           "kind": "compute#instance",
           "labelFingerprint": "42WmSpB8rSM=",
-          "lastStartTimestamp": "2024-05-28T20:44:49.568-07:00",
+          "lastStartTimestamp": "2024-05-29T05:27:01.370-07:00",
           "machineType": "https://www.googleapis.com/compute/v1/projects/broad-achilles/zones/us-central1-a/machineTypes/n2-standard-2",
           "metadata": {
             "fingerprint": "tQ8MvtPrZjw=",
@@ -2702,16 +2760,16 @@
                 {
                   "kind": "compute#accessConfig",
                   "name": "external-nat",
-                  "natIP": "34.132.103.7",
+                  "natIP": "34.69.16.42",
                   "networkTier": "PREMIUM",
                   "type": "ONE_TO_ONE_NAT"
                 }
               ],
-              "fingerprint": "F43lGvOiISo=",
+              "fingerprint": "JfqRTw7RQ6Q=",
               "kind": "compute#networkInterface",
               "name": "nic0",
               "network": "https://www.googleapis.com/compute/v1/projects/broad-achilles/global/networks/default",
-              "networkIP": "10.240.0.47",
+              "networkIP": "10.240.0.34",
               "stackType": "IPV4_ONLY"
             }
           ],
