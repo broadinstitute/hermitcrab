@@ -146,7 +146,7 @@ write_files:
     [Service]
     Environment="HOME=/home/cloudservice"
     StandardOutput=append:/var/log/hermit.log
-    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker
+    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker --registries us-central1-docker.pkg.dev
     ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/{instance_config.pd_name}/home/ubuntu:/home/ubuntu {instance_config.docker_image} /usr/sbin/sshd -D -e -p {CONTAINER_SSHD_PORT}
     ExecStop=/usr/bin/docker stop container-sshd
     ExecStopPost=/usr/bin/docker rm container-sshd
@@ -271,7 +271,7 @@ def up(name: str, verbose: bool):
         )
 
     gcp.log_info(f"Waiting for instance to start")
-    wait_for_instance_start(instance_config, verbose, timeout=10 * 60)
+    wait_for_instance_start(instance_config, verbose, timeout=60 * 60)
 
     if is_tunnel_running(instance_config.name):
         gcp.log_info(f"Stopping tunnel process")
@@ -322,6 +322,7 @@ def wait_for_instance_start(
                 "cat /var/log/hermit.log",
             ],
             ignore_error=True,
+            retries_on_timeout=5,
         )
 
         if stderr != "":

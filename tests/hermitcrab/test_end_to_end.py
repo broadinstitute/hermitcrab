@@ -12,7 +12,7 @@ def test_end_to_end(vcr, tmphomedir):
             "hermit-demo",
             "--disk-size",
             "50",
-            "us.gcr.io/broad-achilles/hermitcrab:with-docker",
+            "us-central1-docker.pkg.dev/depmap-omics/docker/hermit-dev-env:v1",
             "--boot-disk-size",
             "55",
         ]

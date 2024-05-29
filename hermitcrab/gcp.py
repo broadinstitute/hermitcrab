@@ -56,25 +56,37 @@ def _check_procs():
         proc.poll()
 
 
-def gcloud_capturing_output(args: List[str], ignore_error: bool = False):
+def gcloud_capturing_output(
+    args: List[str], ignore_error: bool = False, retries_on_timeout=0
+):
     cmd = _make_command(args)
+    attempt = 0
+    while attempt <= retries_on_timeout:
+        try:
+            log_info(f"Executing, capturing output: {cmd}")
 
-    log_info(f"Executing, capturing output: {cmd}")
+            proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                stdin=subprocess.DEVNULL,
+            )
+            stdout, stderr = proc.communicate(timeout=10)
+            stdout = stdout.decode("utf8")
+            stderr = stderr.decode("utf8")
+            log_debug(f"stdout: {stdout}")
+            log_debug(f"stderr: {stderr}")
+            if not ignore_error:
+                assert (
+                    proc.returncode == 0
+                ), f"Executing {cmd} failed (return code: {proc.returncode}). Stderr: {stderr}"
 
-    proc = subprocess.Popen(
-        cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL
-    )
-    stdout, stderr = proc.communicate(timeout=10)
-    stdout = stdout.decode("utf8")
-    stderr = stderr.decode("utf8")
-    log_debug(f"stdout: {stdout}")
-    log_debug(f"stderr: {stderr}")
-    if not ignore_error:
-        assert (
-            proc.returncode == 0
-        ), f"Executing {cmd} failed (return code: {proc.returncode}). Stderr: {stderr}"
-
-    return stdout, stderr
+            return stdout, stderr
+        except subprocess.TimeoutExpired as ex:
+            attempt += 1
+            if attempt > retries_on_timeout:
+                raise ex
+            print(f"Attempt {attempt}: got {ex}. Retrying...")
 
 
 def gcloud_capturing_json_output(args: List[str]):
@@ -212,6 +224,10 @@ def wait_for_impersonating_access_token_success(
             time.sleep(retry_delay)
 
 
+class AccessDenied(Exception):
+    pass
+
+
 def _check_access_to_docker_image(service_account, docker_image):
     "Tests to make sure that the given service account can read the docker_image. Throws an assertion error if not"
     access_token = _get_access_token()
@@ -245,7 +261,7 @@ def _check_access_to_docker_image(service_account, docker_image):
         )
 
     if res.status_code in [403, 401]:
-        raise Exception(
+        raise AccessDenied(
             f"Service account ({service_account}) does not access to retreive image {reconstructed_image_name}"
         )
 
@@ -255,28 +271,35 @@ def _check_access_to_docker_image(service_account, docker_image):
 
 
 def ensure_access_to_docker_image(service_account, docker_image):
-    "If the docker image is hosted on gcr, will grant the required permissions to access the repo that contains the image"
+    "If the docker image is hosted on artifact registry, will grant the required permissions to access the repo that contains the image"
+
     m = re.match("us.gcr.io/([^/]+)/(.+)", docker_image)
 
     if m is not None:
-        project = m.group(1)
-        print(
-            f"docker image {docker_image} appears to be hosted on a GCR docker repo. Granting access to {service_account} to make sure image can be pulled by VM"
+        raise Exception(
+            "Docker image name suggests the image is hosted on google's (now deprecated) Container Registry service. These docker images are no longer supported. Its possible that this docker image may actually be hosted on Google's Artifact Registry service, and if so, edit the name to use the artifact registry name of this image"
         )
-        grant_access_to_gcr(project, service_account, False)
 
-    _check_access_to_docker_image(service_account, docker_image)
+    m = re.match("[^.]+.pkg.dev/([^/]+)/(.+)", docker_image)
+    if m is not None:
+        project = m.group(1)
 
-
-def grant_access_to_gcr(project, service_account, needs_write_access):
-    if needs_write_access:
-        role = "roles/storage.objectAdmin"
+        print(
+            f"Based on the name, {docker_image} appears to be hosted on google's Artifact Registry. Granting access to {service_account} to make sure image can be pulled by VM"
+        )
+        grant_access_to_artifact_registry(project, service_account, False)
+        wait_for_artifact_registry_access(service_account, docker_image)
     else:
-        role = "roles/storage.objectViewer"
+        _check_access_to_docker_image(service_account, docker_image)
 
-    bucket = f"us.artifacts.{project}.appspot.com"
 
-    print(f"Granting {role} on GS bucket {bucket} to {service_account} ")
+def grant_access_to_artifact_registry(project, service_account, needs_write_access):
+    if needs_write_access:
+        role = "roles/artifactregistry.writer"
+    else:
+        role = "roles/artifactregistry.reader"
+
+    print(f"Granting {role} on GCP project {project} to {service_account} ")
     gcloud(
         [
             "projects",
@@ -287,27 +310,20 @@ def grant_access_to_gcr(project, service_account, needs_write_access):
         ]
     )
 
-    wait_for_bucket_access(service_account, bucket)
 
-
-def wait_for_bucket_access(service_account, bucket, retry_delay=5, max_wait=60 * 5):
+def wait_for_artifact_registry_access(
+    service_account, docker_image, retry_delay=5, max_wait=60 * 5
+):
     start = time.time()
-    attempts = 0
+    attempt = 0
     while True:
-        attempts += 1
+        attempt += 1
 
         try:
-            gcloud(
-                [
-                    "storage",
-                    "ls",
-                    f"gs://{bucket}",
-                    f"--impersonate-service-account={service_account}",
-                ]
-            )
+            _check_access_to_docker_image(service_account, docker_image)
             break
-        except GCloudError as ex:
-            if attempts == 1:
+        except AccessDenied as ex:
+            if attempt == 1:
                 print(
                     "Waiting for grant to take effect... (May take awhile, but this only needs to happen once)"
                 )
