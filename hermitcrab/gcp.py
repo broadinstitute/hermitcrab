@@ -372,6 +372,9 @@ def parse_docker_image_name(docker_image):
     if m is not None:
         location = m.group(1)
         m = re.match(r"([a-z0-9-]+)/([a-z0-9-._]+)/([a-z0-9-/_]+)", generic.path)
+        assert (
+            m
+        ), f"Based on host, looks like a Artifact Registry name, but path was invalid: {generic.path}"
         project, repository, image_name = m.groups()
         return ArtifactRegistryPath(
             host=generic.host,
