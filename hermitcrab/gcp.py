@@ -5,7 +5,16 @@ import logging
 import json
 import requests
 import re
-from .config import GRANT_MODE_ARTIFACT_REGISTRY, GRANT_MODE_INFER, GRANT_MODE_NONE
+from dataclasses import dataclass
+
+
+class GCPPermissionError(Exception):
+    pass
+
+
+class AccessDenied(Exception):
+    pass
+
 
 log = logging.getLogger(__name__)
 
@@ -169,10 +178,6 @@ def wait_for_instance_status(name, zone, project, goal_status, max_time=5 * 60):
         time.sleep(5)
 
 
-class GCPPermissionError(Exception):
-    pass
-
-
 def _get_impersonating_access_token(access_token, service_account):
     # get an access token for impersonating service account so we can see if this account has rights to access the docker image
     res = requests.post(
@@ -189,7 +194,9 @@ def _get_impersonating_access_token(access_token, service_account):
         ),
     )
     if res.status_code == 403:
-        raise GCPPermissionError()
+        raise GCPPermissionError(
+            f'The current credentials gcloud is using doesn\'t have access to impersonate {service_account}. Grant "Service Account OpenID Connect Identity Token Creator" and "Service Account Token Creator" to this user to solve this.'
+        )
     assert (
         res.status_code == 200
     ), f"Got an error trying to impersonate service account ({service_account}). status_code={res.status_code}, response content={res.content}"
@@ -227,8 +234,14 @@ def wait_for_impersonating_access_token_success(
             time.sleep(retry_delay)
 
 
-class AccessDenied(Exception):
-    pass
+def has_access_to_docker_image(service_account, docker_image):
+    """Returns True if this service account has access to pull the docker image, otherwise
+    False."""
+    try:
+        _check_access_to_docker_image(service_account, docker_image)
+    except AccessDenied:
+        return False
+    return True
 
 
 def _check_access_to_docker_image(service_account, docker_image):
@@ -239,20 +252,31 @@ def _check_access_to_docker_image(service_account, docker_image):
         access_token, service_account
     )
 
-    m = re.match("(^[^/]+)/([^:]+)(?::(.*))?", docker_image)
-    assert m, f"Could not parse {docker_image} as an image name"
-    docker_repo_host, image_name, reference = m.groups()
-    if reference is None:
-        reference = "latest"
+    parsed_image_name = parse_docker_image_name(docker_image)
 
     # Now attempt to retreive the docker image manifest to see if we have access. Expecting either success, manifest doesn't exist, or permission denied
-    manifest_url = f"https://{docker_repo_host}/v2/{image_name}/manifests/{reference}"
+    #    manifest_url = f"https://{parsed_image_name.host}:{parsed_image_name.port}/v2/{parsed_image_name.project}/{parsed_image_name.repository}/{parsed_image_name.image_name}/manifests/{parsed_image_name.tag}"
+    manifest_url = f"https://{parsed_image_name.host}:{parsed_image_name.port}/v2/{parsed_image_name.path}/manifests/{parsed_image_name.tag}"
+    # print("manifest_url", manifest_url)
+    #    assert manifest_url == 'https://us-central1-docker.pkg.dev:443/v2/cds-docker-containers/docker/cds_python_jupyter/manifests/latest'
+
+    #    manifest_url="https://us-central1-docker.pkg.dev:443/v2/us-central1-docker.pkg.dev/cds-docker-containers/docker/manifests/latest"
     res = requests.get(
         manifest_url,
         headers={"Authorization": f"Bearer {service_account_access_token}"},
     )
 
-    reconstructed_image_name = f"{docker_repo_host}/{image_name}:{reference}"
+    #     with open("req.py", "wt") as fd:
+    #         headers = {"Authorization": f"Bearer {service_account_access_token}"}
+    #         fd.write(f"""
+    # import requests
+
+    # res = requests.get({repr(manifest_url)}, headers={headers})
+    # print(res.status_code)
+    # print(res.content)
+    # """)
+
+    reconstructed_image_name = str(parsed_image_name)
 
     if res.status_code == 200:
         # return if we were successful
@@ -273,79 +297,134 @@ def _check_access_to_docker_image(service_account, docker_image):
     )
 
 
-def _do_grant_access_to_artifact_registry(project, service_account, docker_image):
-    grant_access_to_artifact_registry(project, service_account, False)
-    wait_for_artifact_registry_access(service_account, docker_image)
+@dataclass
+class DockerImageName:
+    host: str
+    port: int
+    path: str
+    tag: str
 
 
-def ensure_access_to_docker_image(service_account, docker_image, grant_mode):
-    "If the docker image is hosted on artifact registry, will grant the required permissions to access the repo that contains the image"
-
-    if grant_mode == GRANT_MODE_INFER:
-        m = re.match("us.gcr.io/([^/]+)/(.+)", docker_image)
-
-        if m is not None:
-            raise Exception(
-                "Docker image name suggests the image is hosted on google's (now deprecated) Container Registry service. These docker images are no longer supported. Its possible that this docker image may actually be hosted on Google's Artifact Registry service, and if so, set grant_mode in config file to \"artifact-registry:PROJECT_ID\" where PROJECT_ID is the owning google project ID"
-            )
-    elif grant_mode.startswith(GRANT_MODE_ARTIFACT_REGISTRY + ":"):
-        _, project = grant_mode.split(":")
-        _do_grant_access_to_artifact_registry(project, service_account, docker_image)
-
-    elif grant_mode == GRANT_MODE_INFER:
-        m = re.match("[^.]+.pkg.dev/([^/]+)/(.+)", docker_image)
-        if m is not None:
-            project = m.group(1)
-
-            print(
-                f"Based on the name, {docker_image} appears to be hosted on google's Artifact Registry. Granting access to {service_account} to make sure image can be pulled by VM"
-            )
-            _do_grant_access_to_artifact_registry(
-                project, service_account, docker_image
-            )
-    else:
-        assert grant_mode == GRANT_MODE_NONE
-        _check_access_to_docker_image(service_account, docker_image)
+@dataclass
+class ContainerRegistryPath(DockerImageName):
+    region: str  # values like "" (if global), or a region like "asia", "eu", "us" etc
+    project: str
+    repository: str
+    image_name: str
 
 
-def grant_access_to_artifact_registry(project, service_account, needs_write_access):
-    if needs_write_access:
-        role = "roles/artifactregistry.writer"
-    else:
-        role = "roles/artifactregistry.reader"
+@dataclass
+class ArtifactRegistryPath(DockerImageName):
+    location: str  # values like "us", "us-central1", etc
+    project: str
+    repository: str
+    image_name: str
 
-    print(f"Granting {role} on GCP project {project} to {service_account} ")
-    gcloud(
-        [
-            "projects",
-            "add-iam-policy-binding",
-            project,
-            f"--member=serviceAccount:{service_account}",
-            f"--role={role}",
-        ]
+
+def _default_to(value, default):
+    if value is None or value == "":
+        return default
+    return value
+
+
+def parse_docker_image_name(docker_image):
+    m = re.match(
+        r"(?:([a-z0-9.-]+)(?::(\\d+))?/)?([a-z0-9-_/]+)(?::([a-z0-9-_/]+))?",
+        docker_image,
+    )
+    if m is None:
+        raise Exception(
+            f'"{docker_image}" does not appear to be a valid docker image name'
+        )
+    host, port, path, tag = m.groups()
+
+    # parse this as a generic name
+    generic = DockerImageName(
+        host=_default_to(host, "docker.io"),
+        port=int(_default_to(port, "443")),
+        path=path,
+        tag=_default_to(tag, "latest"),
     )
 
+    # Now check, is it a google container registry address like us.gcr.io/cds-docker-containers/gumbopot or gcr.io/cds-docker-containers/gumbopot
+    m = re.match(r"^([a-z0-9-]+)\.gcr\.io$", generic.host)
+    if m is not None:
+        region = m.group(1)
+        m = re.match(r"([a-z0-9-]+)/([a-z0-9-._]+)/([a-z0-9-/_]+)", generic.path)
+        assert (
+            m
+        ), f"Based on host, looks like GCR name, but the path was invalid: {generic.path}"
+        project, repository, image_name = m.groups()
+        return ContainerRegistryPath(
+            host=generic.host,
+            port=generic.port,
+            path=generic.path,
+            tag=generic.tag,
+            region=region,
+            project=project,
+            repository=repository,
+            image_name=image_name,
+        )
 
-def wait_for_artifact_registry_access(
-    service_account, docker_image, retry_delay=5, max_wait=60 * 5
-):
-    start = time.time()
-    attempt = 0
-    while True:
-        attempt += 1
+    # is it an artifact registry service like us-central1-docker.pkg.dev or us-docker.pkg.dev
+    # example: us-central1-docker.pkg.dev/cds-docker-containers/docker/hermit-dev-env:v1
+    m = re.match(r"^([a-z0-9-]+)-docker\.pkg\.dev$", generic.host)
+    if m is not None:
+        location = m.group(1)
+        m = re.match(r"([a-z0-9-]+)/([a-z0-9-._]+)/([a-z0-9-/_]+)", generic.path)
+        project, repository, image_name = m.groups()
+        return ArtifactRegistryPath(
+            host=generic.host,
+            port=generic.port,
+            path=generic.path,
+            tag=generic.tag,
+            location=location,
+            project=project,
+            repository=repository,
+            image_name=image_name,
+        )
 
-        try:
-            _check_access_to_docker_image(service_account, docker_image)
-            break
-        except AccessDenied as ex:
-            if attempt == 1:
-                print(
-                    "Waiting for grant to take effect... (May take awhile, but this only needs to happen once)"
-                )
+    # if it's neither, just return the generic parsing
+    return generic
 
-            if (time.time() - start) > max_wait:
-                raise Exception(
-                    f"Failed to verify that permissions are set up for impersonification after {attempt} checks. Aborting"
-                )
 
-            time.sleep(retry_delay)
+def get_grant_instructions(service_account, docker_image):
+    parsed_name = parse_docker_image_name(docker_image)
+
+    if isinstance(parsed_name, ArtifactRegistryPath):
+        return f"""Execute the following to grant access to hermit's service account:
+
+gcloud artifacts repositories add-iam-policy-binding {parsed_name.repository} \\
+    --location={parsed_name.location} \\
+    --member='serviceAccount:{service_account}' \\
+    --role='roles/artifactregistry.reader' \\
+    --project='{parsed_name.project}'
+
+After this has executed successfully, wait a few minutes (grants don't apply instantaneously)
+and try your hermit operation again.
+            """
+
+    if isinstance(parsed_name, ContainerRegistryPath):
+        return f"""The name {docker_image} suggests
+that this image is hosted using google's Container Registry service, however that 
+service is deprecated and it likely has been migrated over to Google's 
+Arifact Registry service. 
+
+To confirm this, go to https://console.cloud.google.com/artifacts?project={parsed_name.project} 
+and confirm that you can see your image stored there.
+
+Assuming you can find your image there, you can execute the following to grant access to hermit's service account:
+
+gcloud artifacts repositories add-iam-policy-binding {parsed_name.host} \\
+    --location={parsed_name.region if parsed_name.region != "" else "us"} \\
+    --member='serviceAccount:{service_account}' \\
+    --role='roles/artifactregistry.reader' \\
+    --project='{parsed_name.project}'
+
+After this has executed successfully, wait a few minutes (grants can take some time before they take effect)
+and try your hermit operation again.
+            """
+
+    raise Exception(
+        f"The name {docker_image} doesn't match the patterns for docker images hosted on google, and so no instructions can be provided."
+    )

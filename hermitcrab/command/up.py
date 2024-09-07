@@ -224,27 +224,18 @@ runcmd:
         )
 
 
-from hermitcrab.config import is_assumption_present, record_assumption
-
-
 def up(name: str, verbose: bool):
     instance_config = get_instance_config(name)
 
-    has_access_to_docker_image_assumption = f"{instance_config.service_account} has access to {instance_config.docker_image}"
-    if not is_assumption_present(has_access_to_docker_image_assumption):
-        gcp.log_info(
-            f"Verifying {instance_config.service_account} has access to {instance_config.docker_image} "
+    if not gcp.has_access_to_docker_image(
+        instance_config.service_account, instance_config.docker_image
+    ):
+        print(
+            gcp.get_grant_instructions(
+                instance_config.service_account, instance_config.docker_image
+            )
         )
-        gcp.ensure_access_to_docker_image(
-            instance_config.service_account,
-            instance_config.docker_image,
-            instance_config.grant_mode,
-        )
-        record_assumption(has_access_to_docker_image_assumption)
-    else:
-        gcp.log_info(
-            f"Assuming {instance_config.service_account} has access to {instance_config.docker_image} "
-        )
+        return 1
 
     status = gcp.get_instance_status(
         instance_config.name,

@@ -222,16 +222,17 @@ def setup_vcr(monkeypatch, request, mode=None):
             assert vcr.is_playback()
             monkeypatch.setattr(gcp, fn, make_playback_wrapper(getattr(gcp, fn), vcr))
 
-    monkeypatch.setattr(
-        gcp,
-        "ensure_access_to_docker_image",
-        lambda service_account, docker_image, grant_mode: None,
-    )
     if vcr.is_playback():
         monkeypatch.setattr(time, "sleep", lambda x: None)
         monkeypatch.setattr(
             tunnel, "wait_for_proc_to_die_or_port_listening", lambda *args: None
         )
+
+    # no-op this call to always return true because it's contains both getting a key
+    # and making some http requests
+    monkeypatch.setattr(
+        gcp, "has_access_to_docker_image", lambda service_account, docker_image: True
+    )
 
     return vcr, cassette_name
 

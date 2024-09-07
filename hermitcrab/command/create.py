@@ -13,7 +13,6 @@ from ..config import (
     CONTAINER_SSHD_PORT,
     LONG_OPERATION_TIMEOUT,
     set_default_instance_config,
-    GRANT_MODE_INFER,
 )
 from ..ssh import update_ssh_config
 from . import create_service_account
@@ -183,13 +182,14 @@ def create(
     idle_timeout: int,
     boot_disk_size_in_gb: int,
     local_ssd_count: int,
-    grant_mode: str,
 ):
     assert zone
     assert project
     assert pd_name
 
-    gcp.ensure_access_to_docker_image(service_account, docker_image, grant_mode)
+    if not gcp.has_access_to_docker_image(service_account, docker_image):
+        print(gcp.get_grant_instructions(service_account, docker_image))
+        return 1
 
     assert not config_exists(name), f"{name} appears to already have a config stored"
 
@@ -285,7 +285,6 @@ def add_command(subparser):
             args.idle_timeout,
             args.boot_disk_size_in_gb,
             args.local_ssd_count,
-            args.grant_mode,
         )
 
     parser = subparser.add_parser("create", help="Create a new instance config")
@@ -356,10 +355,4 @@ def add_command(subparser):
         type=int,
         default=0,
         help="The number of local SSD drives to attach. If at least one local SSD drive is attached, it will be used for the /tmp volume. Note: locally attached SSD drives lose their contents during shutdown, so only temporary files should be placed on these volumes. (Default: 0)",
-    )
-    parser.add_argument(
-        "--grant-mode",
-        dest="grant_mode",
-        default=GRANT_MODE_INFER,
-        help="If run with --grant-mode=none will assume that docker image has already been granted to this service account.",
     )

@@ -15,6 +15,9 @@ def test_check_gcloud_calls():
             if gcloud_args.startswith("config"):
                 continue
 
+            if gcloud_args.startswith("auth print-access-token"):
+                continue
+
             assert "--project" in gcloud_args
             if not gcloud_args.startswith("compute firewall-rules"):
                 assert "--zone" in gcloud_args
