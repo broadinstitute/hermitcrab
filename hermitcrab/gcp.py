@@ -350,11 +350,11 @@ def parse_docker_image_name(docker_image):
     m = re.match(r"^([a-z0-9-]+)\.gcr\.io$", generic.host)
     if m is not None:
         region = m.group(1)
-        m = re.match(r"([a-z0-9-]+)/([a-z0-9-._]+)/([a-z0-9-/_]+)", generic.path)
+        m = re.match(r"([a-z0-9-]+)/([a-z0-9-/_]+)", generic.path)
         assert (
             m
         ), f"Based on host, looks like GCR name, but the path was invalid: {generic.path}"
-        project, repository, image_name = m.groups()
+        project, image_name = m.groups()
         return ContainerRegistryPath(
             host=generic.host,
             port=generic.port,
@@ -362,7 +362,7 @@ def parse_docker_image_name(docker_image):
             tag=generic.tag,
             region=region,
             project=project,
-            repository=repository,
+            repository=generic.host,
             image_name=image_name,
         )
 
