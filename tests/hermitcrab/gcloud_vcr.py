@@ -52,7 +52,7 @@ def _rewrite_metadata_param(args):
                 content = fd.read()
                 # this content contains an key which needs to be replaced because
                 # when we're playing back, we don't have access to the real key
-                content = re.sub("ssh-rsa .+", "ssh-rsa X", content)
+                content = re.sub("'ssh-rsa [^']+'", "'ssh-rsa X'", content)
 
             new_args.append(f"{arg[:len(prefix)]}<{content}>")
         else:

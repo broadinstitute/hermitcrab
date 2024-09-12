@@ -9,11 +9,15 @@ from ..config import (
 )
 import tempfile
 from ..tunnel import is_tunnel_running, stop_tunnel, start_tunnel
-import textwrap
 import pkg_resources
 from ..ssh import update_ssh_config
 import time
 import re
+import io
+import yaml
+from ..config import InstanceConfig
+from .. import __version__
+import os
 
 # change the live-restore flag to false because its incompatible with swarm mode
 # (which is required by miniwdl). The other options were the values in the file before.
@@ -44,151 +48,186 @@ def resume_instance(instance_config):
     )
 
 
-from ..config import InstanceConfig
-from .. import __version__
-import os
+def _create_bootcmd(instance_config: InstanceConfig):
+    bootcmd = [
+        "echo in-bootcmd",
+        'echo "Starting cloudinit bootcmd..." >> /var/log/hermit.log',
+        "mount",
+        "umount /tmp",
+    ]
+    # if we have no local ssd drives, use /var/tmp for /tmp
+    if instance_config.local_ssd_count == 0:
+        bootcmd.append("mount --bind /var/tmp /tmp")
+    else:
+        for i in range(instance_config.local_ssd_count):
+            bootcmd.extend(
+                [
+                    f"mkfs -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i}",
+                    f"mkdir -p /mnt/disks/local-ssd-{i}",
+                    f"mount -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i} /mnt/disks/local-ssd-{i}",
+                ]
+            )
+            # if we're using at least one local ssd drive, mount it at /tmp
+            if i == 0:
+                bootcmd.extend(
+                    [
+                        f"mkdir /mnt/disks/local-ssd-{i}/tmp",
+                        f"chmod 1777 /mnt/disks/local-ssd-{i}/tmp",
+                        f"mount --bind /mnt/disks/local-ssd-{i}/tmp /tmp",
+                    ]
+                )
+
+    bootcmd.extend(
+        [
+            f"echo in-bootcmd-after-tmp-remount",
+            f"mount",
+            f'echo "Checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log',
+            f"fsck -C 1 -a /dev/disk/by-id/google-{instance_config.pd_name} >> /var/log/hermit.log",
+            f'echo "Finished checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log',
+            f"mkdir -p /mnt/disks/{instance_config.pd_name}",
+            f'echo "Mounting /dev/disk/by-id/google-{instance_config.pd_name}" as /mnt/disks/{instance_config.pd_name} >> /var/log/hermit.log',
+            f"mount -t ext4 /dev/disk/by-id/google-{instance_config.pd_name} /mnt/disks/{instance_config.pd_name}",
+            f"mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh",
+        ]
+    )
+
+    return bootcmd
 
 
-def create_instance(instance_config: InstanceConfig):
-    username = os.getlogin()
-
+def _create_cloud_config(instance_config: InstanceConfig):
     ssh_pub_key = get_pub_key()
 
     suspend_on_idle = pkg_resources.resource_string(
         "hermitcrab", "deploy_scripts/suspend_on_idle.py"
     ).decode("utf8")
 
+    hermit_setup = f"""
+set -ex
+echo "initial mount state"
+mount
+echo "Setting up ubuntu home directory permissions..."
+usermod -u 2000 ubuntu
+groupmod -g 2000 ubuntu
+chown 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu
+chmod -R 700 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
+chown -R 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
+echo "Mounting home directory into place..."
+mount --bind /mnt/disks/{instance_config.pd_name}/home/ubuntu/ /home/ubuntu
+chown ubuntu:ubuntu /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys
+chmod 0666 /var/run/docker.sock
+echo "Starting up services..."
+systemctl daemon-reload
+systemctl restart docker
+systemctl start container-sshd.service
+systemctl start suspend-on-idle.service
+echo "final mount state"
+mount
+echo "hermit-setup.sh complete"
+"""
+
+    cloud_config = {
+        "bootcmd": _create_bootcmd(instance_config),
+        "write_files": [
+            {
+                "path": f"/mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys",
+                "permissions": "0700",
+                "content": ssh_pub_key,
+            },
+            {
+                "path": "/home/cloudservice/suspend_on_idle.py",
+                "content": suspend_on_idle,
+            },
+            {"path": "/home/cloudservice/hermit-setup.sh", "content": hermit_setup},
+            {
+                "path": "/home/cloudservice/setup_firewall",
+                "content": f"""
+# Create a chain for tracking traffic to ssh in container
+iptables -N CONTAINER_SSH
+iptables -I INPUT -j CONTAINER_SSH
+iptables -A CONTAINER_SSH -p tcp --dport {CONTAINER_SSHD_PORT}
+iptables -A INPUT -p tcp --dport {CONTAINER_SSHD_PORT} -j ACCEPT
+""",
+            },
+            {
+                "path": "/etc/systemd/system/config-firewall.service",
+                "permissions": "0644",
+                "owner": "root",
+                "content": f"""
+[Unit]
+Description=Configures the host firewall
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/sh /home/cloudservice/setup_firewall
+""",
+            },
+            {
+                "path": "/etc/systemd/system/container-sshd.service",
+                "permissions": "0644",
+                "owner": "root",
+                "content": f"""
+[Unit]
+Description=Container which we can connect via ssh
+Wants=gcr-online.target config-firewall.service
+After=gcr-online.target config-firewall.service
+
+[Service]
+Environment="HOME=/home/cloudservice"
+StandardOutput=append:/var/log/hermit.log
+ExecStartPre=/usr/bin/docker-credential-gcr configure-docker --registries us-central1-docker.pkg.dev
+ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/{instance_config.pd_name}/home/ubuntu:/home/ubuntu {instance_config.docker_image} /usr/sbin/sshd -D -e -p {CONTAINER_SSHD_PORT}
+ExecStop=/usr/bin/docker stop container-sshd
+ExecStopPost=/usr/bin/docker rm container-sshd
+Restart=always
+""",
+            },
+            {
+                "path": "/etc/systemd/system/suspend-on-idle.service",
+                "permissions": "0644",
+                "owner": "root",
+                "content": f"""
+[Unit]
+Description=Suspend when container is detected to be idle
+Wants=gcr-online.target
+After=gcr-online.target
+
+[Service]
+ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 {instance_config.suspend_on_idle_timeout} {instance_config.name} {instance_config.zone} {instance_config.project} {CONTAINER_SSHD_PORT}
+Restart=always""",
+            },
+            {
+                "path": "/etc/docker/daemon.json",
+                "permissions": "0644",
+                "owner": "root",
+                "content": docker_daemon_config,
+            },
+        ],
+        "users": [{"name": "ubuntu"}],
+        "runcmd": [
+            "echo in-runcmd",
+            "bash /home/cloudservice/hermit-setup.sh >> /var/log/hermit.log 2>&1",
+        ],
+    }
+
+    return cloud_config
+
+
+def _dict_to_yaml_str(value):
+    buf = io.StringIO()
+    yaml.dump(value, buf)
+    return buf.getvalue()
+
+
+def create_instance(instance_config: InstanceConfig):
+    username = os.getlogin()
+
+    cloud_config = _create_cloud_config(instance_config)
+
     with tempfile.NamedTemporaryFile("wt") as tmp:
         # write out cloudinit file
-        tmp.write(
-            f"""#cloud-config
-
-users:
-- name: ubuntu
-
-bootcmd:
-- echo in-bootcmd
-- 'echo "Starting cloudinit bootcmd..." >> /var/log/hermit.log'
-- mount
-- umount /tmp
-"""
-        )
-        # if we have no local ssd drives, use /var/tmp for /tmp
-        if instance_config.local_ssd_count == 0:
-            tmp.write(
-                """
-- mount --bind /var/tmp /tmp
-"""
-            )
-        else:
-            for i in range(instance_config.local_ssd_count):
-                tmp.write(
-                    f"""- mkfs -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i}
-- mkdir -p /mnt/disks/local-ssd-{i}
-- mount -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i} /mnt/disks/local-ssd-{i}
-"""
-                )
-                # if we're using at least one local ssd drive, mount it at /tmp
-                if i == 0:
-                    tmp.write(
-                        f"""- mkdir /mnt/disks/local-ssd-{i}/tmp
-- chmod 1777 /mnt/disks/local-ssd-{i}/tmp
-- mount --bind /mnt/disks/local-ssd-{i}/tmp /tmp
-"""
-                    )
-
-        tmp.write(
-            f"""- echo in-bootcmd-after-tmp-remount
-- 'mount'
-- 'echo "Checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log'
-- 'fsck -C 1 -a /dev/disk/by-id/google-{instance_config.pd_name} >> /var/log/hermit.log'
-- 'echo "Finished checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log'
-- 'mkdir -p /mnt/disks/{instance_config.pd_name}'
-- 'echo "Mounting /dev/disk/by-id/google-{instance_config.pd_name}" as /mnt/disks/{instance_config.pd_name} >> /var/log/hermit.log'
-- 'mount -t ext4 /dev/disk/by-id/google-{instance_config.pd_name} /mnt/disks/{instance_config.pd_name}'
-- 'mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh'
-
-write_files:
-- path: /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys
-  permissions: "0700"
-  content: |
-    {ssh_pub_key}
-- path: /home/cloudservice/suspend_on_idle.py
-  content: |
-{textwrap.indent(suspend_on_idle, "    ")}
-- path: /home/cloudservice/setup_firewall
-  content: |
-    # Create a chain for tracking traffic to ssh in container
-    iptables -N CONTAINER_SSH
-    iptables -I INPUT -j CONTAINER_SSH
-    iptables -A CONTAINER_SSH -p tcp --dport {CONTAINER_SSHD_PORT}
-    iptables -A INPUT -p tcp --dport {CONTAINER_SSHD_PORT} -j ACCEPT
-- path: /etc/systemd/system/config-firewall.service
-  permissions: 0644
-  owner: root
-  content: |
-    [Unit]
-    Description=Configures the host firewall
-
-    [Service]
-    Type=oneshot
-    RemainAfterExit=true
-    ExecStart=/bin/sh /home/cloudservice/setup_firewall
-- path: /etc/systemd/system/container-sshd.service
-  permissions: "0644"
-  owner: root
-  content: |
-    [Unit]
-    Description=Container which we can connect via ssh
-    Wants=gcr-online.target config-firewall.service
-    After=gcr-online.target config-firewall.service
-
-    [Service]
-    Environment="HOME=/home/cloudservice"
-    StandardOutput=append:/var/log/hermit.log
-    ExecStartPre=/usr/bin/docker-credential-gcr configure-docker --registries us-central1-docker.pkg.dev
-    ExecStart=/usr/bin/docker run --rm --name=container-sshd --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -v /mnt/disks/{instance_config.pd_name}/home/ubuntu:/home/ubuntu {instance_config.docker_image} /usr/sbin/sshd -D -e -p {CONTAINER_SSHD_PORT}
-    ExecStop=/usr/bin/docker stop container-sshd
-    ExecStopPost=/usr/bin/docker rm container-sshd
-    Restart=always
-- path: /etc/systemd/system/suspend-on-idle.service
-  permissions: "0644"
-  owner: root
-  content: |
-    [Unit]
-    Description=Suspend when container is detected to be idle
-    Wants=gcr-online.target
-    After=gcr-online.target
-    
-    [Service]
-    ExecStart=/usr/bin/python /home/cloudservice/suspend_on_idle.py 1 {instance_config.suspend_on_idle_timeout} {instance_config.name} {instance_config.zone} {instance_config.project} {CONTAINER_SSHD_PORT}
-    Restart=always
-- path: /etc/docker/daemon.json
-  permissions: "0644"
-  owner: root
-  content: |
-  {textwrap.indent(docker_daemon_config, "   ")}
-runcmd:
-  - echo in-runcmd
-  - 'echo "Setting up ubuntu home directory permissions..." >> /var/log/hermit.log'
-  - mount
-  - 'usermod -u 2000 ubuntu'
-  - 'groupmod -g 2000 ubuntu'
-  - chown 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu
-  - chmod -R 700 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
-  - chown -R 2000:2000 /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh
-  - 'echo "Mounting home directory into place..." >> /var/log/hermit.log'
-  - mount --bind /mnt/disks/{instance_config.pd_name}/home/ubuntu/ /home/ubuntu
-  - 'chown ubuntu:ubuntu /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh/authorized_keys'
-  - 'chmod 0666 /var/run/docker.sock'
-  - 'echo "Starting up services..." >> /var/log/hermit.log'
-  - systemctl daemon-reload
-  - systemctl restart docker
-  - systemctl start container-sshd.service
-  - systemctl start suspend-on-idle.service
-  - 'echo "Cloudinit runcmd complete." >> /var/log/hermit.log'
-"""
-        )
+        tmp.write("#cloud-config\n")
+        tmp.write(_dict_to_yaml_str(cloud_config))
         tmp.flush()
 
         cloudinit_path = tmp.name
@@ -209,7 +248,7 @@ runcmd:
             f"--service-account={instance_config.service_account}",
         ]
 
-        for i in range(instance_config.local_ssd_count):
+        for _ in range(instance_config.local_ssd_count):
             create_options.extend(["--local-ssd=interface=nvme"])
 
         gcp.gcloud(
