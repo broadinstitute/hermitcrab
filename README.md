@@ -188,6 +188,18 @@ DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 
 # Tips and tricks
 
+## Disabling suspend-on-idle behavior
+
+By default machines will be suspended when the machine is detected to be idle. This is largely to save costs, however, the definition of "idle" is based on whether there is any ssh traffic, and thus running a large non-interactive job can still be thought of as "idle". 
+
+If you ever want to disable the suspend-on-idle on a machine that is already running you can execute (not on the hermit machine) the following:
+
+```
+gcloud compute ssh INSTANCE_NAME --command 'sudo systemctl stop suspend-on-idle'
+```
+
+This will disable the service which is montioring network activity and suspending the instance. Once disabled, the VM will require being explictly shutdown. This command only affects a running VM, so if the hermit VM is brough down and then back up, the `suspend-on-idle` service will be started once again as part of bringing the VM online.
+
 ## Changing machine type (ie: how to increase memory on the VM)
 
 In order to change how much memory or number of CPUs you are using, change the machine type of your instance.
