@@ -248,31 +248,6 @@ The boot volume is created during `hermit up` and destroyed during `hermit
 down` so to make the change take effect, just bring the instance down and
 then back up. After it's initialized the boot volume will be the new size.
 
-# Known issues
-
-## All files disappearing on startup
-
-I've observed that occasionally `hermit up` starts the server successfully but the home directory doesn't get mounted. This can be recognized as the /home/ubuntu being mounted on tmpfs:
-
-```
-$ df -k | grep /home/ubuntu
-tmpfs                256       4       252   2% /home/ubuntu
-```
-
-when it _should_ have mounted /dev/sdb. 
-
-```
-$ df -k | grep /home/ubuntu
-/dev/sdb       206364100 11468084 184410256   6% /home/ubuntu
-```
-
-This appears to happen randomly and doing a `hermit down` and `hermit up` usually fixes this. Still trying to understand what non-deterministically is happening. I have observed that when this happened last time linux had bound the home PD as to /dev/sda instead of /dev/sdb. I think this is the root cause and hermit's code relying on the device names being stable, and apparently they are not. Instead we should probably mount `/dev/by-id/google-<volume name>`.
-
-## Shutdown shortly after un-suspending
-
-If the VM has been suspended and `hermit up` unsuspends it, I've had a few times where it suddenly shuts down after a few minutes. I've traced this google shutting down the VM as a "systemIntegrityEvent" which is apparently a result of their "integrity monitoring" https://cloud.google.com/compute/shielded-vm/docs/integrity-monitoring. What's odd however is that the logs also show that the VM is passing the monitoring checks, so I'm at a loss as to why the VM is being shut down. The easiest solution would be to disable integrity monitoring upon VM creating, but that still remains to be done.
-
-
 # Troubleshooting
 
 All gcloud commands are logged to hermit.log. That can be a good place to
