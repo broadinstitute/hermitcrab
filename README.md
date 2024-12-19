@@ -55,7 +55,7 @@ Assuming you have poetry installed, you should be able to check out this repo an
 poetry install
 ```
 
-...which should create a virtual environment and download and install all dependencies. I also like the being able to run `hermit` without having to activate the virtual environment, so to do that, I also recommend putting a symlink to the `hermit` executable script into your path.
+...which should create a virtual environment and download and install all dependencies. I also like the being able to run `hermit` without having to activate the virtual environment (e.g. `poetry shell`), so to do that, I also recommend putting a symlink to the `hermit` executable script into your path.
 
 For example, I do this by running:
 
