@@ -55,7 +55,7 @@ Assuming you have poetry installed, you should be able to check out this repo an
 poetry install
 ```
 
-...which should create a virtual environment and download and install all dependencies. I also like the being able to run `hermit` without having to activate the virtual environment, so to do that, I also recommend putting a symlink to the `hermit` executable script into your path.
+...which should create a virtual environment and download and install all dependencies. I also like the being able to run `hermit` without having to activate the virtual environment (e.g. `poetry shell`), so to do that, I also recommend putting a symlink to the `hermit` executable script into your path.
 
 For example, I do this by running:
 
@@ -84,7 +84,7 @@ disk mounted.
 This will also update your `~/.ssh/config` file with information that ssh
 can use to seamlessly connect to your instance when its running.
 
-Example: `hermit create test-hermit us.gcr.io/broad-achilles/hermitcrab`
+Example: `hermit create us-central1-docker.pkg.dev/cds-docker-containers/docker/dev-hermit-env:v3`
 
 ```
 hermit up [name]
@@ -287,3 +287,11 @@ Alternatively, you can always look at all the recent logs across the entire mach
 ```
 gcloud compute ssh MACHINE_NAME -- sudo journalctl --since "10 minutes ago"
 ```
+
+# Tips and Tricks
+
+### Use VS Code to handle git authentication
+
+VS Code has helpful source control management tools. Selecting "Clone Repository" will let you authenticate through the browser, which is a much easier process than trying to configure and authenticate through the git command line tools. 
+
+![VS Code Source Control Tool](docs/vs-code-source-control.png)

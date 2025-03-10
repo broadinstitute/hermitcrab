@@ -257,7 +257,7 @@ def add_command(subparser):
 
         assert (
             zone is not None
-        ), "no default zone in gcloud config, so specified the project with the --zone parameter"
+        ), "no default zone in gcloud config, so specify the zone with the --zone parameter (ex. '--zone=us-central1-a')"
 
         if args.local_port is None:
             local_port = find_unused_port()
