@@ -287,3 +287,12 @@ Alternatively, you can always look at all the recent logs across the entire mach
 ```
 gcloud compute ssh MACHINE_NAME -- sudo journalctl --since "10 minutes ago"
 ```
+
+TODO:
+Check on how gcr.io is handled these. Make into a hard error if it not
+artifact registry
+Update gcr.io in readme
+20 minute default for going to sleep is way too short. Maybe make the
+timeout something like 5 hrs
+hermit nodes get stopped due to shielded vm check failing (???):
+  logName: "projects/broad-achilles/logs/compute.googleapis.com%2Fshielded_vm_integrity"
