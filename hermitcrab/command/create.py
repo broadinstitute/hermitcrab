@@ -27,7 +27,7 @@ def create_volume(
     service_account,
     zone,
     project,
-    machine_type="n2-standard-2",
+    machine_type,
 ):
     disk_status = gcp.gcloud_capturing_json_output(
         [
@@ -195,7 +195,16 @@ def create(
 
     ensure_firewall_setup(project)
 
-    create_volume(pd_name, drive_size, drive_type, name, service_account, zone, project)
+    create_volume(
+        pd_name,
+        drive_size,
+        drive_type,
+        name,
+        service_account,
+        zone,
+        project,
+        machine_type,
+    )
     print(
         f"Successfully created {drive_size}GB filesystem on persistent disk {pd_name}"
     )

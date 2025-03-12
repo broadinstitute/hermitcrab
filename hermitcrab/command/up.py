@@ -236,6 +236,7 @@ def create_instance(instance_config: InstanceConfig):
             f"--description=hermit v{__version__} VM started user {username}",
             "--image-family=cos-stable",
             "--image-project=cos-cloud",
+            "--maintenance-policy=TERMINATE",  # required for GPU instances because they do not support live-migration
             f"--boot-disk-size={instance_config.boot_disk_size_in_gb}GB",
             f"--zone={instance_config.zone}",
             f"--project={instance_config.project}",
