@@ -18,6 +18,7 @@ import yaml
 from ..config import InstanceConfig
 from .. import __version__
 import os
+from ..errors import UserError
 
 # change the live-restore flag to false because its incompatible with swarm mode
 # (which is required by miniwdl). The other options were the values in the file before.
@@ -219,6 +220,20 @@ def _dict_to_yaml_str(value):
     return buf.getvalue()
 
 
+def start_instance(instance_config: InstanceConfig):
+    gcp.gcloud(
+        [
+            "compute",
+            "instances",
+            "start",
+            instance_config.name,
+            f"--zone={instance_config.zone}",
+            f"--project={instance_config.project}",
+        ],
+        timeout=LONG_OPERATION_TIMEOUT,
+    )
+
+
 def create_instance(instance_config: InstanceConfig):
     username = os.getlogin()
 
@@ -285,11 +300,12 @@ def up(name: str, verbose: bool):
     )
 
     if status == "TERMINATED":
-        raise Exception(
-            "Found existing stopped instance. You'll need to manually delete it before proceeding"
-        )
-
-    if status is None:
+        gcp.log_info("Starting stopped instance")
+        start_instance(instance_config)
+        # raise UserError(
+        #     f"Found existing stopped instance. You'll need to manually run `hermit down {name}` before trying to bring it back up"
+        # )
+    elif status is None:
         gcp.log_info(f"Creating instance")
         create_instance(instance_config)
     elif status == "RUNNING":

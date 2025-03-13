@@ -38,6 +38,7 @@ def main():
 
 
 def poll(poll_frequency, activity_timeout, name, zone, project, port):
+    suspend_fail_count = 0
     last_bytes_transmitted = None
     last_activity = time.time()
     while True:
@@ -46,23 +47,50 @@ def poll(poll_frequency, activity_timeout, name, zone, project, port):
             last_bytes_transmitted = bytes_transmitted
             last_activity = time.time()
             log.info("%s", f"active (last_bytes_transmitted={last_bytes_transmitted})")
+
+            # reset if there's some activity. Only want to count the number of failed suspends since we've decided that we're idle
+            suspend_fail_count = 0
         elapsed_since_activity = time.time() - last_activity
         if elapsed_since_activity > activity_timeout:
             log.info(
                 "%s",
                 f"{elapsed_since_activity} seconds elapsed since last sign of activity. Suspending...",
             )
-            suspend_instance(name, zone, project)
-            log.info("Suspend complete")
-            time.sleep(5 * 60)
-            # this is likely after the VM has been resumed
+            successful_suspend = suspend_instance(name, zone, project)
+            log.info(
+                f"Suspend is over. Waiting for {activity_timeout/60} minutes before polling again"
+            )
+            time.sleep(activity_timeout)
+            # this is likely after the VM has been resumed but ...
+            # it's been observed that the suspend command often reports failure even though the vm successfully suspended.
+            # I don't have a reliable way of telling whether it worked or not. (Specificly, it gets a timeout trying to read the response
+            # to the suspend request, because while it was
+            # reading, the VM got suspended. ) In the event that suspend _really_ is broken, we want to shutdown as that's
+            # safer then leaving the machine run forever. So, let's go with a heuristic of, if it fails repeatedly then shutdown.
+
+            if not successful_suspend:
+                log.info(
+                    "Suspend command reportedly failed -- but not sure if that's true. Incrementing fail count"
+                )
+                suspend_fail_count += 1
+
+                if suspend_fail_count > 10:
+                    log.info(
+                        f"suspending failed {suspend_fail_count} times. Shutting down as a last resort"
+                    )
+                    _shutdown()
+
             log.info("Resuming polling...")
         time.sleep(poll_frequency)
 
 
+def _shutdown():
+    return_code = subprocess.run(["shutdown", "--poweroff"]).returncode
+    log.info(f"return code = {return_code}")
+
+
 def suspend_instance(name, zone, project):
     has_ssd = os.path.exists("/mnt/disks/local-ssd-0")
-    start_time = time.time()
     cmd = [
         "docker",
         "run",
@@ -82,26 +110,8 @@ def suspend_instance(name, zone, project):
         cmd.append("--discard-local-ssd=false")
 
     return_code = subprocess.run(cmd).returncode
-    end_time = time.time()
-    elapsed = end_time - start_time
 
-    if elapsed > 10 * 60:
-        # it's been observed that this command often reports failure even though the vm successfully suspended.
-        # Specificly, it gets a timeout trying to read the response, because while it was
-        # reading, the VM got suspended. This is a bit of a hack, but lets try to detect
-        # this case by seeing how long that command took. If it took a _long_ time
-        # it's probably because the machine was suspended and woke up much later
-        log.info(
-            f"Suspend command took {elapsed} secs to complete, probably suspended in the middle. (return_code={return_code})"
-        )
-        return_code = 0
-
-    if return_code != 0:
-        log.info(
-            f"Return code was non-zero {return_code}. Unable to suspend, so trying shutdown --poweroff instead"
-        )
-        return_code = subprocess.run(["shutdown", "--poweroff"]).returncode
-        log.info(f"return code = {return_code}")
+    return return_code == 0
 
 
 def get_bytes_transmitted(port):
