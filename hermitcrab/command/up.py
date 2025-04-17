@@ -259,8 +259,10 @@ def create_instance(instance_config: InstanceConfig):
             f"--metadata-from-file=user-data={cloudinit_path}",
             f"--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no",
             # use scopes that are equivilent to 'default' from https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes
-            # but also add compute-rw so that the instance can suspend itself down when idle.
-            f"--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw",
+            # but also add:
+            # - compute-rw so that the instance can suspend itself down when idle.
+            # - cloud-platform so that user credentials can be used with gcloud (e.g. for gumbo client auth without a service account)
+            f"--scopes=storage-ro,logging-write,monitoring-write,pubsub,service-management,service-control,trace,compute-rw,cloud-platform",
             f"--service-account={instance_config.service_account}",
         ]
 
