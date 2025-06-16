@@ -188,6 +188,20 @@ DOCKER_HOST=ssh://image-builder docker build . -t sample-image
 
 # Tips and tricks
 
+## Permissions problems
+
+An important thing to note is that operations performed by hermit are done via a service account and _not_ by using your personal account. (Service accounts are created on-the-fly whenever a new google project is used.)
+
+If your hermit service account needs some additional permissions, for example, in order to pull the docker image from Artifact Registry in a **different** google project, you can find the name of the service account in `~/.hermit/service-accounts/PROJECT_NAME`. (where `PROJECT_NAME` is the name of the google project hermit used to create the service account)
+
+You can then use the account name in that file to manually grant any needed access. For example, if the file contained the service account `hermit-nrqacuv537@sample.iam.gserviceaccount.com`, you can grant it access to pull docker images from the `sample-docker-imgs` google project via:
+
+```
+gcloud projects add-iam-policy-binding sample-docker-imgs \
+   --member=serviceAccount:hermit-nrqacuv537@sample.iam.gserviceaccount.com \
+   --role=roles/artifactregistry.reader
+```
+
 ## Disabling suspend-on-idle behavior
 
 By default machines will be suspended when the machine is detected to be idle. This is largely to save costs, however, the definition of "idle" is based on whether there is any ssh traffic, and thus running a large non-interactive job can still be thought of as "idle". 
