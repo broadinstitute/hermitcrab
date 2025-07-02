@@ -55,12 +55,13 @@ def down(name: str):
                         "compute",
                         "ssh",
                         instance_config.name,
+                        "--tunnel-through-iap",
                         f"--zone={instance_config.zone}",
                         f"--project={instance_config.project}",
                         "--command",
                         "sudo shutdown now",
                     ],
-                    timeout=10,
+                    timeout=20,
                 )
             except subprocess.TimeoutExpired:
                 print("Timeout expired waiting for command to terminate")
