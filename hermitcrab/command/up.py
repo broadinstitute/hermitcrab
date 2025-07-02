@@ -82,13 +82,14 @@ def _create_bootcmd(instance_config: InstanceConfig):
         [
             f"echo in-bootcmd-after-tmp-remount",
             f"mount",
-            f'echo "Checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log',
+            f'echo "Starting check filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log',
             f"fsck -C 1 -a /dev/disk/by-id/google-{instance_config.pd_name} >> /var/log/hermit.log",
             f'echo "Finished checking filesystem /dev/disk/by-id/google-{instance_config.pd_name}" >> /var/log/hermit.log',
             f"mkdir -p /mnt/disks/{instance_config.pd_name}",
             f'echo "Mounting /dev/disk/by-id/google-{instance_config.pd_name}" as /mnt/disks/{instance_config.pd_name} >> /var/log/hermit.log',
             f"mount -t ext4 /dev/disk/by-id/google-{instance_config.pd_name} /mnt/disks/{instance_config.pd_name}",
             f"mkdir -p /mnt/disks/{instance_config.pd_name}/home/ubuntu/.ssh",
+            f'echo "Finished hermit VM setup" >> /var/log/hermit.log',
         ]
     )
 
@@ -257,6 +258,7 @@ def create_instance(instance_config: InstanceConfig):
             f"--project={instance_config.project}",
             f"--machine-type={instance_config.machine_type}",
             f"--metadata-from-file=user-data={cloudinit_path}",
+            f"--metadata=google-monitoring-enabled=true",
             f"--disk=name={instance_config.pd_name},device-name={instance_config.pd_name},auto-delete=no",
             # use scopes that are equivilent to 'default' from https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes
             # but also add compute-rw so that the instance can suspend itself down when idle.
@@ -413,13 +415,34 @@ def wait_for_instance_start(
         time.sleep(poll_frequency)
 
 
+COULD_NOT_CHECK_FILESYSTEM_MSG = "superblock could not be read"
+COULD_NOT_START_DOCKER_CONTAINER = 'error during container init: exec: "/usr/sbin/sshd"'
+# b08e2ff4391e: Download complete
+# b08e2ff4391e: Pull complete
+# Digest: sha256:440dcf6a5640b2ae5c77724e68787a906afb8ddee98bf86db94eea8528c2c076
+# Status: Downloaded newer image for ubuntu:latest
+# docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "/usr/sbin/sshd": stat /usr/sbin/sshd: no such file or directory: unknown.
+
+
 def get_status_from_log(log_content):
     "Given the contents of /var/logs/hermit.log, return a tuple of (ssh_ready:bool, summary:List[str])"
 
     ssh_ready = False
     status = []
 
-    check_fs_m = re.search("^(Checking filesystem)", log_content, re.MULTILINE)
+    # first check for fatal conditions. These are heuristics intended to give useful information when they arrise
+
+    if COULD_NOT_CHECK_FILESYSTEM_MSG in log_content:
+        raise UserError(
+            f"/var/log/hermit.log contains {repr(COULD_NOT_CHECK_FILESYSTEM_MSG)} which indicates the disk associated with this instance does not have a valid filesystem (this should have been created when `hermit create ...` was run). You may want to recreate the disk (via hermit delete ... hermit create ...) the instance in case something transiently went wrong during the creation process."
+        )
+
+    if COULD_NOT_START_DOCKER_CONTAINER in log_content:
+        raise UserError(
+            'In /var/log/hermit.log an error message indicates that the docker container could not be started because the image did not contain "sshd". See the README at https://github.com/broadinstitute/hermitcrab for what is required installed inside the docker image to work with hermit.'
+        )
+
+    check_fs_m = re.search("^(Starting check filesystem)", log_content, re.MULTILINE)
     if check_fs_m:
         status.append(check_fs_m.group(1))
 
@@ -445,6 +468,12 @@ def get_status_from_log(log_content):
     m = re.search("(Pulling from \\S+)$", log_content, re.MULTILINE)
     if m:
         status.append(m.group(1))
+
+    pulled_m = re.search(
+        "^(Status: Downloaded newer image for .*)$", log_content, re.MULTILINE
+    )
+    if pulled_m is not None:
+        status.append(pulled_m.group(1))
 
     m = re.search("^(Server listening on 0.0.0.0.*)$", log_content, re.MULTILINE)
     if m:
