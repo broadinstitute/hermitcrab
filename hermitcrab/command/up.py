@@ -49,6 +49,21 @@ def resume_instance(instance_config):
     )
 
 
+def _format_and_mount_tmp(dev_name):
+    return [
+        # format filesystem
+        f"mkfs -t ext4 {dev_name}",
+        # create mount point
+        f"mkdir -p /mnt/disks/local-ssd",
+        # mount filesystem at mount point
+        f"mount -t ext4 {dev_name} /mnt/disks/local-ssd",
+        # now, mount /tmp from the new filesystem (on the ssd filesystem)
+        f"mkdir /mnt/disks/local-ssd/tmp",
+        f"chmod 1777 /mnt/disks/local-ssd/tmp",
+        f"mount --bind /mnt/disks/local-ssd/tmp /tmp",
+    ]
+
+
 def _create_bootcmd(instance_config: InstanceConfig):
     bootcmd = [
         "echo in-bootcmd",
@@ -59,24 +74,23 @@ def _create_bootcmd(instance_config: InstanceConfig):
     # if we have no local ssd drives, use /var/tmp for /tmp
     if instance_config.local_ssd_count == 0:
         bootcmd.append("mount --bind /var/tmp /tmp")
+    if instance_config.local_ssd_count == 1:
+        # if we have a single ssd drive format it and mount it
+        bootcmd.extend(_format_and_mount_tmp("/dev/disk/by-id/google-local-nvme-ssd-0"))
     else:
-        for i in range(instance_config.local_ssd_count):
-            bootcmd.extend(
-                [
-                    f"mkfs -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i}",
-                    f"mkdir -p /mnt/disks/local-ssd-{i}",
-                    f"mount -t ext4 /dev/disk/by-id/google-local-nvme-ssd-{i} /mnt/disks/local-ssd-{i}",
-                ]
-            )
-            # if we're using at least one local ssd drive, mount it at /tmp
-            if i == 0:
-                bootcmd.extend(
-                    [
-                        f"mkdir /mnt/disks/local-ssd-{i}/tmp",
-                        f"chmod 1777 /mnt/disks/local-ssd-{i}/tmp",
-                        f"mount --bind /mnt/disks/local-ssd-{i}/tmp /tmp",
-                    ]
-                )
+        # if we have more than one turn them into a single volume
+        dev_list = " ".join(
+            [
+                f"/dev/disk/by-id/google-local-nvme-ssd-{i}"
+                for i in range(instance_config.local_ssd_count)
+            ]
+        )
+        bootcmd.extend(
+            [
+                f"mdadm --create /dev/md0 --level=0 --raid-devices={instance_config.local_ssd_count} {dev_list}",
+            ]
+            + _format_and_mount_tmp("/dev/md0")
+        )
 
     bootcmd.extend(
         [
