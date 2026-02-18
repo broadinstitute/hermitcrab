@@ -60,7 +60,7 @@ poetry install
 For example, I do this by running:
 
 ```
-sudo ln -s `poetry run which hermit` /usr/local/bin
+sudo ln -sf "$(poetry run which hermit)" /usr/local/bin/hermit
 ```
 
 Once this is done, you should be able to run
