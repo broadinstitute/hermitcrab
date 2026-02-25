@@ -7,7 +7,7 @@ from ..config import (
 )
 import os
 from .. import __version__
-
+import time
 
 roles_to_add = [
     "roles/editor",  # Eventually figure out the minimal permissions
@@ -24,9 +24,68 @@ def get_or_create_default_service_account(project):
     try:
         return read_default_service_account(project)
     except NoDefaultServiceAccount:
+        print(
+            "Appears this may be the first time you've used hermit -- creating service account and enabling APIs"
+        )
+        enable_apis(project)
         create_service_account(project, None)
 
     return read_default_service_account(project)
+
+
+def _retry_on_gcloud_error(
+    action, attempts=10, sleep_duration=10, expected_error_message="", not_an_error=None
+):
+    last_error = None
+    for i in range(attempts):
+        try:
+            action()
+            return
+        except gcp.GCloudError as e:
+            last_error = e
+            if not_an_error is not None and not_an_error in e.error_message:
+                return
+            if expected_error_message in e.error_message:
+                print(
+                    f"Got an error which is likely transient. Retrying in {sleep_duration} seconds..."
+                )
+        time.sleep(sleep_duration)
+
+    print(f"Too many failed attempts -- raising error")
+    assert last_error is not None
+    raise last_error
+
+
+def enable_apis(project):
+    # if the service is already enabled, then this is a no-op
+    gcp.gcloud(
+        ["services", "enable", "compute.googleapis.com", "--project", project],
+        timeout=60 * 10,
+    )
+    # This seems to be specific to the Broad: After enabling the compute API, there's no default network
+    # so create one now since we need it to create the VM
+    _retry_on_gcloud_error(
+        lambda: gcp.gcloud(
+            ["compute", "networks", "create", "default", "--project", project],
+            timeout=60,
+        ),
+        expected_error_message="Compute Engine API has not been used in project",
+        not_an_error="already exists",
+    )
+
+
+def _perform_grants(service_account_name, project):
+    for i in range(10):
+        try:
+            for role in roles_to_add:
+                grant(service_account_name, project, role)
+                return
+        except gcp.GCloudError as ex:
+            print(
+                f"Got error ({ex}) May be transient issue due to service account still initializing. Trying again in 5 seconds..."
+            )
+        time.sleep(5)
+    raise Exception("10 failed attempts. Aborting")
 
 
 def create_service_account(project, name):
@@ -48,8 +107,8 @@ def create_service_account(project, name):
         ]
     )
     service_account_name = f"{name}@{project}.iam.gserviceaccount.com"
-    for role in roles_to_add:
-        grant(service_account_name, project, role)
+
+    _perform_grants(service_account_name, project)
 
     gcloud_config = gcp.gcloud_capturing_json_output(
         ["config", "list", "--format=json"]
