@@ -122,7 +122,9 @@ def gcloud_capturing_json_output(args: List[str]):
 
 
 class GCloudError(Exception):
-    pass
+    def __init__(self, msg):
+        super().__init__(msg)
+        self.error_message = msg
 
 
 def gcloud(args: List[str], timeout=10):
@@ -329,7 +331,7 @@ def _default_to(value, default):
 
 def parse_docker_image_name(docker_image):
     m = re.match(
-        r"(?:([a-z0-9.-]+)(?::(\\d+))?/)?([a-z0-9-_/]+)(?::([a-z0-9-_/.]+))?",
+        r"(?:([a-z0-9-]+\\.[a-z0-9-.]+)?(?::(\\d+))?/)?([a-z0-9-_/]+)(?::([a-z0-9-_/.]+))?",
         docker_image,
     )
     if m is None:
