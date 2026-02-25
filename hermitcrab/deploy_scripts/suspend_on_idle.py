@@ -90,7 +90,9 @@ def _shutdown():
 
 
 def suspend_instance(name, zone, project):
-    has_ssd = os.path.exists("/mnt/disks/local-ssd-0")
+    has_ssd = os.path.exists("/mnt/disks/local-ssd-0") or os.path.exists(
+        "/mnt/disks/local-ssd"
+    )
     cmd = [
         "docker",
         "run",
